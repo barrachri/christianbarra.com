@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html><body><lang><meta charset="utf-8">
+<meta name="robots" content="index, follow">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]--><meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A little intro to my blog, docker and a good book to read">
+<meta name="author" content="Christian Barra">
+<title>Why, startup quote api and Docker | chrisbarra.me</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../assets/css/codehilite.css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script><script src="../assets/js/main.js"></script><link rel="canonical" href="http://www.chrisbarra.me/posts/why-startup-quote-api-and-docker.html">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<meta property="og:title" content="Why, startup quote api and Docker">
+<meta property="og:description" content="My first blog and my first post. The reason to start a blog ? The Why ? (I've just finished reading Start with Why by Simon Sinek....) Share my experience and projects Learn about your experience and projects Although in the last 100 years technology ">
+<meta property="og:site_name" content="chrisbarra.me">
+<meta property="og:url" content="http://chrisbarra.me/posts/why-startup-quote-api-and-docker.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="http://www.chrisbarra.me/images/img_why.jpg.jpg">
+<style type="text/css"> 
+   .header::after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(../images/img_why.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+
+  .header::after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(../images/img_why.jpg) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
+ 
+
+
+}
+  </style>
+<!-- Side Menu --><a id="menu-toggle" href="http://www.chrisbarra.me/" title="chrisbarra.me" rel="home" class="btn btn-primary btn-lg toggle"><i class="fa fa-home"></i></a>
+    <!-- /Side Menu -->
+
+    <!-- Full Page Image Header Area -->
+<div id="top" class="header">
+        <div class="vert-text">
+        <div class="container">
+            <div class="row">
+
+
+<div class="col-md-8 col-md-offset-2">
+<p class="lead"> 19 April 2014  // 811 words // <a href="http://www.chrisbarra.me/posts/why-startup-quote-api-and-docker.html#disqus_thread"></a></p>
+<h1 class="title">Why, startup quote api and Docker</h1>
+<p class="lead">Everything begins with why, also my blog</p>
+
+</div>
+
+             </div>
+
+             <div class="row">
+
+                <div class="col-md-6 col-md-offset-3 text-center down">
+             <a href="#about"><i class="fa fa-chevron-down fa-3x"></i></a>
+                </div>
+                </div>
+
+        </div>
+
+        </div>
+    </div>
+
+       <!-- /Full Page Image Header Area -->
+
+    <!-- Intro -->
+    <div id="about" class="intro">
+        <div class="container">
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                <h3>Hi there ! my name is <strong>Christian</strong> and I'm a curious, adventurer, wanna be statistician@<a href="http://www.unipd.it/en/university/history">UniPD</a> and organizer @<a href="http://www.europython.eu">europython</a>.</h3>
+                <h3>You can use twitter or write at barrachri at gmail dot com if you want to get in touch with me.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Intro -->
+
+    <!-- About -->
+    <div id="services" class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-md-offset-4  text-center">
+                    <div class="service-item">
+                    <a href="http://twitter.com/christianbarra"><i class="sp-twitter service-icon fa fa-twitter"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-1 text-center">
+                    <div class="service-item">
+                     <a href="https://it.linkedin.com/in/christianbarra"><i class="sp-linkedin service-icon fa fa-linkedin"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-1 text-center">
+                    <div class="service-item">
+                     <a href="https://github.com/barrachri"><i class="sp-github service-icon fa fa-github"></i> </a>
+                    </div>
+                </div>
+                <div class="col-md-1 text-center">
+                    <div class="service-item">
+                    <a href="../rss.xml"><i class="sp-rss service-icon fa fa-rss"></i> </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /About -->
+
+    <!-- Mailinglist -->
+      <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <br><br><br><br>
+</div>
+            </div>
+        </div>
+    </div>
+    <!-- /Mailinglist -->
+
+    <!-- Blog -->
+    <div id="portfolio" class="portfolio">
+        <div class="container">
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><div class="row">
+                
+                <div class="col-md-8 col-md-offset-2">
+                
+<article class="postbox post-text"><div class="post_body">
+<div>
+<p>My first blog and my first post.</p>
+<p>The reason to start a blog ? The Why ? (I've just finished reading <a href="http://amzn.to/1j6vlHN" title="Start with Why by Simon Sinek">Start with Why by Simon Sinek</a>....)</p>
+<ul>
+<li>Share my experience and projects</li>
+<li>Learn about your experience and projects</li>
+</ul>
+<p>Although in the last 100 years technology improve our lives quality about a 10x factor, we still study/learn in the same way of 2000 years before.
+Write and read are still the best method to share knowledge.</p>
+<p>So, here I am.</p>
+<!-- TEASER_END -->
+
+<p>In honour of <a href="http://www.oup.it/files/Documenti/ReadOn/RightsoftheReaderbyPennac.pdf" title="The rights of the Reader">the Daniel Pennac's ten rules</a> I'll follow 3 simple rules to make more enjoyable reading this blog:</p>
+<ol>
+<li>Don't write more than 900 words;</li>
+<li>Be interesting (<a href="https://www.youtube.com/watch?v=BQ4yd2W50No">don't try to be, remember Yoda ?</a>);</li>
+<li>Write for your and my fun</li>
+</ol>
+<p>So I'll don't overwhelming you with hundreds of thousands of sentences about who come first between egg or chicken.
+I'll figure out the best I can write about my entreprenurship plan, experience, hobbies, travel (I'm planning to see some countries) and about my strange country (Italy).</p>
+<p>I think is always interesting to know what there is behind something, for example behind this blog.
+Well, I love python and after start this blog with django I choose to use <a href="http://getnikola.com/" title="Nikola Static Site Generator">Nikola</a>, a simple and powerful static site generator and hosting it with github.</p>
+<p>The dynamic part of the site is based on javascript and ajax calls to a simple django backend.
+You can use this url <a href="http://api.chrisbarra.me/api/quote/get" title="api.chrisbarra.me json">api.chrisbarra.me/api/quote/get</a> to get a random quote (json format) or <a href="http://api.chrisbarra.me" title="api.chrisbarra.me html">api.chrisbarra.me</a> to see a simple html page.</p>
+<p>Back to architect, I use a <a href="https://www.digitalocean.com/?refcode=16e2312f412e" title="Digital Ocean">Digital Ocean vps</a>, with Ubuntu and Docker.
+Docker is awesome, for the first 2 hours. After that I have a form of hate and love (much love than hate), but I'll talk about this in the next weeks.</p>
+<p>I have 1 simple docker container with python, uWSGI and NGINX.</p>
+<p><a href="https://github.com/barrachri/dockerfiles" title="barrachri Repo">Here</a> you can find my repo with my docker and config files.</p>
+<p>Now ssh your digital ocean vps or whatever you want to use
+</p>
+<pre>ssh root@ipyourhostmachine</pre>
+Change your dir
+<pre>
+# Clone git repository of your project or change your directory with your ROOT
+# project directory, this is very important because this command "ADD ./ /app" 
+# copy all your files from your current directory to the /app container's dir
+cd rootprojectdir
+</pre>
+Download my Dockerfile
+<pre>
+# Always from ROOT directory of your project download my Dockerfile
+# remember to change your uwsgi.ini if your wsgi.py is not located in api/wsgi.py dir
+# More information in my Dockerfile
+sudo curl -o Dockerfile https://raw.githubusercontent.com/barrachri/dockerfiles/master/dockerfile/Dockerfile_app
+</pre>
+Build image from Dockerfile and name it appserver_image
+<pre>docker build -t appserver_image .</pre>
+Run a container from appserver_image and expose port 80 from the container to port 80 of the host machine and name this container appserver
+<pre>docker run -d -p 80:80 --name appserver appserver_image</pre>
+We looking for mount point directories between our container and host machine
+<pre>docker inspect --format='{{.Volumes}}' appserver</pre>
+The output will be something like this
+<pre>
+map[
+/app:/var/lib/docker/vfs/dir/strangehashcode
+/etc/nginx/sites-enabled:/var/lib/docker/vfs/dir/strangehashcode
+/var/log/nginx:/var/lib/docker/vfs/dir/strangehashcode]
+</pre>
+If you want to stop and restart your container
+<pre>
+docker stop appserver
+docker start appserver
+</pre>
+If something went wrong simple
+<pre>
+docker logs appserver
+</pre>
+After that we need to set this container to start automatically, we can do that with <a href="http://supervisord.org/" title="Supervisord">supervisor</a>
+<pre>
+sudo apt-get install supervisor
+sudo nano /etc/supervisor/supervisord.conf
+</pre>
+And add this text at end
+<pre>
+[program:appserver]
+command=/usr/bin/docker start -a appserver
+</pre>
+Save and then
+<pre>sudo reboot</pre>
+<p>Now your python app should be online !</p>
+<p>I hope this was useful for other questions I’m here !</p>
+<p><strong><em>Tsuduku !</em></strong></p>
+</div>
+    
+    
+</div>
+
+<ul class="social_network">
+<li>
+<div class="fb-share-button" data-type="button_count"></div>
+</li>
+
+<li>
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+</li>
+
+<li>
+<script src="//platform.linkedin.com/in.js" type="text/javascript">
+  lang: en_US
+</script><script type="IN/Share" data-counter="right"></script>
+</li>
+<li>
+    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</li>
+</ul>
+<div class="row">
+                <div class="col-md-12">
+                           <ul class="pager">
+<li class="next">
+                <a href="no-country-for-young-men.html" rel="next">Next post →</a>
+            </li>
+        </ul>
+</div>
+                
+</div>
+ 
+
+   
+     
+
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'chrisbarra'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+          </article>
+</div>
+                
+</div>
+
+       <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'chrisbarra'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script><script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</div>
+    </div>
+
+    <!-- /Blog -->
+
+
+
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+
+    <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script><!-- Google Analytics --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41799543-1', 'chrisbarra.me');
+  ga('send', 'pageview');
+
+</script><!-- /Google Analytics --></lang></body></html>

@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>chrisbarra.me</title><link>http://www.chrisbarra.me/</link><description>Hi ! My name is Christian and this is my blog, I write about my projects, my travels and a lots of other interesting stuff</description><atom:link href="http://www.chrisbarra.me/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 24 Jul 2016 10:05:31 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Classes, instances and attributes in Python</title><link>http://www.chrisbarra.me/posts/classes-instances-and-attributes-in-python.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;Some days ago I got a simple question.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="c1"&gt;# ?&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;My answer was wrong but it was the good occasion to pick some books and the &lt;strong&gt;&lt;a href="https://docs.python.org/3.5/reference/" title="Python 3.5.2 Reference"&gt;reference docs&lt;/a&gt;&lt;/strong&gt; back and spend some hours with the concepts behind: &lt;strong&gt;classes&lt;/strong&gt;, &lt;strong&gt;instances&lt;/strong&gt;, &lt;strong&gt;attributes&lt;/strong&gt; and &lt;strong&gt;namespaces&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;All the things you are going to read are related to Python 3.x.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Briefly introduction to Scope&lt;/h2&gt;
+&lt;p&gt;In Python you have 2 very important concepts: &lt;strong&gt;scope&lt;/strong&gt; and &lt;strong&gt;namespace&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;They are both related but generally &lt;strong&gt;scope&lt;/strong&gt; is related to unqualified names (X for example) and &lt;strong&gt;namespace&lt;/strong&gt; is related to qualified attribute names (object.X).&lt;/p&gt;
+&lt;p&gt;Due to the fact that in &lt;strong&gt;Python everything is an object&lt;/strong&gt; the difference is slight, but in general we can assume that.&lt;/p&gt;
+&lt;p&gt;Time for some code&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt; &lt;span class="c1"&gt;# global X&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f1&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# local X&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 20&lt;/span&gt;
+&lt;span class="n"&gt;f1&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 1&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Python (generally) follows the &lt;strong&gt;LEGB&lt;/strong&gt; rule, where LEGB means &lt;strong&gt;Local&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Enclosed&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Global&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Built-in&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LEGB&lt;/strong&gt; rule means that when you call &lt;strong&gt;X&lt;/strong&gt; Python will look in order inside the:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Local scope&lt;/li&gt;
+&lt;li&gt;Enclosed scope&lt;/li&gt;
+&lt;li&gt;Global&lt;/li&gt;
+&lt;li&gt;Built-in.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And if Python doesn't find anything it throws an error:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#X = 20&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 20&lt;/span&gt;
+
+&lt;span class="o"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="ne"&gt;NameError&lt;/span&gt;                                 &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="n"&gt;b47feb56ddf&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="mi"&gt;3&lt;/span&gt;     &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 20&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="n"&gt;b47feb56ddf&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;#X = 20&lt;/span&gt;
+      &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;     &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="mi"&gt;4&lt;/span&gt;
+      &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 20&lt;/span&gt;
+
+&lt;span class="ne"&gt;NameError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s1"&gt;'X'&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;defined&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;If you want to know more about &lt;strong&gt;LEGB&lt;/strong&gt; you can start from &lt;strong&gt;&lt;a href="http://stackoverflow.com/questions/291978/short-description-of-python-scoping-rules" title="Python LEGB Rule"&gt;here&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Let's go back to our classes.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;C&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt; &lt;span class="c1"&gt;# class is a reserved keyword used to create class&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;We just defined a simple class, named &lt;strong&gt;C&lt;/strong&gt;, &lt;strong&gt;X&lt;/strong&gt; is defined inside &lt;strong&gt;class C&lt;/strong&gt;, &lt;strong&gt;c&lt;/strong&gt; is what we call an &lt;strong&gt;object of C&lt;/strong&gt; or an &lt;strong&gt;instance of C&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;"f"&lt;/strong&gt; is a &lt;em&gt;function&lt;/em&gt; that accepts 1 parameter, &lt;strong&gt;self&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x1039aaae8&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;bound&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;__main__&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x103ea8e10&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now the first strange part, we called &lt;strong&gt;f&lt;/strong&gt;, a function defined inside &lt;strong&gt;C&lt;/strong&gt;, and we get &lt;strong&gt;&lt;em&gt;2 different things&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;&lt;em&gt;function&lt;/em&gt;&lt;/strong&gt; with &lt;strong&gt;C.f&lt;/strong&gt; and a &lt;strong&gt;&lt;em&gt;method&lt;/em&gt;&lt;/strong&gt; with &lt;strong&gt;c.f&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The keyword here is &lt;strong&gt;bound&lt;/strong&gt; or at least it's where the main difference lives.&lt;/p&gt;
+&lt;p&gt;But let's call our function (or method in this case):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="ne"&gt;NameError&lt;/span&gt;                                 &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;abfb4dafb0b&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="mi"&gt;4&lt;/span&gt;         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;abfb4dafb0b&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="mi"&gt;2&lt;/span&gt;     &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+      &lt;span class="mi"&gt;3&lt;/span&gt;     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;         &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="ne"&gt;NameError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s1"&gt;'X'&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;defined&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;mmmm.... Python should find &lt;strong&gt;X&lt;/strong&gt; following the &lt;strong&gt;LEGB&lt;/strong&gt;, does the &lt;strong&gt;LEGB&lt;/strong&gt; rule still apply or not ?&lt;/p&gt;
+&lt;p&gt;Let's try with this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;C&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;Y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f1&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;f1&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Output: 50&lt;/span&gt;
+&lt;span class="c1"&gt;# Output: 10&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;We have a nested function (f1) and we added X = 50 in the global scope and now the code works.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But what about X inside class C ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Well &lt;strong&gt;X&lt;/strong&gt; (inside class C) is not exactly a &lt;em&gt;variable&lt;/em&gt;, it's an &lt;strong&gt;attribute&lt;/strong&gt; and behaves in a different way from a &lt;em&gt;variable&lt;/em&gt; when we talk about &lt;strong&gt;LEGB&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;C&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;We just changed X with &lt;strong&gt;self.X&lt;/strong&gt; inside the print function a now it works.&lt;/p&gt;
+&lt;p&gt;Why ?&lt;/p&gt;
+&lt;p&gt;Well.... time to explain the concept of &lt;strong&gt;self&lt;/strong&gt; and &lt;strong&gt;namespaces&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2&gt;Self&lt;/h2&gt;
+&lt;p&gt;As I said, &lt;strong&gt;self&lt;/strong&gt; is just a parameter.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;C&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;legion&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;legion&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;This code works in the same way, we use &lt;strong&gt;self&lt;/strong&gt; as a convention, it's just a reference to the &lt;strong&gt;instance&lt;/strong&gt;, in this case to the instance &lt;strong&gt;c&lt;/strong&gt;, that is passed to the function when we call it.&lt;/p&gt;
+&lt;p&gt;When we type &lt;strong&gt;c.f()&lt;/strong&gt;  Python is calling &lt;strong&gt;C.f(c)&lt;/strong&gt;, where &lt;strong&gt;C&lt;/strong&gt; is the class of our instance, &lt;strong&gt;f&lt;/strong&gt; is our function/method and &lt;strong&gt;c&lt;/strong&gt; is the first parameter required by &lt;strong&gt;f&lt;/strong&gt; (self or legion).&lt;/p&gt;
+&lt;p&gt;And do you remember this ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="c1"&gt;# &amp;lt;bound method C.f of &amp;lt;__main__.C object at 0x1039cf6d8&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now the meaning of &lt;strong&gt;bound&lt;/strong&gt; is more clear, it means that when we call &lt;strong&gt;f&lt;/strong&gt; with &lt;strong&gt;c.f&lt;/strong&gt; we are automatically passing a reference to our instance.&lt;/p&gt;
+&lt;p&gt;So from this moment when we talk about a function that accept a self parameter we will call it &lt;strong&gt;instance method&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;And yes you can also have &lt;strong&gt;unbound method&lt;/strong&gt;, that are not related to your instances like &lt;strong&gt;class method&lt;/strong&gt; or &lt;strong&gt;static method&lt;/strong&gt;, but we leave this for the future.&lt;/p&gt;
+&lt;h2&gt;Namespaces&lt;/h2&gt;
+&lt;p&gt;A namespace is a collection of...names.&lt;/p&gt;
+&lt;p&gt;A collection of &lt;strong&gt;references&lt;/strong&gt; to &lt;strong&gt;objects&lt;/strong&gt; like &lt;strong&gt;name=object&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Why &lt;strong&gt;namespaces&lt;/strong&gt; are so important ?&lt;/p&gt;
+&lt;p&gt;Because every class has a namespace and...... every instance of a class has a namespace too.&lt;/p&gt;
+&lt;p&gt;They are completely &lt;strong&gt;separated&lt;/strong&gt; but related &lt;em&gt;somehow&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Let's look inside our class and instance namespaces, we have a built-in attribute for this: &lt;strong&gt;__dict&lt;/strong&gt;__&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# I cleaned the output of C.__dict__ of all the built-in methods/attributes&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# mappingproxy({'f': &amp;lt;function C.f at 0x1039c1378&amp;gt;, 'X': 10})&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;As you can see class namespace and instance namespace are completely different.&lt;/p&gt;
+&lt;p&gt;Class namespace is a &lt;strong&gt;mappingproxy&lt;/strong&gt;, instance namespace is a &lt;strong&gt;dict&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A mappingproxy is a kind of &lt;strong&gt;read-only&lt;/strong&gt; dict.&lt;/p&gt;
+&lt;p&gt;You can find why mappingproxy is used &lt;strong&gt;&lt;a href="http://stackoverflow.com/questions/32720492/why-is-a-class-dict-a-mappingproxy" title="why-is-a-class-dict-a-mappingproxy"&gt;here&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;When I said that mappingproxy is read-only I mean that you cannot assign items using the mappingproxy as a dict for example:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'X'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# 10&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'X'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="o"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="ne"&gt;TypeError&lt;/span&gt;                                 &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;193&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ec143c56e8cd&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'X'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'X'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+
+&lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'mappingproxy'&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;support&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="n"&gt;assignment&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;If you want to put new elements inside your class namespace you have to use other ways.&lt;/p&gt;
+&lt;p&gt;Back to &lt;strong&gt;C namespace&lt;/strong&gt; we can find &lt;strong&gt;f&lt;/strong&gt;, our instance method, and &lt;strong&gt;X&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;X&lt;/strong&gt; as we said is not properly a &lt;em&gt;variable&lt;/em&gt; and is defined in &lt;strong&gt;C.__dict__&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;How can we call it ? &lt;strong&gt;Class attribute&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;And with class attribute we mean that &lt;strong&gt;X&lt;/strong&gt; (attribute) belongs to &lt;strong&gt;C&lt;/strong&gt; (class), because as we see &lt;strong&gt;X&lt;/strong&gt; is inside &lt;strong&gt;C namespace&lt;/strong&gt; (C.__dict__).&lt;/p&gt;
+&lt;p&gt;Can we access directly a class attribute ?&lt;/p&gt;
+&lt;p&gt;Yes, with &lt;strong&gt;NameOfTheClass.AttributeName&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="c1"&gt;# 10&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Just to recap:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;C namespace contains &lt;strong&gt;f&lt;/strong&gt; (a method) and &lt;strong&gt;X&lt;/strong&gt; (a class attribute)&lt;/li&gt;
+&lt;li&gt;c namespace is empty&lt;/li&gt;
+&lt;li&gt;We accessed X of C with &lt;strong&gt;self.X&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;But before I said that &lt;strong&gt;class namespaces&lt;/strong&gt; and &lt;strong&gt;instance namespaces&lt;/strong&gt; are completely separated.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;C&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When we type &lt;strong&gt;self.X&lt;/strong&gt; we tell Python to "&lt;em&gt;look inside the namespace of instance &lt;strong&gt;self&lt;/strong&gt; for &lt;strong&gt;X&lt;/strong&gt;&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How can we access something that belongs to C (attribute X) from self.X (our instance) ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Time for the next part.&lt;/p&gt;
+&lt;h2&gt;MRO&lt;/h2&gt;
+&lt;p&gt;MRO means &lt;em&gt;&lt;strong&gt;Method Resolution Order&lt;/strong&gt;&lt;/em&gt; and is how and why from &lt;strong&gt;self.X&lt;/strong&gt; we get &lt;strong&gt;C.__dict__['X']&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As I said namespace of a class and its instances are separated but somehow related.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MRO&lt;/strong&gt; is behind the "&lt;em&gt;somehow related&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;When Python look for an attribute, like &lt;strong&gt;self.X&lt;/strong&gt;, it will search in order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Instance namespace&lt;/li&gt;
+&lt;li&gt;Class namespace&lt;/li&gt;
+&lt;li&gt;Parents of your class namespace&lt;/li&gt;
+&lt;li&gt;Object&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Object is...the mother of all classes but we are not going to talk about &lt;em&gt;her&lt;/em&gt; here.&lt;/p&gt;
+&lt;p&gt;Let's look at another example&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Mother&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;M&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;22&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Father&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;34&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Son&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Mother&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Father&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;getattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"M"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Output: 22&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"F"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Output: 34&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"S"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Output: 10&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Output: 22&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Output: 34&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Output: 10&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;With &lt;a href="https://docs.python.org/3/library/functions.html#getattr" title="getattr"&gt;getattr&lt;/a&gt; we are using our instance (self) and another parameter ("M", "F" or "S") to get our class attributes.&lt;/p&gt;
+&lt;p&gt;I used &lt;a href="https://docs.python.org/3/library/functions.html#getattr" title="getattr"&gt;getattr&lt;/a&gt; because I can specify dynamically the name of the attribute but is exactly like self.M (or a.M in our case).&lt;/p&gt;
+&lt;p&gt;As I said our instance is related to its class (Son) and to the superclasses of Son (Mother and Father).&lt;/p&gt;
+&lt;p&gt;The process of giving an order between your instance and its class and between your class and all its superclasses is called &lt;strong&gt;linearization&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The algorithm behind Python MRO is called &lt;strong&gt;&lt;a href="https://www.python.org/download/releases/2.3/mro/" title="Python MRO"&gt;C3&lt;/a&gt;&lt;/strong&gt;
+and the main thing to remember is this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;children precede their parents (aka superclasses) and the order of appearance in __bases__ is respected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bases are what we put inside the parenthesis after the name of a class: class Name(bases).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instance &lt;strong&gt;a&lt;/strong&gt; is a child of class &lt;strong&gt;A&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Class &lt;strong&gt;A&lt;/strong&gt; is a child of class &lt;strong&gt;Mother&lt;/strong&gt; and &lt;strong&gt;Father&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Class &lt;strong&gt;Mother&lt;/strong&gt; and &lt;strong&gt;Father&lt;/strong&gt; are both children of object&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With &lt;strong&gt;__bases__&lt;/strong&gt; we get a tuple with the parents of a class, with &lt;strong&gt;__class__&lt;/strong&gt; we get the class of an instance:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt; &lt;span class="c1"&gt;# __main__.A,&lt;/span&gt;
+&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__bases__&lt;/span&gt; &lt;span class="c1"&gt;# (__main__.Mother, __main__.Father)&lt;/span&gt;
+&lt;span class="n"&gt;Mother&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__bases__&lt;/span&gt; &lt;span class="c1"&gt;# (object,)&lt;/span&gt;
+&lt;span class="n"&gt;Father&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__bases__&lt;/span&gt; &lt;span class="c1"&gt;# (object,)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Nothing new I would say, can we see the search order of MRO ?&lt;/p&gt;
+&lt;p&gt;Yes, with &lt;strong&gt;__mro&lt;/strong&gt;__:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__mro__&lt;/span&gt; &lt;span class="c1"&gt;# (__main__.Son, __main__.Mother, __main__.Father, object)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When we type the code below:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;M&lt;/span&gt; &lt;span class="c1"&gt;# 22&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Python searches in order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;a.__dict__&lt;/li&gt;
+&lt;li&gt;Son.__dict__&lt;/li&gt;
+&lt;li&gt;Mother.__dict__&lt;/li&gt;
+&lt;li&gt;Father.__dict__&lt;/li&gt;
+&lt;li&gt;object.__dict__&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With the rule first-come first-served.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Mother&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;M&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;22&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Father&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;34&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Son&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Mother&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Father&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;getattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="c1"&gt;# Output: 50&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;This is why we get 50 here instead of 34.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;First Python looks inside &lt;strong&gt;a&lt;/strong&gt; (Son's instance) namespace, but nothing is found named &lt;strong&gt;"F"&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Then it's time to look inside the namespace of Son, class of our instance, and we found &lt;strong&gt;"F"&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And what about F defined inside Father ?&lt;/p&gt;
+&lt;p&gt;As I said &lt;em&gt;first-come first-served&lt;/em&gt;, and in our &lt;strong&gt;__mro__&lt;/strong&gt; Son namespace is before Father namespace.&lt;/p&gt;
+&lt;p&gt;And what does it happen if you look for a reference that doesn't exist in all the __mro__ namespaces ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DXIUISD&lt;/span&gt;
+&lt;span class="o"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="ne"&gt;AttributeError&lt;/span&gt;                            &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ipython&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;242&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bcb50197f1e4&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DXIUISD&lt;/span&gt;
+
+&lt;span class="ne"&gt;AttributeError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'A'&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="n"&gt;has&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;attribute&lt;/span&gt; &lt;span class="s1"&gt;'DXIUISD'&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;You get an &lt;strong&gt;AttributeError&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But where is the tricky part ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MRO and all the things explained above work only when you try to &lt;strong&gt;retrieve&lt;/strong&gt; an attribute/method and with &lt;strong&gt;retrieve&lt;/strong&gt; I mean object.attribute or object.method in general.&lt;/p&gt;
+&lt;p&gt;When you try to &lt;strong&gt;assign&lt;/strong&gt; an attribute/method (like object.attribute = 10) you do that in the &lt;strong&gt;namespace of the object (instance/class)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You can change the behaviour with advanced and magic things (metaclass, inheritance, descriptor, property...) but this is how it &lt;strong&gt;normally&lt;/strong&gt; works.&lt;/p&gt;
+&lt;p&gt;So when we type this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Python looks for the attribute inside the namespaces following the __mro__ order.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;But with this the __mro__ doesn't matter, &lt;strong&gt;Python will create a new attribute or change its value if exists&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Mother&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;34&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Son&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Mother&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
+
+&lt;span class="n"&gt;Mother&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="c1"&gt;# 34&lt;/span&gt;
+&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="c1"&gt;# 50 # operation 1&lt;/span&gt;
+&lt;span class="k"&gt;del&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# remove F from Son.__dict__ # operation 2&lt;/span&gt;
+&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="c1"&gt;# 34 # operation 3&lt;/span&gt;
+&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt; &lt;span class="c1"&gt;# operation 4&lt;/span&gt;
+&lt;span class="n"&gt;Son&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt; &lt;span class="c1"&gt;# 30&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Clear how it works ?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;With Son.F we get 50 because is defined inside Son namespace&lt;/li&gt;
+&lt;li&gt;We delete F attribute from Son namespace&lt;/li&gt;
+&lt;li&gt;There is no attribute inside Son namespace called "F" and the next phase for Python is to look inside Mother namespace, where it finds F = 34&lt;/li&gt;
+&lt;li&gt;The assignment, Son.F = 30, is done inside the Son namespace, now we have a new occurrence for F inside Son namespace, this is why Son.F is 30&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here are the namespaces&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'S'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'F'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="c1"&gt;# After 1&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'S'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,}&lt;/span&gt; &lt;span class="c1"&gt;# After 2&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'S'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'F'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="c1"&gt;# After 4&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h2&gt;&lt;strong&gt;__init__&lt;/strong&gt; method&lt;/h2&gt;
+&lt;p&gt;Init method is a special method to customize our instance, and it's called when we create an instance.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Translated it means "&lt;em&gt;when you call A(something) create a new instance of A and assign something to self.x&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;Let's look inside the namespace.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# (mappingproxy({'__init__': &amp;lt;function A.__init__ at 0x103ecab70&amp;gt;, 'C': 10})&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# {'x': 10}&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;#  {'x': 50}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt; has its attributes, C and __init__, &lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt; their own x.&lt;/p&gt;
+&lt;p&gt;The attributes of &lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt; are called &lt;strong&gt;instance attributes&lt;/strong&gt;, and &lt;strong&gt;they belong to their instance&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now it should be clear the output of this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# (10, 10, 10)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Both &lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt; have no references of the attribute C in their namespaces, so Python looks inside &lt;strong&gt;A&lt;/strong&gt; namespace to find something (following the MRO).&lt;/p&gt;
+&lt;p&gt;But what happens if we do this ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# {'C': 50, 'x': 10}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;We create a new reference inside &lt;strong&gt;a&lt;/strong&gt; namespace.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# (10, 50, 10)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;This is why we get this result, because now when we look for C inside &lt;strong&gt;a&lt;/strong&gt; we have an occurrence.&lt;/p&gt;
+&lt;p&gt;Let's see the &lt;strong&gt;dict&lt;/strong&gt; of &lt;strong&gt;A&lt;/strong&gt;, &lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt; again&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# (mappingproxy({'__init__': &amp;lt;function A.__init__ at 0x103ecab70&amp;gt;, 'C': 10})&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# {'C': 50, 'x': 10}&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;#  {'x': 10}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;But what if we change A.C ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# (20, 50, 20)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;a.C remains 50 and b.C still looks inside &lt;strong&gt;A&lt;/strong&gt; namespace because its namespace doesn't have any value for "C".&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;70&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now instances &lt;strong&gt;a&lt;/strong&gt;, &lt;strong&gt;b&lt;/strong&gt; and the class &lt;strong&gt;A&lt;/strong&gt; have a reference for "C" in their namespaces.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# (mappingproxy({'__init__': &amp;lt;function A.__init__ at 0x103ecab70&amp;gt;, 'C': 10})&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;# {'C': 50, 'x': 10}&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="c1"&gt;#  {'C': 70, 'x': 50}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Can I access a class attribute from an instance ?&lt;/h2&gt;
+&lt;p&gt;Yes, but if you have a reference in your namespace with the same name you need to be &lt;strong&gt;explicit&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;p&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10 10&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10 50&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;So we just hardcoded &lt;strong&gt;A.C&lt;/strong&gt; inside our method.&lt;/p&gt;
+&lt;p&gt;Is there a better way ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;p&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# First&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Second&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10 10&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 10 50&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Personally I prefer the second (more clear to me).&lt;/p&gt;
+&lt;h2&gt;But what if....&lt;/h2&gt;
+&lt;p&gt;we have this code:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;p&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;and then we type this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# ([], [], [])&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# ([50], [50], [50])&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# ([50, 10], [50, 10], [50, 10])&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# ([10], [10], [10])&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The class attribute &lt;strong&gt;A.C&lt;/strong&gt; this time seems really &lt;em&gt;shared&lt;/em&gt;, but also the class attributes that we used before were &lt;em&gt;initially shared&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;So why we can append and pop elements without any kind of problem ?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Because we didn't do any kind of assignment&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;And our instances and class are "working" on a mutable object, &lt;strong&gt;accessing the object pointed by the reference (C) and changing it directly&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# ([10], [10, 10], [10])&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;After an assignment &lt;strong&gt;a.C&lt;/strong&gt; has a new reference inside its namespace.&lt;/p&gt;
+&lt;p&gt;But the tricky part is this one....if instead of the last code we type this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="o"&gt;*=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="c1"&gt;# ?&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;what would be the output ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;In this case we didn't have any new assignment, so we are still changing the referenced object.&lt;/p&gt;
+&lt;p&gt;Why ?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Due to how augmented assignments (+=, -=, *=, /=, ...) work&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;With list and mutable objects there isn't an &lt;em&gt;assignment&lt;/em&gt; and the operation is done "in-place", we are just updating the &lt;strong&gt;referenced object&lt;/strong&gt; directly.&lt;/p&gt;
+&lt;p&gt;So back to the initial question...&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="c1"&gt;# ?&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The answer is 1 because b.x = 11 creates a new attribute (instance attribute) inside &lt;strong&gt;b&lt;/strong&gt; namespace.&lt;/p&gt;
+&lt;p&gt;The namespace of &lt;strong&gt;a&lt;/strong&gt; remains empty, so &lt;strong&gt;a.x&lt;/strong&gt; will look inside the namespace of &lt;strong&gt;A&lt;/strong&gt; where &lt;strong&gt;x&lt;/strong&gt; is still equal to 1.&lt;/p&gt;
+&lt;p&gt;If you wanto to go further with OOP in Python I think nothing is better than &lt;a href="https://speakerdeck.com/lgiordani/object-oriented-python-from-scratch" title="slides"&gt;Leonardo Giordani's training&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://www.chrisbarra.me/posts/classes-instances-and-attributes-in-python.html</guid><pubDate>Sat, 09 Jul 2016 19:00:10 GMT</pubDate></item><item><title>Amazing Iceland</title><link>http://www.chrisbarra.me/posts/amazing-iceland.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;This is my first post about my travels, I hope you will enjoy it.&lt;/p&gt;
+&lt;p&gt;Let's start !&lt;/p&gt;
+&lt;p&gt;Day 18 March 2015, finally it is time to go, just a few days in London and then right to Reykjavík.&lt;/p&gt;
+&lt;p&gt;I have planned this travel some months ago and the idea was clear from the beginning:&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;&lt;strong&gt;rent a car and take the most from this awesome island&lt;/strong&gt;&lt;/u&gt;.&lt;/p&gt;
+&lt;p&gt;Do you know the right time when I have said "I want to go to Iceland" ?&lt;/p&gt;
+&lt;p&gt;After I saw &lt;a href="http://www.imdb.com/title/tt0359950/" title="The Secret Life of Walter Mitty"&gt;"The Secret life of Walter Mitty"&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And after doing some web zapping I have got a ticket ! &lt;/p&gt;
+&lt;p&gt;Milan-&amp;gt;London - London-&amp;gt;Reykjavík - Reykjavík-&amp;gt;London - London-&amp;gt;Milan.&lt;/p&gt;
+&lt;p&gt;For only 170 euro.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;img src="http://www.chrisbarra.me/images/iceland/map.png" alt="Travel map"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This was my trip around Iceland, from Reykjavík to Hofn and then back to the capital.&lt;/p&gt;
+&lt;h3&gt;Some information&lt;/h3&gt;
+&lt;p&gt;Days in Iceland: 6&lt;/p&gt;
+&lt;p&gt;Total budget: 848 euro, included all things from flights, car, food, fuel, hostel, etc.&lt;/p&gt;
+&lt;p&gt;Company: Completely alone&lt;/p&gt;
+&lt;p&gt;I think the best way to talk about this travel is through some photos because sometimes what you are seeing it leaves you speechless.&lt;/p&gt;
+&lt;h3&gt;Reykjavík&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19451861346" title="Reykjavík #1 by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/546/19451861346_7e1f363c25_z.jpg" width="640" height="481" alt="Reykjavík #1"&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The dawn in Reykjavík is amazing.&lt;/p&gt;
+&lt;h3&gt;Pingvellir&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19452186376" title="Road To Pingvellir by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/321/19452186376_17d4e8aac0_z.jpg" width="640" height="481" alt="Road To Pingvellir"&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Snow around the road to Pingvellir.&lt;/p&gt;
+&lt;p&gt;300.000 people are the number of Iceland citizens, and when you are driving you have more chance to meet an alien than some humans.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/18717234510" title="Pingvellir by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/316/18717234510_9f95951e00_z.jpg" width="640" height="481" alt="Pingvellir"&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Near Reykjavík you will find the Pingvellir National Park, the most ancient european parliament!&lt;/p&gt;
+&lt;p&gt;Maybe the name parliament is a little misleading, because actually there isn't any building, just a lot of rocks.&lt;/p&gt;
+&lt;h3&gt;Jökulsárlón&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/18904352335" title="Jökulsárlón by Christian Barra, su Flickr"&gt;&lt;img src="https://c2.staticflickr.com/6/5596/18904352335_2abdc4cae7_z.jpg" width="640" height="481" alt="Jökulsárlón"&gt;&lt;/a&gt;
+&lt;/p&gt;
+Jökulsárlón, it is a very depth lake (around 260 meters) between the &lt;a href="https://en.wikipedia.org/wiki/Vatnaj%C3%B6kull" title="Vatnajokull"&gt;Vatnajokull&lt;/a&gt; and the Atlantic sea.
+&lt;h3&gt;Lava field&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19482936481" title="Give me a shelter ! by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/479/19482936481_562ae38282_z.jpg" width="640" height="481" alt="Give me a shelter !"&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;A small shelter in a lava field.&lt;/p&gt;
+&lt;h3&gt;Vik&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19472312342" title="Vik by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/411/19472312342_dac45dbdca_z.jpg" width="640" height="481" alt="Vik"&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Famous cliffs near Vik.&lt;/p&gt;
+&lt;h3&gt;Supplies&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19477824035" title="Supplies by Christian Barra, su Flickr"&gt;&lt;img src="https://c2.staticflickr.com/4/3848/19477824035_2fe2279b25_z.jpg" width="640" height="481" alt="Supplies"&gt;&lt;/a&gt;
+&lt;/p&gt;
+Yes... you will need a lot of supplies when you travel out of the Reykjavík area!
+&lt;h3&gt;Vatnajokull National Park&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19480326305" title="Road to Vatnajokull by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/534/19480326305_539c24d2ae_z.jpg" width="640" height="481" alt="Road to Vatnajokull"&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Road to the Vatnajokull.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/17103352427" title="Svartifoss by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/9/8758/17103352427_8095d60b99_z.jpg" width="640" height="481" alt="Svartifoss"&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Svartifoss a beautiful waterfall near Vatnajokull National Park.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19472596492" title="Yoda in Iceland by Christian Barra, su Flickr"&gt;&lt;img src="https://c2.staticflickr.com/4/3831/19472596492_afa52453e0_z.jpg" width="640" height="481" alt="Yoda in Iceland"&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The amazing mascotte of the entire travel, Master Yoda during a force experiment.&lt;/p&gt;
+&lt;h3&gt;Eyjafjallajökull&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/18859664603" title="Do you know how to say it ? by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/490/18859664603_1d7b18b082_z.jpg" width="640" height="481" alt="Do you know how to say it ?"&gt;&lt;/a&gt;
+&lt;/p&gt;
+Eyjafjallajökull museum, just under the volcano.
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=2Q3YVkm8YJM" title="Iceland Volcano - Say What?"&gt;Do you know how to say Eyjafjallajökull ?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;At least for now Iceland is one of the most beautiful countries I have ever seen.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Amazing landscapes that are really unique and it is worth every euro that I spent there.&lt;/p&gt;
+&lt;p&gt;3 things that I will always remember from Iceland:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1) Me, my car and the Nature&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The ring road, the road n. 1, it is amazing.&lt;/p&gt;
+&lt;p&gt;After I have left the Reykjavík area I was the major of the time only with me, my super Dacia Duster and the Nature.
+It was really hard to meet someone else out of some touristic places.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2) The Aurora&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Yes, I have got it !&lt;/p&gt;
+&lt;p&gt;It costs me a night sleeping in my car outside Kirkjubæjarklaustur with an outside temperature of -5 degrees Celsius without a sleeping bag....&lt;/p&gt;
+&lt;p&gt;but again it is worth every "fuc* it is too cold outside!".&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://www.flickr.com/photos/barrachri/19478341935" title="Aurora by Christian Barra, su Flickr"&gt;&lt;img src="https://c1.staticflickr.com/1/296/19478341935_1a91bf4a28_z.jpg" width="640" height="481" alt="Aurora"&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3) Music from Iceland&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;During my trip I was alone, but not completely alone !&lt;/p&gt;
+&lt;p&gt;Fortunately there were some radio stations and the most trasmitted song was &lt;a href="https://www.youtube.com/watch?v=XUClIslXKZo" title="Crystal - Of Monsters and Man"&gt;Crystal of the "Of Monsters and Man"&lt;/a&gt;, amazing song and although I appreciated their music before this travel (&lt;a href="https://www.youtube.com/watch?v=2RXMIyMdhaY" title="'Dirty Paws' | Of Monsters and Men | Sound Tracks Quick Hits | PBS"&gt;Dirty Paws&lt;/a&gt; is one of the movie soundtrack from The Secret Life of Walter Mitty) after it I listen very often to their music.
+I have found a kind of link between their music and the Iceland landscape. &lt;/p&gt;
+&lt;p&gt;What ?!?! You are still not sure about visit Iceland ? Watch this video !
+&lt;/p&gt;&lt;p align="center"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/t1tddmxYjCw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/p&gt;&lt;/div&gt;</description><guid>http://www.chrisbarra.me/posts/amazing-iceland.html</guid><pubDate>Mon, 03 Aug 2015 08:30:00 GMT</pubDate></item><item><title>Docker orchestration</title><link>http://www.chrisbarra.me/posts/docker-orchestration.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;I've made a blog post about Docker some months ago.&lt;/p&gt;
+&lt;p&gt;During this time a lot of things changed.&lt;/p&gt;
+&lt;p&gt;The last version of Docker is &lt;strong&gt;&lt;a href="https://github.com/docker/docker/releases" title="Docker version"&gt;1.5.0-rc4&lt;/a&gt;&lt;/strong&gt; and Fig project is now &lt;strong&gt;&lt;a href="https://github.com/docker/fig/releases" title="dcoker-compose"&gt;docker-compose&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I've tried docker-compose and I think there have been huge improvements in containers orchestration.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now you can manage simple or complex containers architecture with only a few lines of code.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The only limitation is that containers need to be on the same host.&lt;/p&gt;
+&lt;p&gt;But let's start a basic project, a simple flask app with nginx as proxy and static server and postgres.&lt;/p&gt;
+&lt;p&gt;The flask app is very simple, you have an index page where your can write and read comments.&lt;/p&gt;
+&lt;h2&gt;To start&lt;/h2&gt;
+&lt;p&gt;So what we need ?&lt;/p&gt;
+&lt;p&gt;In my case a &lt;a href="https://www.digitalocean.com/?refcode=16e2312f412e" title="Digital Ocean"&gt;Digital Ocean&lt;/a&gt; droplet (I'm using Fedora 21).&lt;/p&gt;
+&lt;p&gt;So, first of all we connect to our vm with ssh.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ ssh root@yourvmip
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now that we are inside we need to install git, Docker and docker-compose.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ yum -y install git docker python-pip
+$ pip install docker-compose&lt;span class="o"&gt;==&lt;/span&gt;1.1.0-rc2
+$ systemctl start docker
+$ systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; docker
+&lt;/pre&gt;
+
+
+&lt;p&gt;That's all we need to play with Docker.&lt;/p&gt;
+&lt;p&gt;This is our directory tree of our project, quietly standard as you can see.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;yourappdir/
+    - nginx/
+        - static/
+            - put your static file here
+        - sites-enabled/
+            - app
+        - Dockerfile
+    - templates/
+        - index.html
+    - .gitignore
+    - app.py
+    - build.yml
+    - Dockerfile
+    - README
+    - requirements.txt
+&lt;/pre&gt;
+
+
+&lt;p&gt;So let's start to analyze every part, app, nginx, Dockerfiles and build.yml.&lt;/p&gt;
+&lt;p&gt;The remaining files, .gitignore, README and requirements.txt are pretty standard and I think there's not to much to say.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/barrachri/flask_docker" title="flask_docker Repository"&gt;Here&lt;/a&gt; you can find the repo of this project.&lt;/p&gt;
+&lt;h2&gt;App&lt;/h2&gt;
+&lt;p&gt;If you don't know &lt;a href="http://flask.pocoo.org/" title="Flask"&gt;Flask&lt;/a&gt; it's the right time to spend some hours to learn it, simple and powerful !&lt;/p&gt;
+&lt;p&gt;That's our app, we have some imports, one line config, our models and views.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;## yourdirapp/app.py ##&lt;/span&gt;
+
+&lt;span class="c1"&gt;## import ##&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;peewee&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;PostgresqlDatabase&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TextField&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DateTimeField&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ProgrammingError&lt;/span&gt;
+
+&lt;span class="c1"&gt;## config ##&lt;/span&gt;
+&lt;span class="n"&gt;DEBUG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+
+&lt;span class="c1"&gt;## models ##&lt;/span&gt;
+&lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'postgres'&lt;/span&gt;
+&lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'postgres'&lt;/span&gt;
+&lt;span class="n"&gt;database&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'postgres'&lt;/span&gt;
+&lt;span class="n"&gt;psql_db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;PostgresqlDatabase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;database&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TextField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DateTimeField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;author&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;database&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;psql_db&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;Comment&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_table&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OperationalError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ProgrammingError&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Comment table already exists!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;## views ##&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;from_object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nd"&gt;@app.before_request&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;before_request&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;psql_db&lt;/span&gt;
+    &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="nd"&gt;@app.after_request&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;after_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;
+
+&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'GET'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'POST'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'POST'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'title'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;author&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'author'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'text'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;comment&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Comment&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+        &lt;span class="n"&gt;comment&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;comments&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Comment&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;order_by&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Comment&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;desc&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'index.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Simple right ?&lt;/p&gt;
+&lt;p&gt;We use &lt;a href="http://docs.peewee-orm.com/en/latest/" title="Peewee"&gt;Peewee&lt;/a&gt; as ORM.&lt;/p&gt;
+&lt;p&gt;And here is the index.html template, based on jinja2&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"no-js"&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"en"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"utf-8"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"viewport"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"width=device-width, initial-scale=1.0"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Flask app&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/static/css/foundation.css"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/static/js/vendor/modernizr.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-12 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Welcome to Flask&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-8 medium-8 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="c"&gt;&amp;lt;!-- Grid Example --&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h5&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Write something !&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h5&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"."&lt;/span&gt; &lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"POST"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-12 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Title&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"title"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text"&lt;/span&gt; &lt;span class="na"&gt;placeholder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Insert comment title"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-4 medium-4 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Author&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"author"&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text"&lt;/span&gt; &lt;span class="na"&gt;placeholder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Your name"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-12 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Message&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;textarea&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text"&lt;/span&gt; &lt;span class="na"&gt;placeholder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Comment body"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;textarea&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"submit"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"button"&lt;/span&gt; &lt;span class="na"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Submit"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-8 medium-8 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    {% for comment in comments %}
+       &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;hr&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h3&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{comment.id}} - {{comment.title}}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h3&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h5&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{comment.author}} - {{comment.date}}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h5&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="c"&gt;&amp;lt;!-- Grid Example --&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"row"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"large-12 columns"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"callout panel"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+              &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{comment.body}}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+ {% endfor %}
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/static/js/vendor/jquery.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/static/js/foundation.min.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;foundation&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;With flask we are done.&lt;/p&gt;
+&lt;h2&gt;Nginx&lt;/h2&gt;
+&lt;p&gt;We use nginx as proxy, to redirect some request to our python app and to serve our static files.&lt;/p&gt;
+&lt;p&gt;That's our sites-enabled conf&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# yourappdir/nginx/sites-enabled/app&lt;/span&gt;
+&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;yourwebsite.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;charset&lt;/span&gt;     &lt;span class="s"&gt;utf-8&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/static&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kn"&gt;alias&lt;/span&gt; &lt;span class="s"&gt;/www/static&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;# your project's static files&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://python:8000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Host&lt;/span&gt; &lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Real-IP&lt;/span&gt; &lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The only thing that can looks strange is "proxy_pass http://python:8000", when we link a container to another container Docker insert a new line inside linked container
+/etc/hosts, something like "172.0.0.x python".&lt;/p&gt;
+&lt;p&gt;This is how our nginx container know our python app ip.&lt;/p&gt;
+&lt;h2&gt;Docker and docker-compose file&lt;/h2&gt;
+&lt;p&gt;And now it's the time to talk about Docker and docker-compose.&lt;/p&gt;
+&lt;p&gt;This is our one line Dockerfile used to build python app container.&lt;/p&gt;
+&lt;p&gt;We use the power of &lt;a href="https://docs.docker.com/reference/builder/#onbuild" title="ON BUILD"&gt;ON BUILD&lt;/a&gt; to install all requirements and copy the current directory inside the container /usr/src/app&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# yourappdir/Dockerfile
+FROM python:3.4.2-onbuild
+&lt;/pre&gt;
+
+
+&lt;p&gt;This is Dockerfile for nginx container&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;# yourappdir/nginx/Dockerfile
+FROM tutum/nginx
+RUN rm /etc/nginx/sites-enabled/default
+ADD sites-enabled/ /etc/nginx/sites-enabled
+ADD static/ /www/static
+&lt;/pre&gt;
+
+
+&lt;p&gt;For postgres we use the official image available on Docker registry.&lt;/p&gt;
+&lt;p&gt;Now it's the time for docker-compose.&lt;/p&gt;
+&lt;p&gt;I think that docker-compose it's a great tool that Docker didn't have.&lt;/p&gt;
+&lt;p&gt;Basically we have a &lt;a href="https://github.com/docker/fig/blob/master/docs/cli.md" title="CLI"&gt;CLI&lt;/a&gt; and a &lt;a href="https://github.com/docker/fig/blob/master/docs/yml.md" title="yml file"&gt;yml file&lt;/a&gt; that describes which containers you want to create and some options.&lt;/p&gt;
+&lt;p&gt;If you have some experience with Docker you'll see something familiar in some parameters.&lt;/p&gt;
+&lt;p&gt;In our case we create 3 containers, python, nginx and postgres&lt;/p&gt;
+&lt;p&gt;The first line (python, nginx and postgres) are just alias for the containers&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;######################&lt;/span&gt;
+&lt;span class="c1"&gt;## PYTHON CONTAINER ##&lt;/span&gt;
+&lt;span class="c1"&gt;######################&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;python&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;restart&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;always&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;.&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;expose&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="s"&gt;"8000"&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;links&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;postgres:postgres&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;volumes&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/usr/src/app&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;command&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/usr/local/bin/gunicorn -w 2 -b :8000 app:app&lt;/span&gt;
+
+&lt;span class="c1"&gt;#####################&lt;/span&gt;
+&lt;span class="c1"&gt;## NGINX CONTAINER ##&lt;/span&gt;
+&lt;span class="c1"&gt;#####################&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;nginx&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;restart&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;always&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;build&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;./nginx/&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;ports&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="s"&gt;"80:80"&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;volumes&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/www/static&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;links&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;python:python&lt;/span&gt;
+
+&lt;span class="c1"&gt;####################&lt;/span&gt;
+&lt;span class="c1"&gt;## POSTGRES CONTAINER ##&lt;/span&gt;
+&lt;span class="c1"&gt;####################&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;postgres&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;restart&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;always&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;postgres&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;expose&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="s"&gt;"5432"&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Cool, that's all !&lt;/p&gt;
+&lt;p&gt;now we can type this command&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ docker-compose --file build.yml up -d
+&lt;/pre&gt;
+
+
+&lt;p&gt;And docker-compose will start to create and run our Docker containers.
+First it tries to pull/build the image specified then it creates and runs the
+Docker container with our parameters and the right order.&lt;/p&gt;
+&lt;p&gt;In our example postgres will be created before the python container and nginx will be the last created container.&lt;/p&gt;
+&lt;p&gt;How to check which containers are running ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ docker-compose --file build.yml ps
+&lt;/pre&gt;
+
+
+&lt;p&gt;And how to see the logs of containers ?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ docker-compose --file build.yml logs
+&lt;/pre&gt;
+
+
+&lt;h2&gt;Problems&lt;/h2&gt;
+&lt;p&gt;I would like to tell more about some "issues" that I've met.&lt;/p&gt;
+&lt;h4&gt;Postgres database&lt;/h4&gt;
+&lt;p&gt;It is fucki*ng hard to create a postgres database without using psql or connect directly to the database.
+In my example database must exist before or at the same time that app was running, essentially because without the database you'll get some errors.&lt;/p&gt;
+&lt;p&gt;So I've tried to use pyscopg2 to check if the database exists or not and then create it, but without great results.&lt;/p&gt;
+&lt;p&gt;The best solution probably is to create a new database during image creation, but in the official Postgres image this option is still not available.&lt;/p&gt;
+&lt;p&gt;In my case I've used the default "postgres" db.&lt;/p&gt;
+&lt;h4&gt;Image and container rebuild&lt;/h4&gt;
+&lt;p&gt;I think can be a good option to have the possibility to choice which containers recreate and which not and the same for the images.
+For example I would like to have some data containers inside build.yml but it's risky, because with &lt;em&gt;rm&lt;/em&gt; you remove all containers inside your build.yml...&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;-compose --file build.yml rm
+&lt;span class="c1"&gt;# SHIT MY DATABASE DATA ARE LOST !&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Of course you have "--no-recreate" option but is referred to existing containers.&lt;/p&gt;
+&lt;p&gt;Now it's time for my questions.&lt;/p&gt;
+&lt;p&gt;Do I miss something ? Or maybe I could make something better ?&lt;/p&gt;
+&lt;p&gt;I like to hear your experiences about how to handle Docker orchestration !&lt;/p&gt;&lt;/div&gt;</description><guid>http://www.chrisbarra.me/posts/docker-orchestration.html</guid><pubDate>Mon, 09 Feb 2015 10:49:46 GMT</pubDate></item><item><title>How to start with Python and some useful resources</title><link>http://www.chrisbarra.me/posts/how-to-start-with-python-and-some-useful-resources.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Python is an awesome language, simple, explicit, readable and powerful.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I spent a lot of time wondering about how to start learning Python, which resources use and what books I should buy.&lt;/p&gt;
+&lt;p&gt;After this and some money spent on books I want to share my experience:&lt;/p&gt;
+&lt;p&gt;First of all there’s a lot of free resources so I think it is not useful to invest too much money on books or other things.&lt;/p&gt;
+&lt;h2&gt;To start&lt;/h2&gt;
+&lt;p&gt;There's a lot of interesting Python online courses, they don't talk about every aspect of Python but they are a good starting point.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remember to start with Python 3 !&lt;/strong&gt;  &lt;/p&gt;
+&lt;h4&gt;Online courses&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.codecademy.com/tracks/python" title="Codecademy Python Track"&gt;Codecademy Python Track&lt;/a&gt; - Very useful, with a few hours of practice you can begin mastering the Python basics.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://learnpythonthehardway.org/book/" title="Learnpython.org"&gt;Learnpython.org&lt;/a&gt; - Another interesting online course&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://learnpythonthehardway.org/book" title="Learn Python the hardway"&gt;Learn Python the hardway&lt;/a&gt; - If you prefer the "hardway" both course/book.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So pick up one of this course and start learning Python.&lt;/p&gt;
+&lt;h4&gt;Books&lt;/h4&gt;
+&lt;p&gt;If you prefer some good books I think this is the best to start.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920028154.do" title="Learning Python"&gt;Learning Python&lt;/a&gt; - Awesome book, it talks deeply about every aspect of Python and sometimes it’s a little “boring”. But, personally, I can call it the Python Bible.
+This book costs a lot of money and it's worth it, but often you'll find interesting offer (50 % discount) on O'Reilly site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Useful resource&lt;/h2&gt;
+&lt;h4&gt;Video&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://pyvideo.org/" title="Pyvideo"&gt;Pyvideo&lt;/a&gt; - A collection of PyCon talks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Books&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/" title="Officiale Python Docs"&gt;Officiale Python Docs&lt;/a&gt; - save it in your bookmarks, it's your reference about Python.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920023784.do" title="Python for Data Analysis"&gt;Python for Data Analysis&lt;/a&gt; - Awesome book about Numpy and Scipy is in my to-read-list.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920030195.do" title="Mining the Social Web"&gt;Mining the Social Web&lt;/a&gt; - Great book about data mining, another must read book.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/9781782161400.do" title="Building Machine Learning Systems with Python"&gt;Building Machine Learning Systems with Python&lt;/a&gt; - If you want to start with ML this is the right book for you.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920028338.do" title="Python Pocket Reference"&gt;Python Pocket Reference&lt;/a&gt; -It's a good pocket reference, if you can get it for 5 bucks it's a best buy.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920029533.do" title="Test-Driven Development with Python"&gt;Test-Driven Development with Python&lt;/a&gt; - I've read some pages, interesting but I recommend from an intermediate level.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Same as for "Learning Python", these books cost a lot of money, but you can get them with some good discount on O'Really site.&lt;/p&gt;
+&lt;h4&gt;Slides&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.slideshare.net/" title="Slideshare.com"&gt;Slideshare&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/" title="Speackerdeck.com"&gt;Speackerdeck&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Events and Conferences&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href="http://www.meetup.com/" title="Meetup.com"&gt;meetup.com&lt;/a&gt; and look for a Python meetup in your city and most of all take a ticket for the next PyCon in your country.
+This is my first year that I’ve participated in PyCon Italy and DjangoVillage and it was a great experience which left me wondering why I have not gone before.&lt;/p&gt;
+&lt;h2&gt;Mistakes to avoid&lt;/h2&gt;
+&lt;p&gt;Don’t make my mistake to buy a lot of interesting long books about Python when you're not started to code yet.&lt;/p&gt;
+&lt;p&gt;Remember, reading docs and books is important but code is much more important !
+So after studying function, generators, class and others remember to write some code to see if you understood what you have studied.&lt;/p&gt;
+&lt;p&gt;It's time to code now !&lt;/p&gt;&lt;/div&gt;</description><guid>http://www.chrisbarra.me/posts/how-to-start-with-python-and-some-useful-resources.html</guid><pubDate>Wed, 18 Jun 2014 18:00:50 GMT</pubDate></item><item><title>No country for young men</title><link>http://www.chrisbarra.me/posts/no-country-for-young-men.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;Are you looking the graph at the top of this page ?
+It is mean how much money Italy will have to pay to somebody (&lt;strong&gt;130% of its GDP&lt;/strong&gt;) and how many young italians are not working. &lt;/p&gt;
+&lt;h2&gt;Our big problem&lt;/h2&gt;
+&lt;p&gt;I like to say that if you are a retired person, with a good month cheque, Italy will be a perfect country for you.&lt;/p&gt;
+&lt;p&gt;Beatiful place, awesome foods, we have mountains, lakes, sea, hills. And the cost of living isn't too high.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But, if you are under the 30, well...Italy is not the right country for you&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We have a unemployement rate near 40% for people between 15-24, a jobs law that protect people who don't want to work rather than people who want to work.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;And if you want to be an entrepreneur the things is even worse&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We have a fiscal policy that prefers medium and large companies, rather than startups or one person companies. If you want to start a limited company you need a notary, because you need a public act.&lt;/p&gt;
+&lt;p&gt;The price for this service it is around 2000 euro (2776$), at some conditions you can start a "simplified" limited company, and in this case you pay nothing.&lt;/p&gt;
+&lt;p&gt;After notary you need to pay aroud 368 euro (510$) to the chamber of commerce for annual fees.
+Now you have your company and your VAT number.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;But you haven't met your worst enemy yet, burocracy&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To follow every month-stupid-crazy-burocracy-thing you need an accountant, for an annual cost around 5000 euro (6942$/year).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now you have a company and an accountant, you haven't earned nothing yet but you know that you are out of 7368 euro or 5368 euro with a "simplified" limited company (10229$ or 7453$)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;But that's not all, you need to pay INAIL (National Institute for Insurance against Accidents at Work) from 270 euro/year (374$/year) and you need to pay INPS (National Istitute for Social Security).&lt;/p&gt;
+&lt;p&gt;Every shareholder that works for its company needs to pay INPS, for a minium cost of 3000 euro/year (4163$/year).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So after the first year, you have to pay at least around 8638 euro (12000 $) even if you haven't sold anything yet&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If you are an employee, you are not in a better condition. 
+Your net wage it is around 50% of what your employer pay for you.&lt;/p&gt;
+&lt;p&gt;So if you take 1200 euro/month (1665$/month) your employer will pays around 2400 euro/month (3330$/month) for your wage and social security.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.doingbusiness.org/data/exploreeconomies/italy/" title="Doing Business 2014 data for Italy"&gt;Now you can understand why Italy is 65th in the doing business ranking 2014&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Our very big problem&lt;/h2&gt;
+&lt;p&gt;Sure &lt;a href="http://www.theguardian.com/world/2013/feb/20/six-things-wrong-with-italy" title="The six things wrong with Italy – and how to solve them"&gt;we have other big problems&lt;/a&gt; but I think that our biggest problem is our political situation. Our chambers (parliament and senate) are very strange. 115 members on 854 are guilty of crimes from fraud to mafia.&lt;/p&gt;
+&lt;p&gt;We have a political system that cost too much, with too many people and that is far from be useful to its nation.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://www.chrisbarra.me/images/berlusconi_dell_utri.jpg" class="img-responsive" alt="Marcello dell'Utri and Silvio Berlusconi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Marcello dell'Utri with Silvio Berlusconi.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;One of the founder of Forza italia (&lt;a href="http://www.reuters.com/article/2013/11/27/us-italy-berlusconi-idUSBRE9AQ0P220131127" title="
+Berlusconi expelled from Italian parliament over tax fraud"&gt;Silvio Berlusconi's&lt;/a&gt; party), Marcello dell'Utri, was found guilty of mafia association and &lt;a href="http://www.theguardian.com/world/2014/apr/12/berlusconi-ally-caught-in-lebanon-after-fleeing-italy" title="Marcello dell'Utri and Beirut holiday"&gt;he was locked in a Beirut hospital&lt;/a&gt; for a international arrest warrant from italian justice.&lt;/p&gt;
+&lt;p&gt;But stop with pessimist, is there a little hope ?&lt;/p&gt;
+&lt;p&gt;Yes and no.&lt;/p&gt;
+&lt;p&gt;No because the problems are still the same from when I'm born. And every years  the same answers come from politicians (we could do this, we should do that, we'll make this) but the problems still remain.&lt;/p&gt;
+&lt;p&gt;Yes, because hope is the last to die.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://www.chrisbarra.me/images/obama-renzi.jpg" class="img-responsive" alt="President Obama with Prime Minister Renzi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;President Obama with our "Yes We Can men" Prime Minister Renzi&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;We can still be a great nation but in the meantime, if you are a young italian, and if you don't want to loose to many years to fight with windmills you can use &lt;a href="https://www.google.com/maps" title="Google Maps"&gt;google maps&lt;/a&gt; and look how big the world is and &lt;a href="http://lifehacker.com/the-science-of-breaking-out-of-your-comfort-zone-and-w-656426705" title="Leave your comfort zone"&gt;how many opportunities it has to offer&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><guid>http://www.chrisbarra.me/posts/no-country-for-young-men.html</guid><pubDate>Mon, 05 May 2014 18:22:41 GMT</pubDate></item><item><title>Why, startup quote api and Docker</title><link>http://www.chrisbarra.me/posts/why-startup-quote-api-and-docker.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;My first blog and my first post.&lt;/p&gt;
+&lt;p&gt;The reason to start a blog ? The Why ? (I've just finished reading &lt;a href="http://amzn.to/1j6vlHN" title="Start with Why by Simon Sinek"&gt;Start with Why by Simon Sinek&lt;/a&gt;....)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Share my experience and projects&lt;/li&gt;
+&lt;li&gt;Learn about your experience and projects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Although in the last 100 years technology improve our lives quality about a 10x factor, we still study/learn in the same way of 2000 years before.
+Write and read are still the best method to share knowledge.&lt;/p&gt;
+&lt;p&gt;So, here I am.&lt;/p&gt;
+&lt;!-- TEASER_END --&gt;
+
+&lt;p&gt;In honour of &lt;a href="http://www.oup.it/files/Documenti/ReadOn/RightsoftheReaderbyPennac.pdf" title="The rights of the Reader"&gt;the Daniel Pennac's ten rules&lt;/a&gt; I'll follow 3 simple rules to make more enjoyable reading this blog:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Don't write more than 900 words;&lt;/li&gt;
+&lt;li&gt;Be interesting (&lt;a href="https://www.youtube.com/watch?v=BQ4yd2W50No"&gt;don't try to be, remember Yoda ?&lt;/a&gt;);&lt;/li&gt;
+&lt;li&gt;Write for your and my fun&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So I'll don't overwhelming you with hundreds of thousands of sentences about who come first between egg or chicken.
+I'll figure out the best I can write about my entreprenurship plan, experience, hobbies, travel (I'm planning to see some countries) and about my strange country (Italy).&lt;/p&gt;
+&lt;p&gt;I think is always interesting to know what there is behind something, for example behind this blog.
+Well, I love python and after start this blog with django I choose to use &lt;a href="http://getnikola.com/" title="Nikola Static Site Generator"&gt;Nikola&lt;/a&gt;, a simple and powerful static site generator and hosting it with github.&lt;/p&gt;
+&lt;p&gt;The dynamic part of the site is based on javascript and ajax calls to a simple django backend.
+You can use this url &lt;a href="http://api.chrisbarra.me/api/quote/get" title="api.chrisbarra.me json"&gt;api.chrisbarra.me/api/quote/get&lt;/a&gt; to get a random quote (json format) or &lt;a href="http://api.chrisbarra.me" title="api.chrisbarra.me html"&gt;api.chrisbarra.me&lt;/a&gt; to see a simple html page.&lt;/p&gt;
+&lt;p&gt;Back to architect, I use a &lt;a href="https://www.digitalocean.com/?refcode=16e2312f412e" title="Digital Ocean"&gt;Digital Ocean vps&lt;/a&gt;, with Ubuntu and Docker.
+Docker is awesome, for the first 2 hours. After that I have a form of hate and love (much love than hate), but I'll talk about this in the next weeks.&lt;/p&gt;
+&lt;p&gt;I have 1 simple docker container with python, uWSGI and NGINX.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/barrachri/dockerfiles" title="barrachri Repo"&gt;Here&lt;/a&gt; you can find my repo with my docker and config files.&lt;/p&gt;
+&lt;p&gt;Now ssh your digital ocean vps or whatever you want to use
+&lt;/p&gt;&lt;pre&gt;ssh root@ipyourhostmachine&lt;/pre&gt;
+Change your dir
+&lt;pre&gt;
+# Clone git repository of your project or change your directory with your ROOT
+# project directory, this is very important because this command "ADD ./ /app" 
+# copy all your files from your current directory to the /app container's dir
+cd rootprojectdir
+&lt;/pre&gt;
+Download my Dockerfile
+&lt;pre&gt;
+# Always from ROOT directory of your project download my Dockerfile
+# remember to change your uwsgi.ini if your wsgi.py is not located in api/wsgi.py dir
+# More information in my Dockerfile
+sudo curl -o Dockerfile https://raw.githubusercontent.com/barrachri/dockerfiles/master/dockerfile/Dockerfile_app
+&lt;/pre&gt;
+Build image from Dockerfile and name it appserver_image
+&lt;pre&gt;docker build -t appserver_image .&lt;/pre&gt;
+Run a container from appserver_image and expose port 80 from the container to port 80 of the host machine and name this container appserver
+&lt;pre&gt;docker run -d -p 80:80 --name appserver appserver_image&lt;/pre&gt;
+We looking for mount point directories between our container and host machine
+&lt;pre&gt;docker inspect --format='{{.Volumes}}' appserver&lt;/pre&gt;
+The output will be something like this
+&lt;pre&gt;
+map[
+/app:/var/lib/docker/vfs/dir/strangehashcode
+/etc/nginx/sites-enabled:/var/lib/docker/vfs/dir/strangehashcode
+/var/log/nginx:/var/lib/docker/vfs/dir/strangehashcode]
+&lt;/pre&gt;
+If you want to stop and restart your container
+&lt;pre&gt;
+docker stop appserver
+docker start appserver
+&lt;/pre&gt;
+If something went wrong simple
+&lt;pre&gt;
+docker logs appserver
+&lt;/pre&gt;
+After that we need to set this container to start automatically, we can do that with &lt;a href="http://supervisord.org/" title="Supervisord"&gt;supervisor&lt;/a&gt;
+&lt;pre&gt;
+sudo apt-get install supervisor
+sudo nano /etc/supervisor/supervisord.conf
+&lt;/pre&gt;
+And add this text at end
+&lt;pre&gt;
+[program:appserver]
+command=/usr/bin/docker start -a appserver
+&lt;/pre&gt;
+Save and then
+&lt;pre&gt;sudo reboot&lt;/pre&gt;
+&lt;p&gt;Now your python app should be online !&lt;/p&gt;
+&lt;p&gt;I hope this was useful for other questions I’m here !&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Tsuduku !&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://www.chrisbarra.me/posts/why-startup-quote-api-and-docker.html</guid><pubDate>Sat, 19 Apr 2014 00:05:00 GMT</pubDate></item></channel></rss>
