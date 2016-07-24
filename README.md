@@ -1,3 +1,3 @@
 # chrisbarra.me blog
 
-Write with love with [nikola](http://getnikola.com/)
+Written with love with [nikola](http://getnikola.com/)
