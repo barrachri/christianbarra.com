@@ -1,0 +1,314 @@
+
+/*
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.head {
+  background-color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar-nav.affix {
+    position: static;
+
+}
+
+.lead a{
+  color: #E48743;
+
+}
+
+.lead a:hover {
+  text-decoration: underline;
+}
+
+.post_body a{
+  color: #E48743;
+  font-weight: 500;
+}
+
+.post_body a:hover {
+  text-decoration: underline;
+}
+
+.title, .title:hover{
+
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+}
+
+p.more a {
+
+  text-decoration: none;
+  color: #333;
+
+}
+
+.brand {
+
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+    /* colors */
+    .sp-twitter  {
+      color:#00aced;
+      border: 3px solid #00aced;
+    }
+    .sp-linkedin   {
+      color:#0077B5;
+      border: 3px solid #0077B5;
+    }
+    .sp-github   {
+      color:#171515;
+      border: 3px solid #171515;
+    }
+    .sp-rss   {
+      color:#FF6600;
+      border: 3px solid #FF6600;
+    }
+    .sp-flickr   {
+      color:#ff0084;
+      border: 3px solid #ff0084;
+    }
+
+blockquote {
+
+  border-left: 10px solid #E48743 !important;
+}
+
+blockquote.success {
+border-left: 5px solid #90CA77 !important;
+}
+
+blockquote.warning {
+border-left: 5px solid #9E3B33 !important;
+}
+    /* =============================================================
+
+
+
+
+/* Global Styles */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+
+}
+
+.post_body {
+  color: rgb(58, 56, 52);
+font-weight: 300;
+line-height: 1.4;
+font-size: 1.35em;
+
+}
+
+.vert-text {
+  display: table-cell;
+  vertical-align: middle;
+
+  color: #ffffff;
+}
+
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000;
+}
+
+.post_body a {
+  font-weight: 500;
+  color: #0a5175;
+  text-decoration: none;
+}
+
+.post_body a:hover {
+  text-decoration: underline;
+}
+
+.vert-text a {
+  color: #fff;
+  opacity: 0.4;
+}
+
+.vert-text a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.vert-text h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.social_network {
+    position : relative;
+    list-style-type : none;
+    padding-left: 0px;
+}
+.social_network li {
+    float : left;
+
+    margin : 2px;
+}
+
+/* Side Menu */
+
+#menu-toggle {
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+.toggle {
+  margin: 5px 5px 0 0;
+}
+
+/* Full Page Image Header Area */
+
+.header {
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgb(0, 0, 0);
+  /* RGBa with 0.6 opacity */
+  background: rgba(0, 0, 0, 0.4);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000)";
+}
+
+.header::after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(/images/img_index.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Intro */
+
+.intro {
+  padding: 25px 0;
+}
+
+/* Services */
+
+.services {
+  background: #fff;
+  padding: 25px 0;
+  color: #ffffff;
+}
+
+.service-item {
+  margin-bottom: 15px;
+}
+
+i.service-icon {
+
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 28px;
+  width: 70px;
+  height: 70px;
+  line-height: 68px;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+/* Portfolio */
+
+.portfolio {
+  padding: 50px 0;
+}
+
+.portfolio-item {
+  margin-bottom: 25px;
+}
+
+.img-portfolio {
+  margin: 0 auto;
+}
+
+
+/* Call to Action */
+
+.call-to-action {
+  color: #ffffff;
+  background: #0a5175;
+  padding: 25px 0;
+}
+
+/*
+.call-to-action .btn {
+  margin: 10px;
+}
+
+/* Map */
+
+.map {
+  height: 500px;
+}
+
+/* Footer */
+
+footer {
+  padding: 100px 0;
+}
+
+.top-scroll {
+  margin-top: 50px;
+}
+
+.top-scroll a {
+  text-decoration: none;
+  color: inherit;
+}
+
+i.scroll {
+  color: #333333;
+}
+
+i.scroll:hover {
+  color: #0a5175;
+}
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .header::after {
+  background: url(/images/img_index.jpg) no-repeat center center scroll;
+  }
+
+
+}

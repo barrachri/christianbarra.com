@@ -1,0 +1,35 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'index_helper.tmpl' as helper with context %}
+{% import 'comments_helper.tmpl' as comments with context %}
+{% extends 'base.tmpl' %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="portfolio-item">
+                    <p class="lead">{{ post.formatted_date(' %d %B %Y ') }}</p>
+                    <article class="postbox h-entry post-{{ post.meta('type') }}">
+                    <center> 
+                        <h1 class="title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title() }}</a></h1>
+                        <p class="lead">{{ post.meta('sub_title') }}</p>
+                    </center>
+                    </article>
+                    </div>
+                </div>
+                
+</div>
+
+{% if not loop.last %}
+<div class="row">
+               
+                <div class="col-md-12 text-center"> <hr></div>             
+</div>
+{% endif %} 
+    {% endfor %}
+ 
+    {{ helper.html_pager() }}
+    {{ comments.comment_link_script() }}
+    {{ helper.mathjax_script(posts) }}
+{% endblock %}
