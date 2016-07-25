@@ -11,14 +11,18 @@
  </sitemap>
  <sitemap>
   <loc>http://www.chrisbarra.me/galleries/rss.xml</loc>
-  <lastmod>2016-07-24T10:05:00Z</lastmod>
+  <lastmod>2016-07-25T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://www.chrisbarra.me/rss.xml</loc>
-  <lastmod>2016-07-24T10:05:00Z</lastmod>
+  <lastmod>2016-07-25T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://www.chrisbarra.me/sitemap.xml</loc>
-  <lastmod>2016-07-24T10:05:00Z</lastmod>
+  <lastmod>2016-07-25T13:39:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://www.chrisbarra.me/tags/python.xml</loc>
+  <lastmod>2016-07-25T13:39:00Z</lastmod>
  </sitemap>
 </sitemapindex>
