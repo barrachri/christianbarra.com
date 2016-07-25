@@ -11,7 +11,6 @@
 .. sub_title: Back to basics !
 -->
 
-
 Some days ago I got a simple question.
 
 ~~~~{.python}

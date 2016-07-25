@@ -1,9 +1,9 @@
-<!-- 
+<!--
 .. title: No country for young men
 .. slug: no-country-for-young-men
 .. date: 2014/05/05 18:22:41
-.. tags: 
-.. link: 
+.. tags: italy, statistics
+.. link:
 .. description: Talking about my country, Italy, and its big problems
 .. type: text
 .. sub_title: Why Italy is not the right country for you if you are under 30
@@ -13,7 +13,7 @@
 
 
 Are you looking the graph at the top of this page ?
-It is mean how much money Italy will have to pay to somebody (**130% of its GDP**) and how many young italians are not working. 
+It is mean how much money Italy will have to pay to somebody (**130% of its GDP**) and how many young italians are not working.
 
 # Our big problem
 
@@ -46,7 +46,7 @@ Every shareholder that works for its company needs to pay INPS, for a minium cos
 
 **So after the first year, you have to pay at least around 8638 euro (12000 $) even if you haven't sold anything yet**.
 
-If you are an employee, you are not in a better condition. 
+If you are an employee, you are not in a better condition.
 Your net wage it is around 50% of what your employer pay for you.
 
 So if you take 1200 euro/month (1665$/month) your employer will pays around 2400 euro/month (3330$/month) for your wage and social security.
