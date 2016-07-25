@@ -1,11 +1,11 @@
-<!-- 
+<!--
 .. title: Amazing Iceland
 .. slug: amazing-iceland
 .. date: 2015-08-03 08:30:00 UTC
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags: iceland, travel
+.. category:
+.. link:
+.. description: Short story about my trip in Iceland
 .. type: text
 .. img_name: img_iceland.jpg
 .. sub_title: The land of ice and fire.
@@ -25,7 +25,7 @@ Do you know the right time when I have said "I want to go to Iceland" ?
 
 After I saw ["The Secret life of Walter Mitty"](http://www.imdb.com/title/tt0359950/ "The Secret Life of Walter Mitty").
 
-And after doing some web zapping I have got a ticket ! 
+And after doing some web zapping I have got a ticket !
 
 Milan->London - London->Reykjavík - Reykjavík->London - London->Milan.
 
@@ -153,7 +153,7 @@ __3) Music from Iceland__
 During my trip I was alone, but not completely alone !
 
 Fortunately there were some radio stations and the most trasmitted song was [Crystal of the "Of Monsters and Man"](https://www.youtube.com/watch?v=XUClIslXKZo "Crystal - Of Monsters and Man"), amazing song and although I appreciated their music before this travel ([Dirty Paws](https://www.youtube.com/watch?v=2RXMIyMdhaY "'Dirty Paws' | Of Monsters and Men | Sound Tracks Quick Hits | PBS") is one of the movie soundtrack from The Secret Life of Walter Mitty) after it I listen very often to their music.
-I have found a kind of link between their music and the Iceland landscape. 
+I have found a kind of link between their music and the Iceland landscape.
 
 What ?!?! You are still not sure about visit Iceland ? Watch this video !
 <p align="center">

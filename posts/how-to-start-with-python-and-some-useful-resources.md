@@ -1,10 +1,10 @@
-<!-- 
+<!--
 .. title: How to start with Python and some useful resources
 .. slug: how-to-start-with-python-and-some-useful-resources
 .. date: 2014/06/18 18:00:50
-.. tags: 
-.. link: 
-.. description: 
+.. tags: python
+.. link:
+.. description: Useful resource about Python
 .. type: text
 .. sub_title: It's time to code.
 .. img_name: python.png

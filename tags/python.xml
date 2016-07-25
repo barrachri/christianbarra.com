@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>chrisbarra.me (python)</title><link>http://www.chrisbarra.me/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://www.chrisbarra.me/tags/python.xml"></atom:link><language>en</language><lastBuildDate>Mon, 25 Jul 2016 13:39:32 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Classes, instances and attributes in Python</title><link>http://www.chrisbarra.me/posts/classes-instances-and-attributes-in-python.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;Some days ago I got a simple question.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>chrisbarra.me (python)</title><link>http://www.chrisbarra.me/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://www.chrisbarra.me/tags/python.xml"></atom:link><language>en</language><lastBuildDate>Mon, 25 Jul 2016 14:59:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Classes, instances and attributes in Python</title><link>http://www.chrisbarra.me/posts/classes-instances-and-attributes-in-python.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;Some days ago I got a simple question.&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
 
@@ -530,4 +530,51 @@ and the main thing to remember is this:&lt;/p&gt;
 
 &lt;p&gt;The answer is 1 because b.x = 11 creates a new attribute (instance attribute) inside &lt;strong&gt;b&lt;/strong&gt; namespace.&lt;/p&gt;
 &lt;p&gt;The namespace of &lt;strong&gt;a&lt;/strong&gt; remains empty, so &lt;strong&gt;a.x&lt;/strong&gt; will look inside the namespace of &lt;strong&gt;A&lt;/strong&gt; where &lt;strong&gt;x&lt;/strong&gt; is still equal to 1.&lt;/p&gt;
-&lt;p&gt;If you wanto to go further with OOP in Python I think nothing is better than &lt;a href="https://speakerdeck.com/lgiordani/object-oriented-python-from-scratch" title="slides"&gt;Leonardo Giordani's training&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://www.chrisbarra.me/posts/classes-instances-and-attributes-in-python.html</guid><pubDate>Sat, 09 Jul 2016 19:00:10 GMT</pubDate></item></channel></rss>
+&lt;p&gt;If you wanto to go further with OOP in Python I think nothing is better than &lt;a href="https://speakerdeck.com/lgiordani/object-oriented-python-from-scratch" title="slides"&gt;Leonardo Giordani's training&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://www.chrisbarra.me/posts/classes-instances-and-attributes-in-python.html</guid><pubDate>Sat, 09 Jul 2016 19:00:10 GMT</pubDate></item><item><title>How to start with Python and some useful resources</title><link>http://www.chrisbarra.me/posts/how-to-start-with-python-and-some-useful-resources.html</link><dc:creator>Christian Barra</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;Python is an awesome language, simple, explicit, readable and powerful.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I spent a lot of time wondering about how to start learning Python, which resources use and what books I should buy.&lt;/p&gt;
+&lt;p&gt;After this and some money spent on books I want to share my experience:&lt;/p&gt;
+&lt;p&gt;First of all there’s a lot of free resources so I think it is not useful to invest too much money on books or other things.&lt;/p&gt;
+&lt;h2&gt;To start&lt;/h2&gt;
+&lt;p&gt;There's a lot of interesting Python online courses, they don't talk about every aspect of Python but they are a good starting point.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remember to start with Python 3 !&lt;/strong&gt;  &lt;/p&gt;
+&lt;h4&gt;Online courses&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.codecademy.com/tracks/python" title="Codecademy Python Track"&gt;Codecademy Python Track&lt;/a&gt; - Very useful, with a few hours of practice you can begin mastering the Python basics.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://learnpythonthehardway.org/book/" title="Learnpython.org"&gt;Learnpython.org&lt;/a&gt; - Another interesting online course&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://learnpythonthehardway.org/book" title="Learn Python the hardway"&gt;Learn Python the hardway&lt;/a&gt; - If you prefer the "hardway" both course/book.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So pick up one of this course and start learning Python.&lt;/p&gt;
+&lt;h4&gt;Books&lt;/h4&gt;
+&lt;p&gt;If you prefer some good books I think this is the best to start.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920028154.do" title="Learning Python"&gt;Learning Python&lt;/a&gt; - Awesome book, it talks deeply about every aspect of Python and sometimes it’s a little “boring”. But, personally, I can call it the Python Bible.
+This book costs a lot of money and it's worth it, but often you'll find interesting offer (50 % discount) on O'Reilly site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Useful resource&lt;/h2&gt;
+&lt;h4&gt;Video&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://pyvideo.org/" title="Pyvideo"&gt;Pyvideo&lt;/a&gt; - A collection of PyCon talks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Books&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/" title="Officiale Python Docs"&gt;Officiale Python Docs&lt;/a&gt; - save it in your bookmarks, it's your reference about Python.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920023784.do" title="Python for Data Analysis"&gt;Python for Data Analysis&lt;/a&gt; - Awesome book about Numpy and Scipy is in my to-read-list.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920030195.do" title="Mining the Social Web"&gt;Mining the Social Web&lt;/a&gt; - Great book about data mining, another must read book.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/9781782161400.do" title="Building Machine Learning Systems with Python"&gt;Building Machine Learning Systems with Python&lt;/a&gt; - If you want to start with ML this is the right book for you.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920028338.do" title="Python Pocket Reference"&gt;Python Pocket Reference&lt;/a&gt; -It's a good pocket reference, if you can get it for 5 bucks it's a best buy.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/0636920029533.do" title="Test-Driven Development with Python"&gt;Test-Driven Development with Python&lt;/a&gt; - I've read some pages, interesting but I recommend from an intermediate level.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Same as for "Learning Python", these books cost a lot of money, but you can get them with some good discount on O'Really site.&lt;/p&gt;
+&lt;h4&gt;Slides&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.slideshare.net/" title="Slideshare.com"&gt;Slideshare&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://speakerdeck.com/" title="Speackerdeck.com"&gt;Speackerdeck&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Events and Conferences&lt;/h4&gt;
+&lt;p&gt;Go to &lt;a href="http://www.meetup.com/" title="Meetup.com"&gt;meetup.com&lt;/a&gt; and look for a Python meetup in your city and most of all take a ticket for the next PyCon in your country.
+This is my first year that I’ve participated in PyCon Italy and DjangoVillage and it was a great experience which left me wondering why I have not gone before.&lt;/p&gt;
+&lt;h2&gt;Mistakes to avoid&lt;/h2&gt;
+&lt;p&gt;Don’t make my mistake to buy a lot of interesting long books about Python when you're not started to code yet.&lt;/p&gt;
+&lt;p&gt;Remember, reading docs and books is important but code is much more important !
+So after studying function, generators, class and others remember to write some code to see if you understood what you have studied.&lt;/p&gt;
+&lt;p&gt;It's time to code now !&lt;/p&gt;&lt;/div&gt;</description><category>python</category><guid>http://www.chrisbarra.me/posts/how-to-start-with-python-and-some-useful-resources.html</guid><pubDate>Wed, 18 Jun 2014 18:00:50 GMT</pubDate></item></channel></rss>

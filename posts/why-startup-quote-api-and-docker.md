@@ -1,9 +1,9 @@
-<!-- 
+<!--
 .. title: Why, startup quote api and Docker
 .. slug: why-startup-quote-api-and-docker
 .. date: 2014/04/19 00:05:00
-.. tags: 
-.. link: 
+.. tags: startup, docker
+.. link:
 .. description: A little intro to my blog, docker and a good book to read
 .. type: text
 .. sub_title: Everything begins with why, also my blog
@@ -52,7 +52,7 @@ Now ssh your digital ocean vps or whatever you want to use
 Change your dir
 <pre>
 &#35; Clone git repository of your project or change your directory with your ROOT
-&#35; project directory, this is very important because this command "ADD ./ /app" 
+&#35; project directory, this is very important because this command "ADD ./ /app"
 &#35; copy all your files from your current directory to the /app container's dir
 cd rootprojectdir
 </pre>

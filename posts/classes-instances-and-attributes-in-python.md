@@ -5,7 +5,7 @@
 .. tags: python
 .. category:
 .. link:
-.. description:
+.. description: An introduction about namespaces in Python classes
 .. type: text
 .. img_name: baby_python.png
 .. sub_title: Back to basics !

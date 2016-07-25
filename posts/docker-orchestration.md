@@ -1,11 +1,11 @@
-<!-- 
+<!--
 .. title: Docker orchestration
 .. slug: docker-orchestration
 .. date: 2015-02-09 10:49:46 UTC
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags: docker, flask
+.. category:
+.. link:
+.. description: How to use Docker Compose to manage a simple app stack
 .. type: text
 .. img_name: docker.png
 .. sub_title: How to use docker-compose to deploy a flask app
@@ -361,4 +361,3 @@ Now it's time for my questions.
 Do I miss something ? Or maybe I could make something better ?
 
 I like to hear your experiences about how to handle Docker orchestration !
-
