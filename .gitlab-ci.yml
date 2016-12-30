@@ -1,0 +1,11 @@
+image: python:3.6.0-alpine
+
+pages:
+  script:
+  - pip install nikola
+  - nikola build
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
