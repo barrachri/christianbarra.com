@@ -580,6 +580,7 @@ FEED_TEASERS = False
 ADDITIONAL_METADATA = {
  'sub_title' : '',
  'img_name' : '',
+ 'img_name_small' : '',
  }
 
 # Nikola supports Twitter Card summaries / Open Graph.
@@ -616,7 +617,7 @@ ADDITIONAL_METADATA = {
 # TIMEZONE = 'UTC'
 
 # If webassets is installed, bundle JS and CSS to make site loading faster
-USE_BUNDLES = True
+USE_BUNDLES = False
 
 # Plugins you don't want to use. Be careful :-)
 # DISABLED_PLUGINS = ["render_galleries"]
