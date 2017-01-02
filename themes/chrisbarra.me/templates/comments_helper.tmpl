@@ -4,7 +4,6 @@
 {% import 'livefyre_helper.tmpl' as livefyre with context %}
 {% import 'intensedebate_helper.tmpl' as intensedebate with context %}
 {% import 'moot_helper.tmpl' as moot with context %}
-{% import 'googleplus_helper.tmpl' as googleplus with context %}
 {% import 'facebook_helper.tmpl' as facebook with context %}
 {% import 'isso_helper.tmpl' as isso with context %}
 
@@ -17,8 +16,6 @@
         {{ intensedebate.comment_form(url, title, identifier) }}
     {% elif comment_system == 'moot' %}
         {{ moot.comment_form(url, title, identifier) }}
-    {% elif comment_system == 'googleplus' %}
-        {{ googleplus.comment_form(url, title, identifier) }}
     {% elif comment_system == 'facebook' %}
         {{ facebook.comment_form(url, title, identifier) }}
     {% elif comment_system == 'isso' %}
@@ -35,8 +32,6 @@
         {{ intensedebate.comment_link(link, identifier) }}
     {% elif comment_system == 'moot' %}
         {{ moot.comment_link(link, identifier) }}
-    {% elif comment_system == 'googleplus' %}
-        {{ googleplus.comment_link(link, identifier) }}
     {% elif comment_system == 'facebook' %}
         {{ facebook.comment_link(link, identifier) }}
     {% elif comment_system == 'isso' %}

@@ -3,32 +3,34 @@
 {% import 'comments_helper.tmpl' as comments with context %}
 {% extends 'base.tmpl' %}
 
+{% block header %}
+<header>
+<h1>Hi there, my name is Christian!<br /></h1>
+<p>I'm a curious, adventurer, wanna be statistician@UniPD and organizer @europython.</p>
+<p>You can use twitter or write at barrachri at gmail dot com if you want to get in touch with me.</p>
+</header>
+{% endblock %}
+
+
+
 {% block content %}
+<section class="tiles">
 
 {% for post in posts %}
-<div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                    <p class="lead">{{ post.formatted_date(' %d %B %Y ') }}</p>
-                    <article class="postbox h-entry post-{{ post.meta('type') }}">
-                    <center> 
-                        <h1 class="title"><a href="{{ post.permalink() }}" class="u-url">{{ post.title() }}</a></h1>
-                        <p class="lead">{{ post.meta('sub_title') }}</p>
-                    </center>
-                    </article>
-                    </div>
-                </div>
-                
-</div>
 
-{% if not loop.last %}
-<div class="row">
-               
-                <div class="col-md-12 text-center"> <hr></div>             
-</div>
-{% endif %} 
-    {% endfor %}
- 
+<article class="style1">
+<span class="image">
+<img src="/images/{{ post.meta('img_name') }}" alt="" />
+</span>
+<a href="{{ post.permalink() }}"> <h2>{{ post.title() }}</h2>
+<div class="content"><p>{{ post.formatted_date(' %d %B %Y') }} - {{ post.meta('sub_title') }}</p></div>
+</a>
+</article>
+
+
+{% endfor %}
+</section>
+
     {{ helper.html_pager() }}
     {{ comments.comment_link_script() }}
     {{ helper.mathjax_script(posts) }}

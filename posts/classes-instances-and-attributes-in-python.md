@@ -9,6 +9,7 @@
 .. type: text
 .. img_name: baby_python.png
 .. sub_title: Back to basics !
+.. img_name_small: baby_python_small.png
 -->
 
 Some days ago I got a simple question.
@@ -32,9 +33,7 @@ My answer was wrong but it was the good occasion to pick some books and the **[r
 # Briefly introduction to Scope
 
 In Python you have 2 very important concepts: __scope__ and __namespace__.
-
 They are both related but generally __scope__ is related to unqualified names (X for example) and __namespace__ is related to qualified attribute names (object.X).
-
 Due to the fact that in __Python everything is an object__ the difference is slight, but in general we can assume that.
 
 Time for some code
