@@ -3,21 +3,11 @@
 {% import 'annotation_helper.tmpl' as annotations with context %}
 {{ set_locale(lang) }}
 
-<!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
 
-<lang="{{ lang }}">
-<head>
 	{{ base.html_headstart() }}
-    {% block extra_head %}
-    {% endblock %}
-    {{ extra_head_data }}
-</head>
+	{% block extra_head %}
+	{% endblock %}
+	{{ extra_head_data }}
 
 
 	<body>

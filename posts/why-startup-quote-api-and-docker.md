@@ -5,6 +5,7 @@
 .. tags: startup, docker
 .. link:
 .. description: A little intro to my blog, docker and a good book to read
+.. keywords: startup, docker, blog
 .. type: text
 .. sub_title: Everything begins with why, also my blog
 .. img_name: img_why.jpg

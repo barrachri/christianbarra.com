@@ -22,6 +22,7 @@
 
 
 {% block content %}
+<article itemscope="itemscope" itemtype="http://schema.org/Article">
 
 				<!-- Main -->
                     <p class="lead">
@@ -33,6 +34,8 @@
 							<span class="image main"><img src="/images/{{ post.meta('img_name') }}" alt="" /></span>
 
 							{{ post.text() }}
+
+</article>
 
               <aside id="sticky-social">
                   <ul>

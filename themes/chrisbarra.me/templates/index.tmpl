@@ -1,6 +1,5 @@
 {#  -*- coding: utf-8 -*- #}
 {% import 'index_helper.tmpl' as helper with context %}
-{% import 'comments_helper.tmpl' as comments with context %}
 {% extends 'base.tmpl' %}
 
 {% block header %}
@@ -38,6 +37,5 @@ I've also spent time at Datascope, where I helped an NBA team with draft prepara
 </section>
 
     {{ helper.html_pager() }}
-    {{ comments.comment_link_script() }}
     {{ helper.mathjax_script(posts) }}
 {% endblock %}
