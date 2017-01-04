@@ -5,11 +5,12 @@
 
         {% block extra_head %}
             <!-- Facebook property -->
-            <meta property="og:title" content="{{ post.title() }}"/>
-            <meta property="og:description" content="{{ post.text()|striptags|escape|truncate(256, False, "") }}"/>
-            <meta property="og:site_name" content="{{ blog_title|e }}"/>
-            <meta property="og:url" content="https://www.chrisbarra.me{{ post.permalink() }}"/>
-            <meta property="og:type" content="article">
+
+
+            <meta property="og:url" content="https://www.chrisbarra.me{{ post.permalink() }}" />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content="{{ post.title() }}" />
+            <meta property="og:description" content="{{ post.text()|striptags|escape|truncate(256, False, "") }}" />
             <meta property="og:image" content="{{ abs_link('/') }}images/{{ post.meta('img_name') }}" />
 
             {{ helper.twitter_card_information(post) }}
@@ -33,12 +34,18 @@
 
 							{{ post.text() }}
 
-
+              <aside id="sticky-social">
+                  <ul>
+                      <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ post.permalink(absolute=True)|urlencode }}" class="entypo-facebook" target="_blank"></a></li>
+                      <li><a href="https://twitter.com/intent/tweet?text={{ post.title()|urlencode }}&url={{ post.permalink(absolute=True)|urlencode }}" data-size="large" class="entypo-twitter" target="_blank"></a></li>
+                      <li><a href="#" class="entypo-gplus" target="_blank"></a></li>
+                      <li><a href="#" class="entypo-linkedin" target="_blank"></a></li>
+                  </ul>
+              </aside>
 
 							<ul class="icons">
 
                                 <li>
-
 
   <div id="fb-root"></div>
   <script>(function(d, s, id) {

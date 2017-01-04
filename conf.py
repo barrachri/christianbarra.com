@@ -8,7 +8,7 @@ BLOG_AUTHOR = "Christian Barra"
 BLOG_TITLE = "chrisbarra.me"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://www.chrisbarra.me/"
+SITE_URL = "https://www.chrisbarra.me/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
