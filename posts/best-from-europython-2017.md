@@ -69,7 +69,7 @@ Inspiring presentation about the current state of software development inside ac
 <br/>
 
 
-# 6) [Abstract base classes a smart use of metaclasses](https://ep2017.europython.eu/conference/talks/abstract-base-classes-a-smart-use-of-metaclasses) // Leonardo Giordani // [Slide](https://ep2017.europython.eu/media/conference/slides/abstract-base-classes-a-smart-use-of-metaclasses.pdf)
+# 6) [Abstract base classes: a smart use of metaclasses](https://ep2017.europython.eu/conference/talks/abstract-base-classes-a-smart-use-of-metaclasses) // Leonardo Giordani // [Slide](https://ep2017.europython.eu/media/conference/slides/abstract-base-classes-a-smart-use-of-metaclasses.pdf)
 
 Scare your children with meta-classes!
 
