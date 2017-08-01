@@ -5,7 +5,7 @@
 .. tags:
 .. category:
 .. link:
-.. description:
+.. description: A little intro about me, Christian Barra
 .. type: text
 .. img_name:
 .. img_name_small:
@@ -16,13 +16,13 @@
 # Hello there, my name is Christian Barra!
 I am a (__freelance developer__ &#8746; __consultant__ &#8746; __trainer__) &#8745; __Python__.
 
-<p>From 2016 I am board member of the <a href="http://www.europython-society.org">EuroPython Society</a> and organizer of <a href="https://www.europython.eu">EuroPython Conference</a> from 2015.</p>
-
-<p>I love coding and tech, in my spare time I enjoy studying stats and improve my coding and soft skills.</p>
+I am board member of the [EuroPython Society](http://www.europython-society.org/about) from 2016 and organizer of the [EuroPython Conference](https://www.europython.eu) from 2015.
 
 Currently I live in Wrocław (Poland) where I run the [PyData Wroclaw Meetup](https://www.meetup.com/PyData-Wroclaw/) and lead the [Microbit:Polska](https://www.microbitpolska.org) project.
+
+I spend my days coding and try to get (ideally) 1% better every day, most of the time I fail but is a part of the process.
 
 Beside being a freelancer I am working on a personal project called [Cassiny.io](https://www.cassiny.io) and helping maintaining the [aiodocker](https://github.com/aio-libs/aiodocker) library.
 
 
-## Have some cool stuff to work on? I'll be happy to know more: barrachri [//at//] gmail [//dot//] com
+## Have some cool stuff to work on? I'll be happy to know more: me [//at//] chrisbarra [//dot//] xyz
