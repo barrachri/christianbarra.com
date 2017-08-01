@@ -41,7 +41,7 @@ It's impressive how easily you can bind Python and C++, kudos to the creators an
 </center>
 <br/>
 
-# 3) [A Python for future generations](https://ep2017.europython.eu/conference/talks/a-python-for-future-generations) // A. Ronacher // [Slide](https://ep2017.europython.eu/media/conference/slides/a-python-for-future-generations.pdf)
+# 3) [A Python for future generations](https://ep2017.europython.eu/conference/talks/a-python-for-future-generations) // Armin Ronacher // [Slide](https://ep2017.europython.eu/media/conference/slides/a-python-for-future-generations.pdf)
 
 Armin's view about what Python should be in the future and where we should put our efforts to improve Python. I personally agree with what he thinks about breaking compatibilities.
 
@@ -69,7 +69,7 @@ Inspiring presentation about the current state of software development inside ac
 <br/>
 
 
-# 6) [Abstract base classes a smart use of metaclasses](https://ep2017.europython.eu/conference/talks/abstract-base-classes-a-smart-use-of-metaclasses) // Leonardo Giordano // [Slide](https://ep2017.europython.eu/media/conference/slides/abstract-base-classes-a-smart-use-of-metaclasses.pdf)
+# 6) [Abstract base classes a smart use of metaclasses](https://ep2017.europython.eu/conference/talks/abstract-base-classes-a-smart-use-of-metaclasses) // Leonardo Giordani // [Slide](https://ep2017.europython.eu/media/conference/slides/abstract-base-classes-a-smart-use-of-metaclasses.pdf)
 
 Scare your children with meta-classes!
 
