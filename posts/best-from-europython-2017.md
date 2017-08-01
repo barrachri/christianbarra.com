@@ -5,7 +5,7 @@
 .. tags: python,europython,talks,pants
 .. category:
 .. link:
-.. description:
+.. description: My to-watch-list from the EuroPython 2017, biggest European conference about Python
 .. type: text
 .. img_name: best-from-europython-2017/europy.jpg
 .. img_name_small:
