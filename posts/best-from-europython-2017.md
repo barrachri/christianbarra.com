@@ -118,4 +118,4 @@ The story is quiet interesting and there is also a [crowdfunding campaign](https
 
 But there is a lot more to come (I think more than 200 sessions), soon we are going to release all the program on [YouTube](https://www.youtube.com/channel/UC98CzaYuFNAA_gOINFB0e4Q)!
 
-__A big thank to [Alessia Peviani](https://www.flickr.com/photos/photogenicgreen/albums/with/72157683943564550), official photographer of the event, all the pictures come from her lenses.__
+__A big thanks to [Alessia Peviani](https://www.flickr.com/photos/photogenicgreen/albums/with/72157683943564550), official photographer of the event, all the pictures come from her lenses.__
