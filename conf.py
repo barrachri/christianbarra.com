@@ -288,7 +288,7 @@ OUTPUT_FOLDER = 'public'
                              # the main (the newest) index page (index.html)
 
 # Name of the theme to use.
-THEME = "chrisbarra.me"
+THEME = "chrisbarra.xyz"
 
 
 # Color scheme to be used for code blocks. If your theme provides
@@ -366,7 +366,7 @@ COMMENT_SYSTEM_ID = "chrisbarra"
 # ANNOTATIONS = False
 
 # Create index.html for story folders?
-# STORY_INDEX = False
+PAGE_INDEX = True
 # Enable comments on story pages?
 # COMMENTS_IN_STORIES = False
 # Enable comments on picture gallery pages?
@@ -398,7 +398,7 @@ COMMENT_SYSTEM_ID = "chrisbarra"
 # This can be disabled on a per-page/post basis by adding
 #    .. pretty_url: False
 # to the metadata
-# PRETTY_URLS = False
+PRETTY_URLS = True
 
 # If True, publish future dated posts right away instead of scheduling them.
 # Defaults to False.

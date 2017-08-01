@@ -20,7 +20,7 @@ A special thank goes to all the people that have participated in organizing the 
 
 This is my _to-watch-list_ for __EuroPython 2017__, probably you can end up with something different, in case you wonder talks are randomly ordered.
 
-# 1) [The encounter: Python's adventures in Africa](https://ep2017.europython.eu/conference/talks/the-encounter-pythons-adventures-in-africa) // Aisha Bello & Daniela Procida // [Slide](https://ep2017.europython.eu/media/conference/slides/the-encounter-pythons-adventures-in-africa.pdf)
+# 1) [The encounter: Python's adventures in Africa](https://ep2017.europython.eu/conference/talks/the-encounter-pythons-adventures-in-africa) // Aisha Bello & Daniele Procida // [Slide](https://ep2017.europython.eu/media/conference/slides/the-encounter-pythons-adventures-in-africa.pdf)
 
 I've met [Aisha](https://twitter.com/AishaXBello) for the first time during [EuroPython 2015](ep2015.europython.eu), she was an attendee of the DjangoGirls workshop in Bilbao.
 
@@ -41,7 +41,7 @@ It's impressive how easily you can bind Python and C++, kudos to the creators an
 </center>
 <br/>
 
-# 3) [A Python for future generations](https://ep2017.europython.eu/conference/talks/a-python-for-future-generations) // A. Ronacherr // [Slide](https://ep2017.europython.eu/media/conference/slides/a-python-for-future-generations.pdf)
+# 3) [A Python for future generations](https://ep2017.europython.eu/conference/talks/a-python-for-future-generations) // A. Ronacher // [Slide](https://ep2017.europython.eu/media/conference/slides/a-python-for-future-generations.pdf)
 
 Armin's view about what Python should be in the future and where we should put our efforts to improve Python. I personally agree with what he thinks about breaking compatibilities.
 
