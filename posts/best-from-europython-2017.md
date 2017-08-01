@@ -72,7 +72,8 @@ Inspiring presentation about the current state of software development inside ac
 # 6) [Abstract base classes a smart use of metaclasses](https://ep2017.europython.eu/conference/talks/abstract-base-classes-a-smart-use-of-metaclasses) // Leonardo Giordano // [Slide](https://ep2017.europython.eu/media/conference/slides/abstract-base-classes-a-smart-use-of-metaclasses.pdf)
 
 Scare your children with meta-classes!
-A lot of Python programmers are scared by the word `Meta-classes`, this presentation will make your life easier, beautiful introduction to meta-classes and ABC.
+
+A lot of Python programmers are scared by the word _meta-classes_, this presentation will make your life easier, with a beautiful introduction to meta-classes and A(bstract)B(ase)C(lasses).
 
 <center>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/0fMJqWLE6Iw?start=6740" frameborder="0" allowfullscreen></iframe>
@@ -82,7 +83,7 @@ A lot of Python programmers are scared by the word `Meta-classes`, this presenta
 
 # 7) [How to create inspiring data visualizations?](https://ep2017.europython.eu/conference/talks/how-to-create-inspiring-data-visualizations) // Jan Willem Tulp
 
-Do you know how many trees there are world? That's a lot of data points to visualize.
+Do you know how many trees there are in the world? That's a lot of data points to visualize.
 
 <center>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/E-HgQ0JKxHw?start=1718" frameborder="0" allowfullscreen></iframe>
