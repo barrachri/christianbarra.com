@@ -5,10 +5,10 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Christian Barra"
-BLOG_TITLE = "chrisbarra.me"
+BLOG_TITLE = "chrisbarra.xyz"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "https://www.chrisbarra.me/"
+SITE_URL = "https://www.chrisbarra.xyz/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
@@ -407,9 +407,8 @@ FUTURE_IS_NOW = True
 # If True, future dated posts are allowed in deployed output
 # Only the individual posts are published/deployed; not in indexes/sitemap
 # Generally, you want FUTURE_IS_NOW and DEPLOY_FUTURE to be the same value.
-DEPLOY_FUTURE = True
+DEPLOY_FUTURE = False
 # If False, draft posts will not be deployed
-# DEPLOY_DRAFTS = True
 
 # Allows scheduling of posts using the rule specified here (new_post -s)
 # Specify an iCal Recurrence Rule: http://www.kanzaki.com/docs/ical/rrule.html

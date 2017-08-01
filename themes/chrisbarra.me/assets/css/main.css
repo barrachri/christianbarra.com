@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
 
@@ -1643,10 +1643,10 @@
 
 	body, input, select, textarea {
 		color: #585858;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 16pt;
+		font-family: 'Lato', sans-serif;
+		font-size: 21pt;
 		font-weight: 300;
-		line-height: 1.75;
+		line-height: 1.85;
 	}
 
 		@media screen and (max-width: 1680px) {
