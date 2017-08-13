@@ -22,7 +22,7 @@ Currently I live in Wrocław (Poland) where I run the [PyData Wroclaw Meetup](ht
 
 I spend my days coding and try to get (ideally) 1% better every day, most of the time I fail but is a part of the process.
 
-Beside being a freelancer I am working on a personal project called [Cassiny.io](https://www.cassiny.io) and helping maintaining the [aiodocker](https://github.com/aio-libs/aiodocker) library.
+Besides being a freelancer I am working on a personal project called [Cassiny.io](https://www.cassiny.io) and helping maintaining the [aiodocker](https://github.com/aio-libs/aiodocker) library.
 
 
 ## Have some cool stuff to work on? I'll be happy to know more: me [//at//] chrisbarra [//dot//] xyz
