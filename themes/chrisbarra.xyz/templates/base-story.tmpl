@@ -1,0 +1,176 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'base_helper.tmpl' as base with context %}
+{% import 'annotation_helper.tmpl' as annotations with context %}
+{{ set_locale(lang) }}
+
+
+	{{ base.html_headstart() }}
+	{% block extra_head %}
+	{% endblock %}
+	{{ extra_head_data }}
+
+<body>
+
+	<!-- Page Loader -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+
+		<!-- Header
+================================================== -->
+{% include 'header.tmpl' %}
+
+
+
+<!-- Content ================================================== -->
+<!-- Fullpage Start -->
+<div id="fullpage">
+		{% block content %} {% endblock %}
+
+
+		<!-- Section-Footer -->
+		<div id="footer" class="alt section fp-auto-height">
+				<div class="margin-top-60"></div>
+			<!-- Main -->
+		<div class="box">
+				<div class="row">
+					<!-- Copyright -->
+					<div class="col-md-8 col-sm-6">
+						<p>&copy; chrisbarra.xyz 2014. All Rights Reserved.</p>
+					</div>
+
+					<div class="col-md-4  col-sm-12">
+
+						<!-- Social Icons / Start -->
+						<ul class="social-icons color rounded margin-top-15">
+							<li><a class="twitter" href="https://twitter.com/christianbarra"><i class="icon-twitter"></i></a></li>
+							<li><a class="linkedin" href="https://www.linkedin.com/in/christianbarra"><i class="icon-linkedin"></i></a></li>
+							<li><a class="github" href="https://github.com/barrachri"><i class="icon-github"></i></a></li>
+							<li><a class="rss" href="/rss.xml"><i class="icon-rss"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+						<div class="margin-top-60"></div>
+						<!-- Social Icons / End -->
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!-- Section-Footer / End -->
+
+
+	</div>
+	<!-- Fullpage / End -->
+
+
+
+	<!-- Scripts
+================================================== -->
+	<script type="text/javascript" src="/assets/scripts/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/counterup.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/waypoints.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.sticky-kit.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.twentytwenty.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.event.move.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.photogrid.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.tooltips.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.pricefilter.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.stacktable.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.contact-form.js"></script>
+	<script type="text/javascript" src="/assets/scripts/jquery.jpanelmenu.js"></script>
+	<script type="text/javascript" src="/assets/scripts/headroom.min.js"></script>
+	<script type="text/javascript" src="/assets/scripts/modernizr.custom.js"></script>
+	<script type="text/javascript" src="/assets/scripts/puregrid.js"></script>
+	<script type="text/javascript" src="/assets/scripts/flexibility.js"></script>
+	<script type="text/javascript" src="/assets/scripts/custom.js"></script>
+
+
+	<!-- Fullpage.js | documentation - https://github.com/alvarotrigo/fullPage.js -->
+	<script type="text/javascript" src="/assets/scripts/jquery.fullPage.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#fullpage').fullpage({
+				navigation: true,
+				navigationPosition: 'right',
+				responsiveWidth: 990,
+
+				onLeave: function (index, nextIndex, direction) {
+					var leavingSection = $(this);
+
+					// some styling for sticky menu
+					if (index == 1 && direction == 'down') {
+						$('#main-header.cloned').addClass('headroom--pinned headroom--not-top');
+
+						$('#main-header').addClass('not-cloned');
+						$('#main-header.cloned').removeClass('not-cloned');
+					}
+
+					if (index == 2 && direction == 'up') {
+						$('#main-header.cloned').removeClass('headroom--pinned headroom--not-top');
+						$('#main-header.cloned').addClass('headroom--unpinned headroom--top');
+
+						$('#main-header').removeClass('not-cloned');
+					}
+
+				}
+
+			});
+		});
+
+		// Arrow
+		$('.scroll-to-section').click(function (e) {
+			e.preventDefault();
+			$.fn.fullpage.moveSectionDown();
+		});
+
+	</script>
+
+
+	<!-- Typed.js | documentation - https://github.com/mattboldt/typed.js -->
+	<script type="text/javascript" src="/assets/scripts/typed.js"></script>
+	<script>
+		$(window).load(function () {
+
+			setTimeout(function () {
+				$(".typed-text").typed({
+					strings: ["Python + Freelance developer", "Python + Consultant", "Python + Trainer", "(Freelance developer ∪ Consultant ∪ Trainer) ∩ Python"],
+					typeSpeed: 40
+				});
+			}, 600);
+
+		});
+
+	</script>
+
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+	<!-- Google Analytics -->
+	<script>
+			(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-41799543-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+</body>
+
+</html>

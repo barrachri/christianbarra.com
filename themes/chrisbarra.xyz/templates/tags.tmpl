@@ -1,0 +1,67 @@
+{% extends 'base.tmpl' %}
+
+<!-- Header
+================================================== -->
+{% block headbar %}
+<div id="header-container" data-background="/assets/images/blog-parallax.jpg" data-color="#303133" data-color-opacity="0.7">
+	{% endblock %}
+
+	<!-- Titlebar
+================================================== -->
+	{% block titlebar %}
+	<div id="titlebar" class="centered margin-bottom-70">
+		<div class="box">
+			<div class="row">
+				<div class="col-md-12">
+
+					<h2>{{ title }}</h2>
+					<span>All tags available here</span>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+
+
+	<!-- Content
+================================================== -->
+	{% block content %}
+	<div class="box">
+
+		<!-- Projects -->
+		<div class="gutter-30px isotope-three-cols isotope-wrapper blog-wrapper">
+
+			<div class="isotope-sizer"></div>
+
+			{% for text, link in items %}
+
+
+			<!-- Item -->
+			<div class="isotope-item">
+				<!-- Post -->
+				<div class="post-container">
+
+					<div class="post-content">
+						<!-- Categories -->
+						<ul class="post-categories">
+							<li><a href="{{ link }}">{{ text }}</a></li>
+						</ul>
+
+						<!-- Meta -->
+
+						<a href="{{ link }}">
+							<h3>Posts about {{ text }}</h3>
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			{% endfor %}
+
+		</div>
+		<!-- Isotope Wrapper / End -->
+
+	</div>
+	{% endblock %}
