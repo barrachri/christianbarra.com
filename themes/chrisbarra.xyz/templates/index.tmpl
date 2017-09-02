@@ -1,39 +1,91 @@
-{#  -*- coding: utf-8 -*- #}
-{% import 'index_helper.tmpl' as helper with context %}
 {% extends 'base.tmpl' %}
 
-{% block header %}
-<header>
-<h1>Hello there, my name is Christian!</h1>
-<h2>I am a freelance developer, consultant and I am super happy when I teach people how to use Python &#128013;</h2>
+<!-- Header
+================================================== -->
+{% block headbar %}
+<div id="header-container" data-background="/assets/images/service-01-parallax.jpg" data-color="#303133" data-color-opacity="0.6">
+	{% endblock %}
 
-<h2><a href="{{ _link('slug', 'about-me') }}">About me</a><br /></h2>
-</header>
-<br />
-{% endblock %}
+	<!-- Titlebar
+================================================== -->
+	{% block titlebar %}
 
+	<div id="titlebar" class="centered">
+		<div class="box">
+			<div class="row">
+				<div class="col-md-12">
 
+					<h2>Christian's blog</h2>
+					<span>A nomadic (data)pythonista</span>
 
-{% block content %}
-<section class="tiles">
+				</div>
+			</div>
+		</div>
+	</div>
 
-{% for post in posts %}
-
-
-
-<article class="style1">
-<span class="image">
-<img src="/images/{{ post.meta('img_name') }}" alt="" />
-</span>
-<a href="{{ post.permalink() }}"> <h2>{{ post.title() }}</h2>
-<div class="content"><p>{{ post.formatted_date(' %d %B %Y') }} - {{ post.meta('sub_title') }}</p></div>
-</a>
-</article>
+	{% endblock %}
 
 
-{% endfor %}
-</section>
+	<!-- Content
+================================================== -->
+	{% block content %}
+	<div class="box">
 
-    {{ helper.html_pager() }}
-    {{ helper.mathjax_script(posts) }}
-{% endblock %}
+		<!-- Projects -->
+		<div class="gutter-30px isotope-three-cols isotope-wrapper blog-wrapper">
+
+			<div class="isotope-sizer"></div>
+
+			{% for post in posts %}
+
+
+			<!-- Item -->
+			<div class="isotope-item">
+				<!-- Post -->
+				<div class="post-container">
+					<div class="post-img"><a href="{{ post.permalink() }}" class="img-hover"><img src="/images/{{ post.meta('img_name') }}" alt=""></a></div>
+
+					<div class="post-content">
+						<!-- Categories -->
+						<ul class="post-categories">
+							{#
+							<li><a href="#">{{ post.meta('tags') }}</a></li>
+							#}
+						</ul>
+
+						<!-- Meta -->
+						<div class="meta-tags">
+							<span>{{ post.formatted_date('%d %B %Y') }}</span>
+							<span><a href="{{ post.permalink() }}#disqus_thread"></a></span>
+						</div>
+
+						<a href="{{ post.permalink() }}">
+							<h3>{{ post.title() }}</h3>
+						</a>
+						<p>{{ post.meta('sub_title') }}</p>
+					</div>
+
+				</div>
+			</div>
+
+			{% if loop.index == 3 %}
+			<!-- Item -->
+			<div class="isotope-item">
+				<div class="post-quote">
+					<span class="icon"></span>
+					<blockquote class="quote_body">
+
+					</blockquote>
+					<span class="quote_author"></span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			{% endif %} {% endfor %}
+
+
+		</div>
+		<!-- Isotope Wrapper / End -->
+
+
+	</div>
+	{% endblock %}
