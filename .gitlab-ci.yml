@@ -7,7 +7,7 @@ pages:
     DEBIAN_FRONTEND: "noninteractive"
   script:
   - apt-get update && apt-get install -y python3-dev python3-setuptools libtiff5-dev libjpeg62-turbo-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
-  - pip install markdown jinja2 nikola
+  - pip install markdown jinja2 nikola notebook
   - nikola build
   artifacts:
     paths:
