@@ -46,7 +46,7 @@ It's impressive how easily you can bind Python and C++, kudos to the creators an
 Armin's view about what Python should be in the future and where we should put our efforts to improve Python. I personally agree with what he thinks about breaking compatibilities.
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D6kU7kJeX_s?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IeSu_odkI5I?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
@@ -94,7 +94,7 @@ Do you know how many trees there are in the world? That's a lot of data points t
 Want to get __97x__ improvement in your code performance for free? Well this introduction to PyPy is probably the best way :)
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/28FJOb5fXsw?start=24875" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NQfpHQII2cU?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br />
 
