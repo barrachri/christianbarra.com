@@ -46,7 +46,7 @@ It's impressive how easily you can bind Python and C++, kudos to the creators an
 Armin's view about what Python should be in the future and where we should put our efforts to improve Python. I personally agree with what he thinks about breaking compatibilities.
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/xkcNoqHgNs8?start=2880" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D6kU7kJeX_s?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
@@ -64,7 +64,7 @@ Very interesting talk, an "hand-made" data science project, from getting the dat
 Inspiring presentation about the current state of software development inside academy and research and how it should be (and hopefully will be).
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/NlFuQT8tCGk?start=21605" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3DJHefC6v28?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
@@ -76,7 +76,7 @@ Scare your children with meta-classes!
 A lot of Python programmers are scared by the word _meta-classes_, this presentation will make your life easier, with a beautiful introduction to meta-classes and A(bstract)B(ase)C(lasses).
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/0fMJqWLE6Iw?start=6740" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I9nXiJQnGsk?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
@@ -86,7 +86,7 @@ A lot of Python programmers are scared by the word _meta-classes_, this presenta
 Do you know how many trees there are in the world? That's a lot of data points to visualize.
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/E-HgQ0JKxHw?start=1718" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D6kU7kJeX_s?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
