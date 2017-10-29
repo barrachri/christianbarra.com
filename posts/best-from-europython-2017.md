@@ -27,7 +27,7 @@ I've met [Aisha](https://twitter.com/AishaXBello) for the first time during [Eur
 From that moment she has put a [lot of effort](https://www.djangoproject.com/weblog/2016/dec/22/dsf-announces-winner-2016-malcolm-tredinnick-memor/) in growing the Python community in Africa and the results are astonishing as much as the different kind of problems they are facing there.
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/IZ5P12GASDQ?start=36" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L2BEIhfwZgg?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
@@ -104,7 +104,7 @@ A very interesting presentation about how to make your Python code faster but it
 If you are facing these problems inside your team this presentation is for you.
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/Xv2zSC39kws?start=9435" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5js_-pLGqwA?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
