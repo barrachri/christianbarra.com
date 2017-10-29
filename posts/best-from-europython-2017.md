@@ -37,7 +37,7 @@ Python is getting faster, directly or through new projects like [PyBind11](https
 It's impressive how easily you can bind Python and C++, kudos to the creators and maintainers.
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/4H5yNP19es8?start=6080" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jQedHfF1Jfw?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
@@ -55,7 +55,7 @@ Armin's view about what Python should be in the future and where we should put o
 Very interesting talk, an "hand-made" data science project, from getting the data to analyzing them.
 
 <center>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ONCGQVwHD20?start=7605" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iasLRI30meA?rel=0" frameborder="0" allowfullscreen></iframe>
 </center>
 <br/>
 
