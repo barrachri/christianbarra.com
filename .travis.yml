@@ -3,14 +3,15 @@ sudo: required
 language: python
 python: "3.6"
 
-jobs:
-  include:
-    - stage: deploy
-      script:
-        - pip install pipenv
-        - pipenv install
-        - pipenv run nikola build
-      deploy:
-        provider: firebase
-        token:
-          secure: "TTDIfKKc/6YrY7uftYJ8Rm5fllKsiuVXaabx1SI0hJZ0GnbqulFPcjNIM+Mtbmj03X0qrywjvAqZYskixdqgwOb783p9sYyKpaJETQ1zoYLSahv1p23gGzVdF90bCsyqy2o3SsXoat8+oYIs9ShthCAOFEeM/DZsV/BNjAngy5aE4XPuvNzdAxRMfCt7hD7BOyANBInMB1YFpBDcUVJK2KL9l0x2Aga2p0rkGEXRDSEW1t2NWkt2fI+I0P1jr5dpWgzmH+8TrNrZRD5WJrV1gTw4g6/s2VB5wzyg2yYBMNmAthHKyIeI2k6cvqHSsu2m3tt0evBG472N/R8MH0Xc6foMw8ZBOgKx5wNHboKzjJHn/vvH3ROXtG3oEpHkhmBCOU+6M2bmpAdv+/zgLIPile9P77mxNlJcPDHF52f1uSEikJPD104+PNVJueMAk5SachnE+i/Sy7eosFRuIq6KFmxIz7BD3Lw9nhQTNsloijQ/wwoH2Rzue6INoobzFQOo5WHBXk2knUe+wCtHsu98GkR9MnE0gcHJmKiQUsizxL6TBFbuHCbK7FEOjDdkZFsGrZtDzlfS19VIpbu62cRomyJZ4GrJWZP8+4cLrwAZIb8Q9OguVC/jTyDOjDVVqTRpLMuw8ygxPedctwxjrnUhJ9u1uPHw4ue5kq9M3sgtyMc="
+script:
+  - pip install pipenv
+  - pipenv install
+  - pipenv run nikola build
+
+install:
+  - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  - sudo apt-get install -y nodejs
+  - npm install -g firebase-tools
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
