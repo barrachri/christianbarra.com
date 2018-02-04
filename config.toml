@@ -1,0 +1,68 @@
+baseURL = "http://chrisbarra.xyz/"
+languageCode = "en-us"
+title = "chrisbarra.xyz"
+theme = "minimo"
+
+Paginate = 5
+preserveTaxonomyNames = true
+
+googleAnalytics = "UA-41799543-1"
+
+enableRobotsTXT = true # generate robots.txt
+
+# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
+pygmentsCodefences = true
+
+enableEmoji = true
+
+# Missing translations will default to this content language
+defaultContentLanguage = "en"
+
+[params.info]
+title404 = "Nothing's here!"
+
+[params.copyright]
+prefix = ""
+holder = "Christian Barra"
+startYear = "2015"
+suffix = ""
+
+[params.settings]
+# date & time format: https://golang.org/pkg/time/
+dateFormat = "2006, Jan 02"
+listDateFormat = "2006, Jan 02"
+archiveDateFormat = "Jan 02"
+hideEntryNavigation = ["page"] # boolean / array of sections
+showReadingTime = true
+taxonomyCloudShuffle = true
+accentColor = "#ffcd00"
+hideMainMenu = false
+
+[params.widgets]
+homepage = ["recent_posts"]
+footer = ["social_menu"]
+
+[params.opengraph.twitter]
+page = "" # Twitter page username
+
+[params.seo]
+# Title Separator: - – — · • * ⋆ | ~ « » < >
+titleSeparator = "•"
+
+[params.social]
+github = "barrachri"
+linkedin = "christianbarra"
+twitter = "christianbarra"
+
+[params.comments]
+enable = true
+
+[taxonomies]
+tag = "tags"
+
+canonifyURLs = true
+[permalinks]
+post = "/blog/:slug/"
+
+[blackfriday]
+hrefTargetBlank = true

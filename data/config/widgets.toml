@@ -1,0 +1,6 @@
+# Recent Posts Widget config
+[recent_posts]
+title = "Posts"
+length = 10
+excludeTypes = ["page"]
+

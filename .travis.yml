@@ -1,17 +1,15 @@
 sudo: required
 
-language: python
-python: "3.6"
-
-script:
-  - pip install pipenv
-  - pipenv install
-  - pipenv run nikola build
+language: generic
 
 install:
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.40.3/hugo_0.40.3_Linux-64bit.tar.gz
+  - tar xvf hugo_0.40.3_Linux-64bit.tar.gz
+  - rm hugo_0.40.3_Linux-64bit.tar.gz
   - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
   - sudo apt-get install -y nodejs
   - npm install -g firebase-tools
+  - ./hugo
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
