@@ -4,7 +4,6 @@ description: "AKA try/except properly and log!"
 slug: "the-code-review-that-never-happened"
 date: 2017-11-03
 tags: ["python", "try except", "logging"]
-notebook: true
 ---
 
 I am currently working as consultant for a mid-sized company in Europe, where my goal is to try to keep their old Django application alive (running Django 1.5.5).
