@@ -353,7 +353,7 @@ Check the [official documentation](https://docs.python.org/3/reference/datamodel
 - What do you think about **__slots__**?
 - Is there a use case where you have found **__slots__** extremely useful?
 
-This blog post is a notebook, you can download it from [here](/files/)
+This blog post was a notebook, you can download it from [here](https://github.com/barrachri/chrisbarra.xyz/blob/master/static/files/let-me-introduce-slots.ipynb)
 
 Credits
 
