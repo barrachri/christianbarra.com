@@ -1,10 +1,6 @@
 ---
 title: About Me
 description: Just more bytes about me
-keywords:
-- mysite
-- mysite keyword
-- Another useful keyword
 menu: main
 weight: -210
 ---

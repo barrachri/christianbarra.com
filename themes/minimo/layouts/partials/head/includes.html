@@ -5,6 +5,10 @@
   <link rel='stylesheet' href='{{ . | relURL }}'>
 {{- end -}}
 
+{{ if .Params.notebook }}
+  <link href="{{ $.Site.BaseURL }}css/jupyter.css" rel="stylesheet" type="text/css">
+{{ end }}
+
 {{- partial "head/css" . -}}
 
 {{- partial "head/analytics" . -}}

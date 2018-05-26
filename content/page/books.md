@@ -7,6 +7,8 @@ weight: -210
 
 ## May 2018
 
+* Blue Ocean Strategy - W. Chan Kim and Renée Mauborgne
+* The 7 Day Startup - Dan Norris
 * Sprint - Jake Knapp
 
 ## April 2018
