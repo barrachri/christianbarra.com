@@ -5,6 +5,10 @@ menu: main
 weight: -210
 ---
 
+## June 2018
+
+* Data Visualization - Andy Kirk
+
 ## May 2018
 
 * Blue Ocean Strategy - W. Chan Kim and Renée Mauborgne
