@@ -12,9 +12,9 @@ I'm originally from 🇮🇹 and currently living in Berlin (🇩🇪) where I w
 I like to organize Python things:
 
 - Board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society") (2016-current)
-- Organiser of the [EuroPython Conference](https://www.europython.eu "EuroPython Conference") (2015-current)
+- Organizer of the [EuroPython Conference](https://www.europython.eu "EuroPython Conference") (2015-current)
 - Organizer of [PyData Wrocław](https://www.meetup.com/PyData-Wroclaw/ "PyData Wrocław meetup") (2016-2017)
-- Founder of the [Microbit:Polska](https://microbitpolska.org/ "Microbit:Polska project") (2016-2017)
+- Founder of [Microbit:Polska](https://microbitpolska.org/ "Microbit:Polska project") (2016-2017)
 
 and contribute to open source projects (check my [github account](https://github.com/barrachri "Christian Barra github account") if you want to know more).
 

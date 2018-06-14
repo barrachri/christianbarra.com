@@ -7,6 +7,8 @@ weight: -210
 
 ## June 2018
 
+* You Are Not So Smart - David McRaney
+* The quick-start guide for smart non-profit marketing - Christopher Quereau
 * Data Visualization - Andy Kirk
 
 ## May 2018
