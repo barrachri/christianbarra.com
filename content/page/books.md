@@ -5,6 +5,11 @@ menu: main
 weight: -210
 ---
 
+## July 2018
+
+* The Signal and the Noise - Nate Silver
+* The Hitchhiker's Guide to the Galaxy - Douglas Adams
+
 ## June 2018
 
 * You Are Not So Smart - David McRaney
