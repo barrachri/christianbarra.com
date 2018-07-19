@@ -7,6 +7,7 @@ weight: -210
 
 ## July 2018
 
+* Piccolo manuale di autodifesa verbale - Barbara Berckhan
 * The Signal and the Noise - Nate Silver
 * The Hitchhiker's Guide to the Galaxy - Douglas Adams
 
