@@ -22,7 +22,7 @@ I often give presentations about different topics and you can find them on:
 - [talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
 - just look on YouTube.
 
-I have a lot of fun writing software and contributing to open source projects (check my [github account](https://github.com/barrachri "Christian Barra github account") if you want to know more).
+I have a lot of fun writing software and contributing to open source projects (check my [github account](https://github.com/barrachri "barrachri github account") if you want to know more).
 
 Currently I am focusing on these areas:
 
@@ -33,7 +33,7 @@ Currently I am focusing on these areas:
 ### Remote
 
 I am big advocate of the distributed and remote culture.
-Starting from 2013 I have been able to work remotely, giving me a great chance to meet amazing people and to explore the 🌍.
+Starting from 2013 I have been working remotely, giving me a great chance to meet amazing people and explore the 🌍.
 
 These are the places where I have been so far:
 
@@ -61,4 +61,4 @@ I am currently working on 2 side projects:
 - **[cassiny.io](https://www.cassiny.io)**: data related
 - **[pybootcamp.com](https://www.pybootcamp.com)**: teaching related
 
-They are defitively work in progress and they need more attention.
+They are definitively work in progress and they need more attention.
