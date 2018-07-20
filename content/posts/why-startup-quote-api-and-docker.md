@@ -4,6 +4,7 @@ description: "A little intro to my blog, docker and a good book to read"
 slug: "why-startup-quote-api-and-docker"
 date: 2014-04-19
 tags: ["startup", "docker"]
+comments: true
 ---
 
 My first blog and my first post.

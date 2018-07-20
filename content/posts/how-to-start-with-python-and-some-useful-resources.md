@@ -4,6 +4,7 @@ slug: "how-to-start-with-python-and-some-useful-resources"
 description: "Useful resource about Python"
 date: 2014-06-18
 tags: ["python"]
+comments: true
 ---
 
 **Python is an awesome language, simple, explicit, readable and powerful.**

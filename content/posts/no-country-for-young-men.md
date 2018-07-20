@@ -4,6 +4,7 @@ description: "Talking about my country, Italy, and its big problems"
 slug: "no-country-for-young-men"
 date: 2014-05-05
 tags: ["italy", "statistics"]
+comments: true
 ---
 
 <img src="/images/img_country.png" class="img-responsive" alt="Marcello dell'Utri and Silvio Berlusconi">

@@ -55,7 +55,7 @@ linkedin = "christianbarra"
 twitter = "christianbarra"
 
 [params.comments]
-enable = true
+enable = false
 
 [taxonomies]
 tag = "tags"

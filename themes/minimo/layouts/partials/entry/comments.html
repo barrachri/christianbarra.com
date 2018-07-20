@@ -13,15 +13,18 @@
 
 {{- $disqusEnabled := .Site.DisqusShortname -}}
 {{- $staticmanEnabled := $config.staticman.enable -}}
+{{- $utterancesEnabled := $config.utterances.enable -}}
 
-{{- if ( or $disqusEnabled $staticmanEnabled ) -}}
+{{- if ( $disqusEnabled | or $staticmanEnabled | or $utterancesEnabled ) -}}
 <section id='comments' class='comments'>
   <div class='container sep-before'>
     <div class='comments-area'>
     {{- if $disqusEnabled -}}
-        {{ partial "comments/disqus" . }}
+      {{ partial "comments/disqus" . }}
     {{- else if $staticmanEnabled -}}
       {{ partial "comments/staticman" . }}
+    {{- else if $utterancesEnabled -}}
+      {{ partial "comments/utterances" . }}
     {{- end -}}
     </div>
   </div>

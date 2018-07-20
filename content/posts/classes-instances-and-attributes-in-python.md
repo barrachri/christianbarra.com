@@ -4,6 +4,7 @@ description: "An introduction about namespaces in Python classes"
 slug: "classes-instances-and-attributes-in-python"
 date: 2016-07-09
 tags: ["python"]
+comments: true
 ---
 
 Some days ago I got a simple question.

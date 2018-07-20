@@ -4,6 +4,7 @@ description: "How to use Docker Compose to manage a simple app stack"
 slug: "docker-orchestration"
 date: 2015-02-09
 tags: ["docker", "flask"]
+comments: true
 ---
 
 I've made a blog post about Docker some months ago.

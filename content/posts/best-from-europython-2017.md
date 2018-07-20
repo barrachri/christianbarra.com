@@ -4,6 +4,7 @@ description: "My to-watch-list from the EuroPython 2017, biggest European confer
 slug: "my-to-watch-list-from-europython-2017"
 date: 2017-07-25
 tags: ["python", "europython", "talks"]
+comments: true
 ---
 
 So [__EuroPython 2017__](https://ep2017.europython.eu) is over!

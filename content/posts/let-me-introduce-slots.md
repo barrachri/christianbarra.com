@@ -4,6 +4,7 @@ description: "The featherweight version of a Python class"
 slug: "let-me-introduce-slots"
 date: 2017-09-03
 tags: ["python", "slots", "classes", "data structure"]
+comments: true
 ---
 
 Hey there!
