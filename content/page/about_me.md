@@ -5,7 +5,7 @@ menu: main
 weight: -210
 ---
 
-![Christian Barra](/images/me.jpeg "Christian Barra")
+![Christian Barra](/images/me_bw.jpg "Christian Barra")
 
 
 Hi there! My name is Christian and I like to build things and share my knowledge.
