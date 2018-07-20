@@ -5,18 +5,16 @@ menu: main
 weight: -210
 ---
 
-### Hi there! I am Christian
+![Christian Barra](/images/me.jpeg "Christian Barra")
 
-I'm originally from 🇮🇹 and currently living in Berlin (🇩🇪) where I work remotely for [made.com](https://www.made.com) (🇬🇧).
 
-I like to organize Python things:
+Hi there! My name is Christian and I like to build things and share my knowledge.
 
-- Board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society") (2016-2018)
-- Organizer of the [EuroPython Conference](https://www.europython.eu "EuroPython Conference") (2015-2018)
-- Organizer of [PyData Wrocław](https://www.meetup.com/PyData-Wroclaw/ "PyData Wrocław meetup") (2016-2017)
-- Founder of [Microbit:Polska](https://microbitpolska.org/ "Microbit:Polska project") (2016-2017)
+In the last years I worked as a consultant, software developer and data scientist.
 
-and contribute to open source projects (check my [github account](https://github.com/barrachri "Christian Barra github account") if you want to know more).
+I am a proud Pythonista, [PSF Fellow](http://pyfound.blogspot.com/2018/06/ "Python Fellow") and I spent a big part of the last 5 years growing the Python Community in Europe. I have been a board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society"), core organizer of 4 editions of the  [EuroPython Conference](https://www.europython.eu "EuroPython Conference") and conference chair of [EuroPython 2017](https://ep2017.europython.eu/ "EuroPython 2017").
+
+Lately I started to be involved with the organization of [PyCon DE](https://de.pycon.org "PyCon DE").
 
 I often give presentations about different topics and you can find them on:
 
@@ -24,24 +22,18 @@ I often give presentations about different topics and you can find them on:
 - [talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
 - just look on YouTube.
 
-### My side projects
+I have a lot of fun writing software and contributing to open source projects (check my [github account](https://github.com/barrachri "Christian Barra github account") if you want to know more).
 
-I am currently working on 2 side projects:
-
-- **[cassiny.io](https://www.cassiny.io "Cassiny.io: a data platform")**: a data platform to make really easy to collect and work with data
-- **[pybootcamp.com](https://www.pybootcamp.com "PyBootCamp: A pythonic weekly screencast series")**: a Pythonic weekly screencast series
-
-### Where I am investing a big part of my time
-
-that means reading/learning/doing/experimenting with:
+Currently I am focusing on these areas:
 
 - Machine/Statistical learning
 - Data engineering
 - Event-driven architecture using Python/Go
 
-### And besides that?
+### Remote
 
-**_I definitively like to travel and do bouldering_**.
+I am big advocate of the distributed and remote culture.
+Starting from 2013 I have been able to work remotely, giving me a great chance to meet amazing people and to explore the 🌍.
 
 These are the places where I have been so far:
 
@@ -51,4 +43,22 @@ These are the places where I have been so far:
 - 🇶🇦
 - 🇹🇳 🇲🇦
 
-and they keep growing.
+I am often around Europe, either for conferences or to escape the winter, so follow me on Twitter to find when I am in your city and we can meet up (I am serious about this!)
+
+### Teaching
+
+Sharing your knowledge in an effective way, teaching people, mentor them correctly is a complex mix between science and art.
+
+And if you wonder where you can find the best practices my answer is:
+[Software Carpentry](https://software-carpentry.org/ "Software Carpentry") and [Data Carpentry](https://datacarpentry.org/ "Data Carpentry").
+
+This is why I decided to become a certified instructor.
+
+### My (side) projects
+
+I am currently working on 2 side projects:
+
+- **[cassiny.io](https://www.cassiny.io)**: data related
+- **[pybootcamp.com](https://www.pybootcamp.com)**: teaching related
+
+They are defitively work in progress and they need more attention.
