@@ -66,3 +66,9 @@ post = "/blog/:slug/"
 
 [blackfriday]
 hrefTargetBlank = true
+
+[staticman]
+  endpoint = "https://api.staticman.net/v2/entry/"
+  username = "barrachri"
+  repository = "barrachri.github.io"
+  branch = "master"
