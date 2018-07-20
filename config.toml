@@ -67,8 +67,10 @@ post = "/blog/:slug/"
 [blackfriday]
 hrefTargetBlank = true
 
-[staticman]
-  endpoint = "https://api.staticman.net/v2/entry/"
-  username = "barrachri"
-  repository = "barrachri.github.io"
-  branch = "master"
+[params.comments.utterances]
+enable = true
+issueTerm = "pathname" # pathname / url / title
+
+[params.comments.utterances.github]
+username = "barrachri"
+repository = "barrachri.github.io"

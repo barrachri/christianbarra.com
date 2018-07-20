@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='AKA try/except properly and log!'>
+<meta name='theme-color' content='#ffcd00'>
+<meta content="" name="keywords">
+<meta property='og:title' content='The code review that never happened • chrisbarra.xyz'>
+<meta property='og:description' content='AKA try/except properly and log!'>
+<meta property='og:url' content='http://chrisbarra.xyz/posts/the-code-review-that-never-happened/'>
+<meta property='og:site_name' content='chrisbarra.xyz'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='python'><meta property='article:tag' content='try except'><meta property='article:tag' content='logging'><meta property='article:published_time' content='2017-11-03T00:00:00Z'/><meta property='article:modified_time' content='2017-11-03T00:00:00Z'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.40.3" />
+
+  <title>The code review that never happened • chrisbarra.xyz</title>
+  <link rel='canonical' href='http://chrisbarra.xyz/posts/the-code-review-that-never-happened/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.809149b6.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-41799543-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class='page type-posts'>
+
+  <div class='site'>
+
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+    <div class='main'>
+
+      <nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/page/about_me/'>About Me</a>
+      </li><li class='item'>
+        <a href='/page/books/'>Books</a>
+      </li></ul>
+  </div>
+</nav>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>chrisbarra.xyz</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>The code review that never happened</h1>
+      
+<p class='desc'>AKA try/except properly and log!</p>
+
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2017-11-03T00:00:00Z'>2017, Nov 03</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<p>I am currently working as consultant for a mid-sized company in Europe, where my goal is to try to keep their old Django application alive (running Django 1.5.5).</p>
+
+<p><br /></p>
+
+<p>A few weeks ago, it became clear to me that the server running the application was down.
+Something wasn&rsquo;t working properly, and yet the logs were completely silent.</p>
+
+<p><br/></p>
+
+<p>So I said… well, there must be an <code>except: pass</code> somewhere and I started looking for it (so much for my Friday night…)</p>
+
+<p><br \></p>
+
+<p><img src="/images/the-code-review-that-never-happened/code.png" alt="screaming code" title="screaming code" /></p>
+
+<p>This code was running somewhere in production.</p>
+
+<p>So I just removed the comments and the code inside each block - everything else I left just as it was.</p>
+
+<p><br/></p>
+
+<p><em>So, let&rsquo;s imagine for a second that we went back 4 years (November 2013), and that my colleague, named <code>Charlie</code> (random name), had just made a PR to add this code to our codebase.</em></p>
+
+<h2 id="let-s-begin">Let&rsquo;s begin.</h2>
+
+<p>Hey Charlie, thanks for the PR.</p>
+
+<p>The code logic looks ok, but <strong>there are a few things that I would definitely change</strong>.</p>
+
+<h3 id="1-did-you-forget-the-docstring">1. Did you forget the docstring?</h3>
+
+<p>Charlie have you read <strong><a href="https://www.python.org/dev/peps/pep-0257/" target="_blank">this</a></strong>?</p>
+
+<p><br/></p>
+
+<p>I think it&rsquo;s always  <strong>good practice to add docstrings</strong>: to at least try to explain, even just briefly how your function behaves, and maybe also add something  about its parameters.</p>
+
+<p>It could be invaluable for your  colleagues or, indeed, anyone who is going to be working on the code in the future (&hellip;&hellip;.).</p>
+
+<p><br/></p>
+
+<p>The name of the function really does not tell us that much about the ‘story’ of your code.
+A general explanation about how your are <strong>dehydrating</strong> your data would be very much appreciated!</p>
+
+<h3 id="2-don-t-code-except-pass-code">2. Don&rsquo;t <code>except: pass</code></h3>
+
+<p>Charlie, I see from the PR that you worked on this very late in the evening&hellip;.. perhaps this explains it.</p>
+
+<p>Nonetheless, what were you trying to do with <strong>except: pass</strong></p>
+
+<p><strong>You are silently catching all the errors, without even logging them.</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">try</span>:
+    <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">except</span>:
+    <span style="color:#66d9ef">pass</span></code></pre></div>
+<p>Do you see?</p>
+
+<p>No error is raised, even if we are dividing by zero.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">try</span>:
+    <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>
+    CONSTANT <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    CONSTANT[<span style="color:#e6db74">&#34;DON-T-EXIST&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">except</span>:
+    <span style="color:#66d9ef">pass</span></code></pre></div>
+<p>Same goes here - you are silently catching every kind of exception.</p>
+
+<p>So please:</p>
+
+<ul>
+<li>remove <strong>pass</strong></li>
+<li>log this exception somehow, the <a href="logging module" target="_blank">https://docs.python.org/3/library/logging.html</a> is a good place to start.</li>
+<li><strong>be more specific about the exception you want to catch (check the example)</strong></li>
+<li>don&rsquo;t <strong>except: pass</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># example for Charlie</span>
+
+<span style="color:#f92672">import</span> logging
+
+log <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(__name__)
+
+<span style="color:#66d9ef">try</span>:
+    <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+    log<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Division by Zero&#34;</span>)
+
+Division by Zero</code></pre></div>
+<p>In any case - great job. Keep up the hard work.</p>
+
+<p><br /></p>
+
+<p>And, just in case you have forgotten: - please <em>don&rsquo;t except: pass</em>.</p>
+
+<p><br /></p>
+
+<p><em>Sincerely, your colleague and a future reader of your code.</em></p>
+
+<h2 id="takeaways-for-the-current-readers">Takeaways for the <em>current</em> readers</h2>
+
+<h3 id="1-code-reviews">1. Code Reviews</h3>
+
+<p>Do code reviews: - they are extremely useful, not only to pick up on bad practice.</p>
+
+<h3 id="2-docstrings">2. Docstrings</h3>
+
+<p>Use docstrings: - they will be extremely useful in the future.</p>
+
+<h3 id="3-catch-errors">3. Catch errors</h3>
+
+<p><code>Try/Except</code> is really powerful, but use it properly: - to catch specific errors and log them.</p>
+
+<h3 id="4-feedback">4. Feedback</h3>
+
+<p><strong>Proper</strong> feedback is fundamental if you want to grow, both in technical skills and in what are generally called <strong>soft skills</strong>.</p>
+
+<p>I say <strong>proper</strong> feedback, because feedback given in the wrong way is probably more harmful than not giving a feedback at all.</p>
+
+<p>If you want to know more about how to give proper feedback, here’s a good starting point: <a href="http://www.ustream.tv/recorded/102892183" target="_blank">http://www.ustream.tv/recorded/102892183</a></p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  <div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/python'>Python</a>, <a class='tag' href='/tags/try-except'>try except</a>, <a class='tag' href='/tags/logging'>Logging</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/let-me-introduce-slots/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Let me introduce: __slots__</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'>
+          <section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/barrachri' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/christianbarra' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/christianbarra' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section>
+          <div class='copyright'>
+  <p> &copy; 2015-2018 Christian Barra </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__public_path__='\/assets\/js\/'</script>
+
+<script src='/assets/js/main.68cb493a.js'></script>
+</body>
+
+</html>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slots on chrisbarra.xyz</title>
+    <link>http://chrisbarra.xyz/tags/slots/</link>
+    <description>Recent content in Slots on chrisbarra.xyz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chrisbarra.xyz/tags/slots/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let me introduce: __slots__</title>
+      <link>http://chrisbarra.xyz/posts/let-me-introduce-slots/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chrisbarra.xyz/posts/let-me-introduce-slots/</guid>
+      <description>Hey there!
+Today I&amp;rsquo;d like to talk about slots.
+The inspiration for this article comes from a blog post about Python data structures published by Dan Bader and the small iteration we then had on this gist to check their performances.
+For all the examples you are going to see I am using Python 3.6.2.
+So what are slots? slots are a different way to define the attributes storage for classes in Python.</description>
+    </item>
+    
+  </channel>
+</rss>
