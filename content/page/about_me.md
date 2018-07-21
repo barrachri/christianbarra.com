@@ -28,7 +28,7 @@ I often give presentations at conferences or meetups and you can find them on:
 - [my talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
 - or just look on YouTube.
 
-I am big advocate of the distributed and remote culture. Since 2013 I have been working, more or less, remotely with the big pros of meeting amazing people and explore the 🌍.
+I am big advocate of the distributed and remote culture. Since 2013 I have been working, more or less, remotely -- with the big pros of meeting amazing people and explore the 🌍.
 
 I am often around Europe, for conferences or to escape the winter, so follow me on [Twitter](https://twitter.com/christianbarra "@christianbarra") to find when I am in your city and we can meet up (I am serious about this!)
 
