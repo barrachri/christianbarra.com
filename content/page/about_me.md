@@ -7,52 +7,30 @@ weight: -210
 
 ![Christian Barra](/images/me_bw.jpg "Christian Barra")
 
+Hi there! My name is Christian and **I like to build things and share my knowledge**.
 
-Hi there! My name is Christian and I like to build things and share my knowledge.
-
-In the last years I worked as a consultant, software developer and data scientist.
-
-I am a proud Pythonista, [PSF Fellow](http://pyfound.blogspot.com/2018/06/ "Python Fellow") and I spent a big part of the last 5 years growing the Python Community in Europe. I have been a board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society"), core organizer of 4 editions of the  [EuroPython Conference](https://www.europython.eu "EuroPython Conference") and conference chair of [EuroPython 2017](https://ep2017.europython.eu/ "EuroPython 2017").
-
-Lately I started to be involved with the organization of [PyCon DE](https://de.pycon.org "PyCon DE").
-
-I often give presentations about different topics and you can find them on:
-
-- [speaker deck](https://speakerdeck.com/barrachri "Christian Barra speaker deck")
-- [talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
-- just look on YouTube.
-
-I have a lot of fun writing software and contributing to open source projects (check my [github account](https://github.com/barrachri "barrachri github account") if you want to know more).
-
-Currently I am focusing on these areas:
+In the last years I worked as a consultant, software developer and data scientist focusing on:
 
 - Machine/Statistical learning
 - Data engineering
 - Event-driven architecture using Python/Go
+- Open Source
 
-### Remote
+I am a proud [Pythonista](https://en.wiktionary.org/wiki/Pythonista "Pythonista") and [Python Software Foundation Fellow](http://pyfound.blogspot.com/2018/06/ "Python Fellow").
 
-I am big advocate of the distributed and remote culture.
-Starting from 2013 I have been working remotely, giving me a great chance to meet amazing people and explore the 🌍.
+A big part of my last 5 years were dedicated to growing the Python Community in Europe.
 
-These are the places where I have been so far:
+I have been a board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society"), core organizer of 4 editions of the [EuroPython Conference](https://www.europython.eu "EuroPython Conference") and conference chair of [EuroPython 2017](https://ep2017.europython.eu/ "EuroPython 2017").
 
-- 🇬🇧 🇮🇪 🇫🇷 🇪🇪 🇪🇸 🇵🇹 🇵🇱 🇧🇪 🇮🇸 🇩🇪 🇦🇹 🇨🇿 🇸🇰 🇷🇴 🇧🇬 🇭🇺 🇳🇴 🇸🇲 🇻🇦 🇹🇷
-- 🇰🇷 🇯🇵 🇹🇭 🇱🇦
-- 🇺🇸
-- 🇶🇦
-- 🇹🇳 🇲🇦
+I often give presentations at conferences or meetups and you can find them on:
 
-I am often around Europe, either for conferences or to escape the winter, so follow me on Twitter to find when I am in your city and we can meet up (I am serious about this!)
+- [my speaker deck](https://speakerdeck.com/barrachri "Christian Barra speaker deck")
+- [my talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
+- or just look on YouTube.
 
-### Teaching
+I am big advocate of the distributed and remote culture. Since 2013 I have been working, more or less, remotely with the big pros of meeting amazing people and explore the 🌍.
 
-Sharing your knowledge in an effective way, teaching people, mentor them correctly is a complex mix between science and art.
-
-And if you wonder where you can find the best practices my answer is:
-[Software Carpentry](https://software-carpentry.org/ "Software Carpentry") and [Data Carpentry](https://datacarpentry.org/ "Data Carpentry").
-
-This is why I decided to become a certified instructor.
+I am often around Europe, for conferences or to escape the winter, so follow me on [Twitter](https://twitter.com/christianbarra "@christianbarra") to find when I am in your city and we can meet up (I am serious about this!)
 
 ### My (side) projects
 
@@ -61,4 +39,4 @@ I am currently working on 2 side projects:
 - **[cassiny.io](https://www.cassiny.io)**: data related
 - **[pybootcamp.com](https://www.pybootcamp.com)**: teaching related
 
-They are definitively work in progress and they need more attention.
+They are in a constant work in progress state and they need more attention.
