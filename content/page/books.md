@@ -5,6 +5,10 @@ menu: main
 weight: -210
 ---
 
+## August 2018
+
+* Manage your day-to-day - Jocelyn K. Glei
+
 ## July 2018
 
 * Piccolo manuale di autodifesa verbale - Barbara Berckhan
