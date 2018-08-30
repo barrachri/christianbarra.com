@@ -7,6 +7,7 @@ weight: -210
 
 ## August 2018
 
+* Big Data, Big Dupe: A little book about a big bunch of nonsense - Stephen Few
 * Manage your day-to-day - Jocelyn K. Glei
 
 ## July 2018
