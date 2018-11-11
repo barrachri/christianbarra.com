@@ -1,6 +1,6 @@
 baseURL = "http://chrisbarra.xyz/"
 languageCode = "en-us"
-title = "chrisbarra.xyz"
+title = "Christian Barra"
 theme = "minimo"
 
 Paginate = 5
