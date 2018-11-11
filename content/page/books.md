@@ -5,8 +5,20 @@ menu: main
 weight: -210
 ---
 
+## October 2018
+
+* Microservices from Day One - Cloves Carneiro Jr. & Tim Schmelmer
+* Kubernetes Microservices with Docker - Deepak Vohra
+* Advanced Microservices - Thomas Hunter II
+
+## September 2018
+
+* Ask Measure Learn - Lutz Finger & Soumitra Dutta
+* Badass: Making Users Awesome - Kathy Sierra
+
 ## August 2018
 
+* Coders at Work - Peter Seibel
 * Big Data, Big Dupe: A little book about a big bunch of nonsense - Stephen Few
 * Manage your day-to-day - Jocelyn K. Glei
 
