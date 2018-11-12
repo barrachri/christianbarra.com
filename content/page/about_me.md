@@ -15,7 +15,7 @@ My focus is currently on:
 
 - Microservices and event-driven architecture
 - Machine/Statistical learning
-- Ops for microservices and ML
+- DevOps for microservices and ML
 - Data engineering
 
 I am a proud [Pythonista](https://en.wiktionary.org/wiki/Pythonista "Pythonista") and [Python Software Foundation Fellow](http://pyfound.blogspot.com/2018/06/ "Python Fellow").
