@@ -7,9 +7,14 @@ weight: -210
 
 ![Christian Barra](/images/me_bw.jpg "Christian Barra")
 
-Hi there! My name is Christian and I am Senior Software Engineer based in Berlin with a particular focus on:
+Hi there!
+
+My name is Christian and I am Senior Software Engineer based in Berlin.
+
+My daily focus is on:
 
 - Microservices and event-driven architecture
+- DevOps
 - Machine/Statistical learning
 - Data engineering
 
