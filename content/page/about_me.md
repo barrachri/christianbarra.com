@@ -9,7 +9,7 @@ weight: -210
 
 Hi there!
 
-My name is Christian and I am Senior Software Engineer based in Berlin where and I am organizing [PyCon DE 2019](https://de.pycon.org/ "PyCon DE 2019") and [berlin.python.pizza](https://berlin.python.pizza/ "Berlin Python Pizza").
+My name is Christian, I am a Senior Software Engineer based in Berlin where I am organizing [PyCon DE 2019](https://de.pycon.org/ "PyCon DE 2019") and [berlin.python.pizza](https://berlin.python.pizza/ "Berlin Python Pizza").
 
 My focus is currently on:
 
@@ -26,4 +26,4 @@ I like to give talks at conferences and meetups, you can find them on:
 
 - [my speaker deck](https://speakerdeck.com/barrachri "Christian Barra speaker deck")
 - [my talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
-- or just look on YouTube.
+- or just look on YouTube 📺
