@@ -20,7 +20,7 @@ My focus is currently on:
 
 I am a proud [Pythonista](https://en.wiktionary.org/wiki/Pythonista "Pythonista") and [Python Software Foundation Fellow](http://pyfound.blogspot.com/2018/06/ "Python Fellow").
 
-I was a board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society"), core organizer of 4 editions of the [EuroPython Conference](https://www.europython.eu "EuroPython Conference") and conference chair of [EuroPython 2017](https://ep2017.europython.eu/ "EuroPython 2017").
+During the 2015-2018 period I had the opportunity the help the Python Community in Europe as a board member of the [EuroPython Society](http://www.europython-society.org/about "EuroPython Society"), core organizer of 4 editions of the [EuroPython Conference](https://www.europython.eu "EuroPython Conference") and conference chair of [EuroPython 2017](https://ep2017.europython.eu/ "EuroPython 2017").
 
 I like to give talks at conferences and meetups, you can find them on:
 
