@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>True on Christian Barra</title>
-    <link>http://chrisbarra.xyz/true/</link>
+    <link>https://chrisbarra.xyz/true/</link>
     <description>Recent content in True on Christian Barra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://chrisbarra.xyz/true/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chrisbarra.xyz/true/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

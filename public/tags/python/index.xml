@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Christian Barra</title>
-    <link>http://chrisbarra.xyz/tags/python/</link>
+    <link>https://chrisbarra.xyz/tags/python/</link>
     <description>Recent content in Python on Christian Barra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://chrisbarra.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chrisbarra.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The code review that never happened</title>
-      <link>http://chrisbarra.xyz/posts/the-code-review-that-never-happened/</link>
+      <link>https://chrisbarra.xyz/posts/the-code-review-that-never-happened/</link>
       <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/posts/the-code-review-that-never-happened/</guid>
+      <guid>https://chrisbarra.xyz/posts/the-code-review-that-never-happened/</guid>
       <description>I am currently working as consultant for a mid-sized company in Europe, where my goal is to try to keep their old Django application alive (running Django 1.5.5).
 
 A few weeks ago, it became clear to me that the server running the application was down. Something wasn&amp;rsquo;t working properly, and yet the logs were completely silent.
@@ -26,10 +26,10 @@ So I said… well, there must be an except: pass somewhere and I started looking
     
     <item>
       <title>Let me introduce: __slots__</title>
-      <link>http://chrisbarra.xyz/posts/let-me-introduce-slots/</link>
+      <link>https://chrisbarra.xyz/posts/let-me-introduce-slots/</link>
       <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/posts/let-me-introduce-slots/</guid>
+      <guid>https://chrisbarra.xyz/posts/let-me-introduce-slots/</guid>
       <description>Hey there!
 Today I&amp;rsquo;d like to talk about slots.
 The inspiration for this article comes from a blog post about Python data structures published by Dan Bader and the small iteration we then had on this gist to check their performances.
@@ -39,10 +39,10 @@ So what are slots? slots are a different way to define the attributes storage fo
     
     <item>
       <title>My to-watch-list from EuroPython 2017</title>
-      <link>http://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</link>
+      <link>https://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</link>
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</guid>
+      <guid>https://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</guid>
       <description>So EuroPython 2017 is over!
 It&amp;rsquo;s been a tough mission to organize the #EuroPython this year but again it was an amazing experience.
 A special thank goes to all the people that have participated in organizing the conference: EuroPython Team.
@@ -52,10 +52,10 @@ This is my to-watch-list for EuroPython 2017, probably you can end up with somet
     
     <item>
       <title>Classes, instances and attributes in Python</title>
-      <link>http://chrisbarra.xyz/posts/classes-instances-and-attributes-in-python/</link>
+      <link>https://chrisbarra.xyz/posts/classes-instances-and-attributes-in-python/</link>
       <pubDate>Sat, 09 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/posts/classes-instances-and-attributes-in-python/</guid>
+      <guid>https://chrisbarra.xyz/posts/classes-instances-and-attributes-in-python/</guid>
       <description>Some days ago I got a simple question.
 class A(): x = 1 a = A() b = A() b.x = 11 a.x # ? My answer was wrong but it was the good occasion to pick some books and the reference docs back and spend some hours with the concepts behind: classes, instances, attributes and namespaces.
 All the things you are going to read are related to Python 3.</description>
@@ -63,10 +63,10 @@ All the things you are going to read are related to Python 3.</description>
     
     <item>
       <title>How to start with Python and some useful resources</title>
-      <link>http://chrisbarra.xyz/posts/how-to-start-with-python-and-some-useful-resources/</link>
+      <link>https://chrisbarra.xyz/posts/how-to-start-with-python-and-some-useful-resources/</link>
       <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/posts/how-to-start-with-python-and-some-useful-resources/</guid>
+      <guid>https://chrisbarra.xyz/posts/how-to-start-with-python-and-some-useful-resources/</guid>
       <description>Python is an awesome language, simple, explicit, readable and powerful.
 I spent a lot of time wondering about how to start learning Python, which resources use and what books I should buy.
 After this and some money spent on books I want to share my experience:

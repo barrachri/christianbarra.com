@@ -3,158 +3,158 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://chrisbarra.xyz/</loc>
+    <loc>https://chrisbarra.xyz/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/page/about_me/</loc>
+    <loc>https://chrisbarra.xyz/page/about_me/</loc>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/page/now/</loc>
+    <loc>https://chrisbarra.xyz/page/now/</loc>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/page/books/</loc>
+    <loc>https://chrisbarra.xyz/page/books/</loc>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/the-code-review-that-never-happened/</loc>
+    <loc>https://chrisbarra.xyz/posts/the-code-review-that-never-happened/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/let-me-introduce-slots/</loc>
+    <loc>https://chrisbarra.xyz/posts/let-me-introduce-slots/</loc>
     <lastmod>2017-09-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</loc>
+    <loc>https://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</loc>
     <lastmod>2017-07-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/classes-instances-and-attributes-in-python/</loc>
+    <loc>https://chrisbarra.xyz/posts/classes-instances-and-attributes-in-python/</loc>
     <lastmod>2016-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/docker-orchestration/</loc>
+    <loc>https://chrisbarra.xyz/posts/docker-orchestration/</loc>
     <lastmod>2015-02-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/how-to-start-with-python-and-some-useful-resources/</loc>
+    <loc>https://chrisbarra.xyz/posts/how-to-start-with-python-and-some-useful-resources/</loc>
     <lastmod>2014-06-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/no-country-for-young-men/</loc>
+    <loc>https://chrisbarra.xyz/posts/no-country-for-young-men/</loc>
     <lastmod>2014-05-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/why-startup-quote-api-and-docker/</loc>
+    <loc>https://chrisbarra.xyz/posts/why-startup-quote-api-and-docker/</loc>
     <lastmod>2014-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/classes/</loc>
+    <loc>https://chrisbarra.xyz/tags/classes/</loc>
     <lastmod>2017-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/data-structure/</loc>
+    <loc>https://chrisbarra.xyz/tags/data-structure/</loc>
     <lastmod>2017-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/docker/</loc>
+    <loc>https://chrisbarra.xyz/tags/docker/</loc>
     <lastmod>2015-02-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/europython/</loc>
+    <loc>https://chrisbarra.xyz/tags/europython/</loc>
     <lastmod>2017-07-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/flask/</loc>
+    <loc>https://chrisbarra.xyz/tags/flask/</loc>
     <lastmod>2015-02-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/italy/</loc>
+    <loc>https://chrisbarra.xyz/tags/italy/</loc>
     <lastmod>2014-05-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/logging/</loc>
+    <loc>https://chrisbarra.xyz/tags/logging/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/page/</loc>
+    <loc>https://chrisbarra.xyz/page/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/posts/</loc>
+    <loc>https://chrisbarra.xyz/posts/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/python/</loc>
+    <loc>https://chrisbarra.xyz/tags/python/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/slots/</loc>
+    <loc>https://chrisbarra.xyz/tags/slots/</loc>
     <lastmod>2017-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/startup/</loc>
+    <loc>https://chrisbarra.xyz/tags/startup/</loc>
     <lastmod>2014-04-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/statistics/</loc>
+    <loc>https://chrisbarra.xyz/tags/statistics/</loc>
     <lastmod>2014-05-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/</loc>
+    <loc>https://chrisbarra.xyz/tags/</loc>
     <lastmod>2017-09-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/talks/</loc>
+    <loc>https://chrisbarra.xyz/tags/talks/</loc>
     <lastmod>2017-07-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/true/</loc>
+    <loc>https://chrisbarra.xyz/true/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/try-except/</loc>
+    <loc>https://chrisbarra.xyz/tags/try-except/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

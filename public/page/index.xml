@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Christian Barra</title>
-    <link>http://chrisbarra.xyz/page/</link>
+    <link>https://chrisbarra.xyz/page/</link>
     <description>Recent content in Pages on Christian Barra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://chrisbarra.xyz/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chrisbarra.xyz/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About Me</title>
-      <link>http://chrisbarra.xyz/page/about_me/</link>
+      <link>https://chrisbarra.xyz/page/about_me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/page/about_me/</guid>
+      <guid>https://chrisbarra.xyz/page/about_me/</guid>
       <description>Hi there!
 My name is Christian, I am a Senior Software Engineer based in Berlin where I am organizing PyCon DE 2019 and berlin.python.pizza.
  Looking for a consultant or you want to have a course about Python? I&amp;rsquo;ll be happy to have a chat about
@@ -25,23 +25,22 @@ My name is Christian, I am a Senior Software Engineer based in Berlin where I am
     
     <item>
       <title>Now</title>
-      <link>http://chrisbarra.xyz/page/now/</link>
+      <link>https://chrisbarra.xyz/page/now/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/page/now/</guid>
-      <description>I am living in Berlin, Germany.
-Although Berlin is a crazy city I really like it.
-The long term plan is to spend 8-9 months here and escape the winter in a warmer place, somewhere in the south of Europe.
-One of the main reasons to settle down here in Berlin was to relax and have more focused time.
+      <guid>https://chrisbarra.xyz/page/now/</guid>
+      <description>I am living in Berlin (Germany) and although is a crazy city I really, really like it.
+The long term plan is to spend 8-9 months here and escape the winter in a warmer place, somewhere in Southern Europe.
+One of the main reasons to settle down in Berlin was to have more focused time and have less moving around hustle.
 I have 3 main areas of focus (yes&amp;hellip;they are interrelated):</description>
     </item>
     
     <item>
       <title>Books</title>
-      <link>http://chrisbarra.xyz/page/books/</link>
+      <link>https://chrisbarra.xyz/page/books/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/page/books/</guid>
+      <guid>https://chrisbarra.xyz/page/books/</guid>
       <description>November 2018  Scrum and XP from the Trenches (2nd Edition) - Henrik Kniberg  October 2018  Microservices from Day One - Cloves Carneiro Jr. &amp;amp; Tim Schmelmer Kubernetes Microservices with Docker - Deepak Vohra Advanced Microservices - Thomas Hunter II  September 2018  Ask Measure Learn - Lutz Finger &amp;amp; Soumitra Dutta Badass: Making Users Awesome - Kathy Sierra  August 2018  Coders at Work - Peter Seibel Big Data, Big Dupe: A little book about a big bunch of nonsense - Stephen Few Manage your day-to-day - Jocelyn K.</description>
     </item>
     

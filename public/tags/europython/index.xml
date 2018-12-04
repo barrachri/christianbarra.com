@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Europython on Christian Barra</title>
-    <link>http://chrisbarra.xyz/tags/europython/</link>
+    <link>https://chrisbarra.xyz/tags/europython/</link>
     <description>Recent content in Europython on Christian Barra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://chrisbarra.xyz/tags/europython/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chrisbarra.xyz/tags/europython/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My to-watch-list from EuroPython 2017</title>
-      <link>http://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</link>
+      <link>https://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</link>
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</guid>
+      <guid>https://chrisbarra.xyz/posts/my-to-watch-list-from-europython-2017/</guid>
       <description>So EuroPython 2017 is over!
 It&amp;rsquo;s been a tough mission to organize the #EuroPython this year but again it was an amazing experience.
 A special thank goes to all the people that have participated in organizing the conference: EuroPython Team.
