@@ -18,9 +18,22 @@
       <guid>http://chrisbarra.xyz/page/about_me/</guid>
       <description>Hi there!
 My name is Christian, I am a Senior Software Engineer based in Berlin where I am organizing PyCon DE 2019 and berlin.python.pizza.
-My focus is currently on:
- Microservices and event-driven architecture Machine/Statistical learning DevOps for microservices and machine learning Data engineering  I am a proud Pythonista and Python Software Foundation Fellow.
-During the 2015-2018 period I had the opportunity the help the Python Community in Europe as a board member of the EuroPython Society, core organizer of 4 editions of the EuroPython Conference and conference chair of EuroPython 2017.</description>
+ Looking for a consultant or you want to have a course about Python? I&amp;rsquo;ll be happy to have a chat about
+ My focus is currently on:
+ Microservices and event-driven architecture Machine/Statistical learning DevOps for microservices and machine learning Data engineering  I am a proud Pythonista and Python Software Foundation Fellow.</description>
+    </item>
+    
+    <item>
+      <title>Now</title>
+      <link>http://chrisbarra.xyz/page/now/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://chrisbarra.xyz/page/now/</guid>
+      <description>I am living in Berlin, Germany.
+Although Berlin is a crazy city I really like it.
+The long term plan is to spend 8-9 months here and escape the winter in a warmer place, somewhere in the south of Europe.
+One of the main reasons to settle down here in Berlin was to relax and have more focused time.
+I have 3 main areas of focus (yes&amp;hellip;they are interrelated):</description>
     </item>
     
     <item>
@@ -29,7 +42,7 @@ During the 2015-2018 period I had the opportunity the help the Python Community 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://chrisbarra.xyz/page/books/</guid>
-      <description>October 2018  Microservices from Day One - Cloves Carneiro Jr. &amp;amp; Tim Schmelmer Kubernetes Microservices with Docker - Deepak Vohra Advanced Microservices - Thomas Hunter II  September 2018  Ask Measure Learn - Lutz Finger &amp;amp; Soumitra Dutta Badass: Making Users Awesome - Kathy Sierra  August 2018  Coders at Work - Peter Seibel Big Data, Big Dupe: A little book about a big bunch of nonsense - Stephen Few Manage your day-to-day - Jocelyn K.</description>
+      <description>November 2018  Scrum and XP from the Trenches (2nd Edition) - Henrik Kniberg  October 2018  Microservices from Day One - Cloves Carneiro Jr. &amp;amp; Tim Schmelmer Kubernetes Microservices with Docker - Deepak Vohra Advanced Microservices - Thomas Hunter II  September 2018  Ask Measure Learn - Lutz Finger &amp;amp; Soumitra Dutta Badass: Making Users Awesome - Kathy Sierra  August 2018  Coders at Work - Peter Seibel Big Data, Big Dupe: A little book about a big bunch of nonsense - Stephen Few Manage your day-to-day - Jocelyn K.</description>
     </item>
     
   </channel>
