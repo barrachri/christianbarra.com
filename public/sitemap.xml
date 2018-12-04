@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://chrisbarra.xyz/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -17,16 +17,6 @@
   
   <url>
     <loc>http://chrisbarra.xyz/page/books/</loc>
-  </url>
-  
-  <url>
-    <loc>http://chrisbarra.xyz/posts/about-on-boarding-new-team-members/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chrisbarra.xyz/posts/how-to-reverse-list-in-python/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -106,20 +96,8 @@
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/leading/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://chrisbarra.xyz/tags/logging/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://chrisbarra.xyz/tags/onboarding/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -130,7 +108,7 @@
   
   <url>
     <loc>http://chrisbarra.xyz/posts/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-11-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -171,12 +149,6 @@
   </url>
   
   <url>
-    <loc>http://chrisbarra.xyz/tags/teams/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://chrisbarra.xyz/true/</loc>
     <priority>0</priority>
   </url>
@@ -184,12 +156,6 @@
   <url>
     <loc>http://chrisbarra.xyz/tags/try-except/</loc>
     <lastmod>2017-11-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://chrisbarra.xyz/tags/wow-experience/</loc>
-    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

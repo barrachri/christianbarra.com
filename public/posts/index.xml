@@ -6,33 +6,10 @@
     <description>Recent content in Posts on Christian Barra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://chrisbarra.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About on boarding new team members</title>
-      <link>http://chrisbarra.xyz/posts/about-on-boarding-new-team-members/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chrisbarra.xyz/posts/about-on-boarding-new-team-members/</guid>
-      <description>Why you need to care about on-boarding 2.  So EuroPython 2017 is over!
-It&amp;rsquo;s been a tough mission to organize the #EuroPython this year but again it was an amazing experience.
-A special thank goes to all the people that have participated in organizing the conference: EuroPython Team.
-This is my to-watch-list for EuroPython 2017, probably you can end up with something different, in case you wonder talks are randomly ordered.</description>
-    </item>
-    
-    <item>
-      <title>How to reverse a list in Python</title>
-      <link>http://chrisbarra.xyz/posts/how-to-reverse-list-in-python/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chrisbarra.xyz/posts/how-to-reverse-list-in-python/</guid>
-      <description>How to reverse a list using the square brackets notation with #Python? #europython pic.twitter.com/4C4i9LWv1r
-&amp;mdash; Christian Barra (@christianbarra) July 25, 2018  
-In a fast-paced and ever-changing environment like Booking.com, it’s crucial to make sure new employees are onboarded in the right way. That becomes even more vital in Tech, our fastest hiring department. With offices around the world, how do we create an effective onboarding programme that helps each new hire do their best work?</description>
-    </item>
     
     <item>
       <title>The code review that never happened</title>
