@@ -19,7 +19,7 @@ I have 3 main areas of focus (yes...they are interrelated):
 
 ### Polyniq
 
-[Polyniq](https://www.polinyq.com) (polynomial uniqueness) is SaaS I am working on, with the goal of providing recommendation and personalisation of contents/products and more generally of the user experience.
+[Polyniq](https://www.polyniq.com) (polynomial uniqueness) is SaaS I am working on, with the goal of providing recommendation and personalisation of contents/products and more generally of the user experience.
 
 ### Python
 
@@ -40,4 +40,4 @@ I really like to imagine Berlin as one of the main Python hubs in Europe (commun
 
 This page is inspired by [Derek Sivers’s Now Page Movement](https://nownownow.com/about).
 
-Updated December 4th 2018, from Berlin, Germany
+Updated December 4th 2018, from Berlin (Germany).
