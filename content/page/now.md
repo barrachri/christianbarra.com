@@ -13,13 +13,13 @@ One of the main reasons to settle down in Berlin was to have more focused time a
 
 I have 3 main areas of focus (yes...they are interrelated):
 
-    - Polyniq
+    - polyniq
     - Python
     - Skills
 
-### Polyniq
+### polyniq
 
-[Polyniq](https://www.polyniq.com) (polynomial uniqueness) is SaaS I am working on, with the goal of providing recommendation and personalisation of contents/products and more generally of the user experience.
+[polyniq](https://www.polyniq.com) (polynomial uniqueness) is SaaS I am working on, with the goal of providing recommendation and personalisation of contents/products and more generally of the user experience.
 
 ### Python
 
