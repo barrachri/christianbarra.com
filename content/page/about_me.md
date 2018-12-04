@@ -11,6 +11,9 @@ Hi there!
 
 My name is Christian, I am a Senior Software Engineer based in Berlin where I am organizing [PyCon DE 2019](https://de.pycon.org/ "PyCon DE 2019") and [berlin.python.pizza](https://berlin.python.pizza/ "Berlin Python Pizza").
 
+> Looking for a consultant or you want to have a course about Python? I'll be happy to have a chat about
+>
+
 My focus is currently on:
 
 - Microservices and event-driven architecture

@@ -2,8 +2,12 @@
 title: Books
 description: Wondering what I am reading?
 menu: main
-weight: -210
+weight: -200
 ---
+
+## November 2018
+
+* Scrum and XP from the Trenches (2nd Edition) - Henrik Kniberg
 
 ## October 2018
 
