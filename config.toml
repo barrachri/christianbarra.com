@@ -1,4 +1,4 @@
-baseURL = "http://chrisbarra.xyz/"
+baseURL = "https://chrisbarra.xyz/"
 languageCode = "en-us"
 title = "Christian Barra"
 theme = "minimo"
