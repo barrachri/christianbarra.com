@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>List</title>
+      <link>https://chrisbarra.xyz/tags/list/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://chrisbarra.xyz/tags/list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Logging</title>
       <link>https://chrisbarra.xyz/tags/logging/</link>
       <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
@@ -77,9 +86,18 @@
     <item>
       <title>Python</title>
       <link>https://chrisbarra.xyz/tags/python/</link>
-      <pubDate>Fri, 03 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://chrisbarra.xyz/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slice</title>
+      <link>https://chrisbarra.xyz/tags/slice/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://chrisbarra.xyz/tags/slice/</guid>
       <description></description>
     </item>
     
@@ -116,6 +134,15 @@
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://chrisbarra.xyz/tags/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips&amp;tricks</title>
+      <link>https://chrisbarra.xyz/tags/tipstricks/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://chrisbarra.xyz/tags/tipstricks/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,23 @@
     <description>Recent content in Python on Christian Barra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chrisbarra.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to reverse a list in Python</title>
+      <link>https://chrisbarra.xyz/posts/how-to-reverse-list-in-python/</link>
+      <pubDate>Wed, 05 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://chrisbarra.xyz/posts/how-to-reverse-list-in-python/</guid>
+      <description>How to reverse a list using the square brackets notation with #Python? #europython pic.twitter.com/4C4i9LWv1r
+&amp;mdash; Christian Barra (@christianbarra) July 25, 2018  
+Reversing a list in Python is really, really easy.
+This doesn&amp;rsquo;t apply only to list but to sequence in general (string and tuple for example).
+msg = &amp;#34;hello there&amp;#34; print(msg[::-1]) # ereht olleh my_tuple = (1, 2, 3) print(my_tuple[::-1]) # (3, 2, 1) The secret behind this magic?</description>
+    </item>
     
     <item>
       <title>The code review that never happened</title>
