@@ -5,9 +5,14 @@ menu: main
 weight: -200
 ---
 
+## December 2018
+
+* Choosing and Using Statistics: A Biologist’s Guide - Calvin Dytham
+
 ## November 2018
 
 * Scrum and XP from the Trenches (2nd Edition) - Henrik Kniberg
+* Getting Real - 􏰌􏰍􏰎􏰃􏰅􏰄􏰈􏰉􏰎􏰌􏰍􏰎􏰃􏰅􏰄􏰈􏰉􏰎37signals (Basecamp)􏰁􏰂􏰂􏰃􏰄􏰅
 
 ## October 2018
 
