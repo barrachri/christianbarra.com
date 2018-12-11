@@ -12,7 +12,7 @@ weight: -200
 ## November 2018
 
 * Scrum and XP from the Trenches (2nd Edition) - Henrik Kniberg
-* Getting Real - 􏰌􏰍􏰎􏰃􏰅􏰄􏰈􏰉􏰎􏰌􏰍􏰎􏰃􏰅􏰄􏰈􏰉􏰎37signals (Basecamp)􏰁􏰂􏰂􏰃􏰄􏰅
+* Getting Real - 37signals (Basecamp)
 
 ## October 2018
 
