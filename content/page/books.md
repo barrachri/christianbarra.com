@@ -7,6 +7,7 @@ weight: -200
 
 ## December 2018
 
+* A Philosophy of Software Design - John Ousterhout
 * Choosing and Using Statistics: A Biologist’s Guide - Calvin Dytham
 
 ## November 2018
