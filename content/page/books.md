@@ -5,6 +5,10 @@ menu: main
 weight: -200
 ---
 
+## Janury 2019
+
+* Love signals - David Givens
+
 ## December 2018
 
 * A Philosophy of Software Design - John Ousterhout

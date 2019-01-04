@@ -16,6 +16,7 @@ After this and some money spent on books I want to share my experience:
 First of all there’s a lot of free resources so I think it is not useful to invest too much money on books or other things.
 
 # To start
+
 There's a lot of interesting Python online courses, they don't talk about every aspect of Python but they are a good starting point.
 
 **Remember to start with Python 3 !**
