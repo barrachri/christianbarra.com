@@ -25,7 +25,7 @@ for key, value in first_dictionary.items():
 
 But do you know which kind of object is returned?
 
-They all return a special object, called [view](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects).
+They all return a special object called [view](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects).
 
 Why are __views__ useful?
 
