@@ -11,7 +11,7 @@ weight: -200
 * Turning Pro - Steven Pressfield
 * Accelaerate -  Nicole Forsgren & Jez Humble & Gene Kim
 
-## Janury 2019
+## January 2019
 
 * Love signals - David Givens
 
