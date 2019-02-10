@@ -5,6 +5,12 @@ menu: main
 weight: -200
 ---
 
+## February 2019
+
+* Story driven - Bernadette Jiwa
+* Turning Pro - Steven Pressfield
+* Accelaerate -  Nicole Forsgren & Jez Humble & Gene Kim
+
 ## Janury 2019
 
 * Love signals - David Givens
