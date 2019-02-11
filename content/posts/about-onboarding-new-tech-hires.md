@@ -102,12 +102,12 @@ In many companies is just a matter of creating a new ticket/task.
 
 #### Having milestones and a task list for each day
 
-Sharing the onboarding plan beforehand is extremely useful and doesn't require too much time:
+Sharing the onboarding plan beforehand with the hire is extremely useful and doesn't require too much time:
 
 ```
 Hi Matteo,
 
-I am really happy you will join Z and PIPitRight team!
+I am really happy you will join Z and the PIPitRight team!
 
 I am Luzia and I will be your buddy for the first 2 weeks.
 
@@ -115,7 +115,7 @@ We will pair together a couple of times during these weeks and I will introduce 
 
 The goal for the 2 weeks is to fix an unclosed socket error, a bug that is afflicting a production service and to release the fix to prod. (ISSUE #4343).
 
-It's going to be a lot of fun, can't wait for that!
+It's going to be a lot of fun, I can't wait for that!
 
 Best,
 Luzia
