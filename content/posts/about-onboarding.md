@@ -119,7 +119,7 @@ Best,
 Luzia
 ```
 
-My appraoch is to avoid overwhelming a new hire and properly manage the cognitive load, with a small and focused scope that would increase during time.
+My approach is to avoid overwhelming a new hire and properly manage the cognitive load, with a small and focused scope that would increase during time.
 
 For example having a 360 degrees and deep overview of the tech stack and infrastructure of the Z company is probably useless and a waste of time at the beginning.
 
