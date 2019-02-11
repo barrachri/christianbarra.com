@@ -107,7 +107,7 @@ Sharing the onboarding plan beforehand with the hire is extremely useful and doe
 ```
 Hi Matteo,
 
-I am really happy you will join Z and the PIPitRight team!
+I am really happy you will the PIPitRight team!
 
 I am Luzia and I will be your buddy for the first 2 weeks.
 
@@ -125,7 +125,7 @@ Luzia
 
 My approach is to avoid overwhelming a new hire and properly manage the cognitive load, with a small and focused scope that would increase during time.
 
-For example having a 360 degrees and deep overview of the tech stack and infrastructure of the Z company is probably useless and a waste of time at the beginning.
+For example having a 360 degrees and deep overview of the tech stack and infrastructure is probably useless and a waste of time at the beginning.
 
 Try to divide the learning process in small chunks, if it's not really needed to  achieve the goal/s, it could probably wait, as understanding the entire architecture of your system is not really important at this stage.
 
