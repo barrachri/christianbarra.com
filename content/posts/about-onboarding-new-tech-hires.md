@@ -28,7 +28,7 @@ You spent around a month, during a long (and maybe painful) process, aren't we d
 
 - First impression matters, this is why onboarding is fundamental.
 
-- Giving your new employees an amazing experience is generally better than providing an average or bad experience, so why wondering at all?
+- Giving your new employees an amazing experience is generally better than providing an average or bad experience, so why wonder at all?
 
 __And above all it will show that they are important__.
 
