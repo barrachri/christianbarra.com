@@ -13,7 +13,7 @@ weight: -200
 
 * Story driven - Bernadette Jiwa
 * Turning Pro - Steven Pressfield
-* Accelaerate -  Nicole Forsgren & Jez Humble & Gene Kim
+* Accelerate -  Nicole Forsgren & Jez Humble & Gene Kim
 
 ## January 2019
 
