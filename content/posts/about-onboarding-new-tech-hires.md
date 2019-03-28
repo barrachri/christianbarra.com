@@ -75,7 +75,7 @@ I personally find really important (and often disturbing when it doesn't happen)
 
 The buddy (or a team lead/engineering manager) should introduce the new hire with an email or a message on slack for example.
 
-If your team as regular meetings announcing it there is also fine.
+If your team has regular meetings announcing it there is also fine.
 
 ```
 Hello PIPitRight Team!
