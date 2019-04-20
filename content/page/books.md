@@ -5,19 +5,15 @@ menu: main
 weight: -200
 ---
 
-## March 2019
+I am an avid reader, ideally I would like to read 52 books each year, one for each week.
 
-* Building Social Business - Muhammad Yunus
+## 2019
 
-## February 2019
-
-* Story driven - Bernadette Jiwa
-* Turning Pro - Steven Pressfield
-* Accelerate -  Nicole Forsgren & Jez Humble & Gene Kim
-
-## January 2019
-
-* Love signals - David Givens
+1. Social Business - Muhammad Yunus
+1. Story driven - Bernadette Jiwa
+1. Turning Pro - Steven Pressfield
+1. Accelerate -  Nicole Forsgren & Jez Humble & Gene Kim
+1. Love signals - David Givens
 
 ## 2018
 

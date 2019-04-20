@@ -9,14 +9,16 @@ weight: -210
 
 Hi there!
 
-My name is Christian Barra, I am a Senior Software Engineer based in Berlin where I am organizing a couple of things related to Python:
+My name is Christian Barra, I am a Senior Software Engineer working at [infarm](https://www.infarm.com), I am based in Berlin where I am organizing a couple of things related to Python:
 
 - [PyCon DE & PyData Berlin 2019](https://de.pycon.org/ "PyCon DE & PyData Berlin 2019")
-- [PyBerlin meetup](https://www.meetup.com/ "PyBerlin")
-- [berlin.python.pizza](https://berlin.python.pizza/ "Berlin Python Pizza").
+- [PyBerlin meetup](https://www.meetup.com/PyBerlin/ "PyBerlin")
+- [berlin.python.pizza](https://berlin.python.pizza/ "Berlin Python Pizza")
 
 > Looking for a consultant or you want to have a course about Python?
 > I'll be happy to have a chat about it :)
+
+You can find me on twitter, github, linkedin and my email is barrachri AT gmail DOT com
 
 My focus is currently on:
 
@@ -33,7 +35,7 @@ During the 2015-2018 period I had the opportunity the help the Python Community 
 
 ### 2019
 
-##### Kubernetes 101 for Python Developer
+##### Kubernetes 101 for Python Developers
 
 - 🇸🇰 PyCon CZ
 
@@ -42,24 +44,36 @@ During the 2015-2018 period I had the opportunity the help the Python Community 
 - 🇸🇰 PyCon CZ
 - 🇮🇹 PyCon Italia
 
-##### Let's talk about MLOps
+##### [Let's talk about MLOps](https://github.com/barrachri/Talks/tree/master/mlops)
 
 - 🇸🇮 PyCon SK
 
-##### Not just a Developer
+##### [Not just a Developer](http://www.google.com)
 
 - 🇺🇦 PyCon Odessa
 
 ### 2018
 
+##### [Scaling your data infrastructure](https://speakerdeck.com/barrachri/scaling-your-data-infrastructure)
+
+- 🇮🇹 PyCon Italia
+
 ### 2017
 
 ### 2016
 
+##### [Introduction to statistics with Python](https://speakerdeck.com/barrachri/introduction-to-statistics-with-python)
+
+- 🇮🇹 PyCon Italia
+
+##### [How to fight with yourself and win](https://speakerdeck.com/barrachri/how-to-fight-with-yourself-and-win)
+
+- 🇮🇹 PyCon Italia
+
 ### 2015
 
-I like to give talks at conferences and meetups, you can find them on:
+### 2014
 
-- [my speaker deck](https://speakerdeck.com/barrachri "Christian Barra speaker deck")
-- [my talks repository](https://github.com/barrachri/Talks "Christian Barra github account")
-- or just look on YouTube 📺
+##### [Django & Docker](https://speakerdeck.com/barrachri/django-and-docker)
+
+- 🇮🇹 Django Village
