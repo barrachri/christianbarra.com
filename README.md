@@ -1,4 +1,3 @@
-# chrisbarra.xyz website
+# christianbarra.com website
 
-1. hugo
-2. firebase deploy
+My personal website based on hugo and hosted on netlify.
