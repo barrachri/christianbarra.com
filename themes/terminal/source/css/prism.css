@@ -8,7 +8,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 code[class*="language-"],
 pre[class*="language-"] {
-	background: none;
+	background: #f5f2f0;
 	font-family: inherit, monospace;
 	text-align: left;
 	white-space: pre;
