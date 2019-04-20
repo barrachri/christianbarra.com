@@ -1,100 +1,41 @@
-baseURL = "https://chrisbarra.xyz/"
-languageCode = "en-us"
-title = "Christian Barra"
-theme = "minimo"
-
 baseurl = "/"
-paginate = 25
-
-Paginate = 5
-preserveTaxonomyNames = true
-
-googleAnalytics = "UA-41799543-1"
-
-enableRobotsTXT = true # generate robots.txt
-
-# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
-pygmentsCodefences = true
-
-enableEmoji = true
-
-# Missing translations will default to this content language
-defaultContentLanguage = "en"
-
-[params.info]
-title404 = "Nothing's here!"
-
-[params.copyright]
-prefix = ""
-holder = "Christian Barra"
-startYear = "2015"
-suffix = ""
-
-[params.settings]
-# date & time format: https://golang.org/pkg/time/
-dateFormat = "2006, Jan 02"
-listDateFormat = "2006, Jan 02"
-archiveDateFormat = "Jan 02"
-hideEntryNavigation = ["page"] # boolean / array of sections
-showReadingTime = true
-taxonomyCloudShuffle = true
-accentColor = "#ffcd00"
-hideMainMenu = false
-
-[params.widgets]
-homepage = ["recent_posts"]
-footer = ["social_menu"]
-
-[params.opengraph.twitter]
-page = "" # Twitter page username
-
-[params.seo]
-# Title Separator: - – — · • * ⋆ | ~ « » < >
-titleSeparator = "•"
-
-[params.social]
-github = "barrachri"
-linkedin = "christianbarra"
-twitter = "christianbarra"
-
-[params.comments]
-enable = false
-
-[taxonomies]
-tag = "tags"
-
-canonifyURLs = true
-
-[permalinks]
-post = "/blog/:slug/"
-
-[blackfriday]
-hrefTargetBlank = true
+languageCode = "en-us"
+theme = "terminal"
+paginate = 5
 
 [params]
-# dir name of your blog content (default is `content/posts`)
-contentTypeName = "posts"
-# ["orange", "blue", "red", "green", "pink"]
-themeColor = "red"
-# if you set this to 0, only submenu trigger will be visible
-showMenuItems = 4
-# set theme to full screen width
-fullWidthTheme = false
-# center theme with default width
-centerTheme = false
-# set a custom favicon (default is a `themeColor` square)
-# favicon = "favicon.ico"
+  # dir name of your blog content (default is `content/posts`)
+  contentTypeName = "posts"
+  # ["orange", "blue", "red", "green", "pink"]
+  themeColor = "red"
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 10
+  # set theme to full screen width
+  fullWidthTheme = false
+  # center theme with default width
+  centerTheme = true
+  # set a custom favicon (default is a `themeColor` square)
+  favicon = "favicon.ico"
 
 [languages]
-[languages.en]
-title = "Terminal"
-subtitle = "A simple, retro theme for Hugo"
-keywords = ""
-copyright = ""
-menuMore = "Show more"
-readMore = "Read more"
-readOtherPosts = "Read other posts"
+  [languages.en]
+    title = "Terminal"
+    subtitle = "A simple, retro theme for Hugo"
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
 
-[languages.en.params.logo]
-logoText = "Christian Barra"
-logoHomeLink = "/"
+    [languages.en.params.logo]
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About Me"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "showcase"
+        name = "Showcase"
+        url = "/showcase"
