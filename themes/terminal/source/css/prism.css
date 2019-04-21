@@ -8,7 +8,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	color: #ccc;
+	background: none;
 	font-family: inherit, monospace;
 	text-align: left;
 	white-space: pre;
@@ -36,6 +37,8 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
+	background: rgba(0, 0, 0, 0.8);
+	/*background: #2d2d2d;*/
 	border-radius: 8px;
 }
 
@@ -103,7 +106,6 @@ pre[class*="language-"].line-numbers > code {
 .code-toolbar {
 	position: relative;
 	margin: 40px 0;
-	padding: 20px 0;
 	border-top: 1px solid rgba(255, 255, 255, .1);
 	border-bottom: 1px solid rgba(255, 255, 255, .1);
 
@@ -166,7 +168,7 @@ div.code-toolbar > .toolbar span {
 	font-size: .8em;
 	padding: 0 .5em;
 	background: #f5f2f0;
-	background: rgba(224, 224, 224, 0.2);
+	background: rgba(224, 224, 244, 0.2);
 	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
 	border-radius: .5em;
 }
@@ -177,7 +179,7 @@ div.code-toolbar > .toolbar button:hover,
 div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
-	color: inherit;
+	color:#f5f2f0;
 	text-decoration: none;
 }
 
@@ -214,3 +216,4 @@ div.code-toolbar > .toolbar span:focus {
 .command-line-prompt > span[data-prompt]:before {
 	content: attr(data-prompt);
 }
+
