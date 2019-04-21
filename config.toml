@@ -16,7 +16,7 @@ title = "Christian Barra"
   # center theme with default width
   centerTheme = true
   # set a custom favicon (default is a `themeColor` square)
-  favicon = "img/favicon.ico"
+  favicon = "img/favicon/favicon.ico"
 
 [languages]
   [languages.en]
