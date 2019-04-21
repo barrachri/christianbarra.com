@@ -16,12 +16,12 @@ title = "Christian Barra"
   # center theme with default width
   centerTheme = true
   # set a custom favicon (default is a `themeColor` square)
-  favicon = "favicon.ico"
+  favicon = "img/favicon.ico"
 
 [languages]
   [languages.en]
     title = "Christian Barra"
-    subtitle = "A simple, retro theme for Hugo"
+    subtitle = ""
     keywords = ""
     copyright = "CC BY-SA 4.0"
     menuMore = "Show more"
