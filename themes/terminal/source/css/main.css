@@ -262,3 +262,65 @@ hr {
 .hidden {
   display: none;
 }
+
+div.form
+{
+    display: block;
+    text-align: center;
+}
+
+.form
+{
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    align-items: center;
+    font-size: 18px;
+}
+
+
+/* Style the input fields */
+.form input {
+  font-size: 18px;
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  line-height: 2;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid transparent;
+  width: 500px;
+}
+
+/* Style the submit button */
+.form button {
+  font-size: 18px;
+  border-radius: 10px;
+  margin-left: -140px;
+  margin-bottom: 0px;
+}
+
+.form button:hover {
+  background-color: #dddddd;
+}
+
+div.mce_inline_error {
+  background-color: black !important;
+  align-self: initial;
+  font-weight: normal !important;
+  width: 500px;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form input {
+    margin: 10px 0;
+  }
+
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,7 +1,7 @@
 baseurl = "https://www.christianbarra.com/"
 languageCode = "en-us"
 theme = "terminal"
-paginate = 5
+paginate = 10
 title = "Christian Barra"
 
 [params]

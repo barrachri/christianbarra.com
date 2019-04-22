@@ -15,10 +15,7 @@ My name is Christian Barra, I am a Senior Software Engineer working at [infarm](
 - [PyBerlin meetup](https://www.meetup.com/PyBerlin/ "PyBerlin")
 - [berlin.python.pizza](https://berlin.python.pizza/ "Berlin Python Pizza")
 
-> Looking for a consultant or you want to have a course about Python?
-> I'll be happy to have a chat about it :)
-
-You can find me on twitter, github, linkedin and my email is barrachri AT gmail DOT com
+> You can find me on [twitter](https://twitter.com/christianbarra), [github](https://github.com/barrachri/), [linkedin](https://www.linkedin.com/in/christianbarra/) and my email is barrachri [AT] gmail [DOT] com.
 
 My focus is currently on:
 
