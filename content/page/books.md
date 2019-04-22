@@ -16,6 +16,7 @@ I am an avid reader, ideally I would like to read 52 books each year, one for ea
 1. Turning Pro - Steven Pressfield
 1. Accelerate -  Nicole Forsgren & Jez Humble & Gene Kim
 1. Love signals - David Givens
+1. On Friendship - Michel De Montaigne
 
 ## 2018
 
