@@ -9,6 +9,8 @@ I am an avid reader, ideally I would like to read 52 books each year, one for ea
 
 ## 2019
 
+1. Introducing Go - Caleb Doxsey
+1. Becoming a Technical Leader - Gerald M. Weinberg
 1. Social Business - Muhammad Yunus
 1. Story driven - Bernadette Jiwa
 1. Turning Pro - Steven Pressfield
