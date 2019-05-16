@@ -17,13 +17,13 @@ Your time is constantly stolen by commuting, inefficiencies, time with colleague
 
 Although I work more or less the same hours I feel having much less time and energy for me.
 
-51 minutes and 41 seconds is the time that takes me to go from my apartment’s door to my office’s door.
+51 minutes and 41 seconds is the time it takes me to go from my apartment’s door to my office’s door.
 
 1 hour and 44 minutes every day, 8 hours and 40 minutes every week are lost.
 
 I have never thought about it in this way but it looks like a compounding debt... that is increasing every day.
 
-Yep... so far commuting is something that *I cannot really enjoy*.
+Yep... so far commuting has been something that *I did not enjoy*.
 
 ```
 picture LX Factory // Lisboa
