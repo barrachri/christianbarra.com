@@ -7,13 +7,8 @@ weight: -190
 
 ### 2019
 
-##### Kubernetes 101 for Python Developers
-
-- 🇸🇰 PyCon CZ
-
 ##### How software can feed the world
 
-- 🇸🇰 PyCon CZ
 - 🇮🇹 PyCon Italia
 
 ##### [Let's talk about MLOps](https://github.com/barrachri/Talks/tree/master/mlops)
