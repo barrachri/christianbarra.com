@@ -11,7 +11,7 @@ Some months ago I decided to run an experiment:
 
 > move from an almost nomadic life and remote job to live in one place and commute every day to the office.
 
-One of the main differences I have noticed between working remotely (whether home office or remote) and going every day to the office is the feeling of **owning your time**.
+After ~3 months one of the main differences I have noticed between working remotely (whether home office or remote) and going every day to the office is the feeling of **owning your time**.
 
 Your time is constantly stolen by commuting, inefficiencies, time with colleagues, lunches and meetings.
 
