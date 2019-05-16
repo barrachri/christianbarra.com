@@ -21,7 +21,7 @@ Although I work more or less the same hours I feel having much less time and ene
 
 1 hour and 44 minutes every day, 8 hours and 40 minutes every week are lost.
 
-I have never thought about it in this way but it looks like a compounding debt... that is increasing every day.
+I have never thought about it in this way but it looks like a *compounding debt...* that is increasing every day.
 
 Yep... so far commuting has been something that *I do not enjoy*.
 
