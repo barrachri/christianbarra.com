@@ -4,7 +4,7 @@ description: "First thoughts after moving back from a remote job to daily commut
 slug: 51-mins-41-secs
 date: 2019-05-16
 cover: /images/51-mins-41-secs/image.jpg
-tags: [ "9to5", "remote-working", "commuting", "time-debt", "berlin"]
+tags: [ "9to5", "remote-work", "commuting", "time-debt", "berlin"]
 ---
 
 Some months ago I decided to run an experiment:
