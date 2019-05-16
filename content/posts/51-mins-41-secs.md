@@ -2,7 +2,7 @@
 title: 51 mins and 41 secs
 description: "First thoughts after moving back from a remote job to daily commuting"
 slug: 51-mins-41-secs
-date: 2019-04-10
+date: 2019-05-16
 cover: /images/51-mins-41-secs/image.jpg
 tags: [ "9to5", "remote-working", "commuting", "time-debt", "berlin"]
 ---
@@ -26,5 +26,5 @@ I have never thought about it in this way but it looks like a compounding debt..
 Yep... so far commuting is something that *I cannot really enjoy*.
 
 ```
-picture taken from Warschau strasse station
+picture LX Factory // Lisboa
 ```
