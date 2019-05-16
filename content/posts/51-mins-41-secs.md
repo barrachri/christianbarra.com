@@ -23,7 +23,7 @@ Although I work more or less the same hours I feel having much less time and ene
 
 I have never thought about it in this way but it looks like a *compounding debt...* that is increasing every day.
 
-Yep... so far commuting has been something that *I do not enjoy*.
+Yep... *so far commuting has not been something that I enjoy*.
 
 ```
 picture LX Factory // Lisboa
