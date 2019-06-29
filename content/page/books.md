@@ -5,8 +5,6 @@ menu: main
 weight: -200
 ---
 
-I am an avid reader, ideally I would like to read 52 books each year, one for each week.
-
 ## 2019
 
 1. The Ultimate Sales Machine - Chet Holmes
