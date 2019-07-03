@@ -7,6 +7,7 @@ weight: -200
 
 ## 2019
 
+1. The Great Mental Models: General Thinking Concepts - Shane Parrish
 1. The Ultimate Sales Machine - Chet Holmes
 1. Introducing Go - Caleb Doxsey
 1. Becoming a Technical Leader - Gerald M. Weinberg
