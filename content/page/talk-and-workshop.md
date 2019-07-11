@@ -7,6 +7,10 @@ weight: -190
 
 ### 2019
 
+##### Kubernetes 101 for Python Developers
+
+- 🇪🇺 EuroPython
+
 ##### [How software can feed the World](https://github.com/barrachri/Talks/tree/master/how_software_can_feed_the_world)
 
 - 🇪🇺 EuroPython
