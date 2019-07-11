@@ -7,8 +7,9 @@ weight: -190
 
 ### 2019
 
-##### How software can feed the world
+##### [How software can feed the World](https://github.com/barrachri/Talks/tree/master/how_software_can_feed_the_world)
 
+- 🇪🇺 EuroPython
 - 🇮🇹 PyCon Italia
 
 ##### [Let's talk about MLOps](https://github.com/barrachri/Talks/tree/master/mlops)
