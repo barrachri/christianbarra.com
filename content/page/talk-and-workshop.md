@@ -9,27 +9,27 @@ weight: -190
 
 ##### [Kubernetes 101 for Python Developers](https://gitlab.com/PyBootCamp/k8s-101-python-developers)
 
-- 🇪🇺 EuroPython
+- 🇪🇺 EuroPython 2019
 - 🇩🇪 PyCon DE & PyData Berlin 2019
 
 ##### [How software can feed the World](https://github.com/barrachri/Talks/tree/master/how_software_can_feed_the_world)
 
-- 🇪🇺 EuroPython
+- 🇪🇺 EuroPython 2019
 - 🇮🇹 PyCon Italia
 
 ##### [Let's talk about MLOps](https://github.com/barrachri/Talks/tree/master/mlops)
 
-- 🇸🇮 PyCon SK
+- 🇸🇮 PyCon SK 2019
 
 ##### [Not just a Developer](https://github.com/barrachri/Talks/tree/master/not_just_a_developer)
 
-- 🇺🇦 PyCon Odessa
+- 🇺🇦 PyCon Odessa 2019
 
 ### 2018
 
 ##### [Scaling your data infrastructure](https://speakerdeck.com/barrachri/scaling-your-data-infrastructure)
 
-- 🇮🇹 PyCon Italia
+- 🇮🇹 PyCon Italia X
 
 ### 2017
 
