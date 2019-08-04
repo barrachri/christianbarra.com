@@ -7,9 +7,10 @@ weight: -190
 
 ### 2019
 
-##### Kubernetes 101 for Python Developers
+##### [Kubernetes 101 for Python Developers](https://gitlab.com/PyBootCamp/k8s-101-python-developers)
 
 - 🇪🇺 EuroPython
+- 🇩🇪 PyCon DE & PyData Berlin 2019
 
 ##### [How software can feed the World](https://github.com/barrachri/Talks/tree/master/how_software_can_feed_the_world)
 
