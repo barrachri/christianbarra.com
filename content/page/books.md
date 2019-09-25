@@ -8,18 +8,19 @@ weight: -200
 ## 2019
 
 1. The Coaching Habit - Michael Bungay Stanier
-1. The Mom Test - Rob Fitzpatrick
-1. Embracing your inner critic - Hal Stone & Sidra Stone
-1. The Great Mental Models: General Thinking Concepts - Shane Parrish
-1. The Ultimate Sales Machine - Chet Holmes
-1. Introducing Go - Caleb Doxsey
-1. Becoming a Technical Leader - Gerald M. Weinberg
-1. Social Business - Muhammad Yunus
-1. Story driven - Bernadette Jiwa
-1. Turning Pro - Steven Pressfield
-1. Accelerate -  Nicole Forsgren & Jez Humble & Gene Kim
-1. Love signals - David Givens
-1. On Friendship - Michel De Montaigne
+2. The Mom Test - Rob Fitzpatrick
+3. Embracing your inner critic - Hal Stone & Sidra Stone
+4. The Great Mental Models: General Thinking Concepts - Shane Parrish
+5. The Ultimate Sales Machine - Chet Holmes
+6. Introducing Go - Caleb Doxsey
+7. Becoming a Technical Leader - Gerald M. Weinberg
+8. Social Business - Muhammad Yunus
+9. Story driven - Bernadette Jiwa
+10. Turning Pro - Steven Pressfield
+11. Accelerate -  Nicole Forsgren & Jez Humble & Gene Kim
+12. Love signals - David Givens
+13. On Friendship - Michel De Montaigne
+14. Cradle to Cradle - Michael Braungart & William McDonough
 
 ## 2018
 
