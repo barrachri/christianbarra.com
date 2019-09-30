@@ -21,8 +21,8 @@ weight: -200
 12. Love signals - David Givens
 13. On Friendship - Michel De Montaigne
 14. Cradle to Cradle - Michael Braungart & William McDonough
-15. Artificial Intelligence for Fashion: How AI is Revolutionizing the Fashion Industry - Leanne Luce
-16. The Guide to the Circular Economy: Capturing Value and Managing Material Risk - Dustin Benton & Jonny Hazell & Julie Hill
+15. Artificial Intelligence for Fashion - Leanne Luce
+16. The Guide to the Circular Economy - Dustin Benton & Jonny Hazell & Julie Hill
 17. The Circular Economy: A User's Guide - Walter R Stahel
 18. Business Models in the Circular Economy - Roberta De Angelis
 
