@@ -4,7 +4,7 @@ description: What climbing can teach us
 slug: how-to-deal-with-self-limiting-thought-before-a-talk
 date: 2019-10-05
 cover: /images/public-speaking-and-climbing/bouldering.jpg
-tags: [ "public-speaking", "self-limiting-thought", "mindfulness", "stress"]
+tags: [ "public-speaking","doubt", "self-limiting-thought", "mindfulness", "stress"]
 ---
 
 A couple of days ago a friend wrote me a message:
