@@ -82,7 +82,6 @@ The internal dialogue should go like this:
 
 - "I am aware my mind thinks this slide sucks... but I am gonna deal with this thought later."
 
-
 ## And you? how do you deal with self-limiting thought before a talk?
 
 ### Useful resources
@@ -93,5 +92,5 @@ The internal dialogue should go like this:
 - [Yenny Cheung - Why You Should Pursue Public Speaking and How to Get There](https://www.youtube.com/watch?v=a5WIMg5sunw)
 
 ```
-picture Photo by Mike Kotsch // Unsplash
+photo by Mike Kotsch // Unsplash
 ```
