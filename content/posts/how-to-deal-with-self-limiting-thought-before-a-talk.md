@@ -7,6 +7,10 @@ cover: /images/public-speaking-and-climbing/bouldering.jpg
 tags: [ "public-speaking","doubt", "self-limiting-thought", "mindfulness", "stress"]
 ---
 
+```
+photo by Mike Kotsch // Unsplash
+```
+
 A couple of days ago a friend wrote me a message:
 
 > Can you check my presentation?
@@ -32,7 +36,7 @@ Ouch, self-limiting thought.
 
 I find many similarities between climbing and public speaking.
 
-> The only difference between a climber who climbs 5.15 and one who climbs 5.5. is the magnitude of the doubt and the skills developed to deal with it.
+> The only difference between a climber who climbs 5.15 and one who climbs 5.5[^1] is the magnitude of the doubt and the skills developed to deal with it.
 >
 - Arno Ilgner
 
@@ -91,6 +95,4 @@ The internal dialogue should go like this:
 - [Amy Cudd - Power Posing](https://www.ted.com/talks/amy_cuddy_your_body_language_shapes_who_you_are?language=en)
 - [Yenny Cheung - Why You Should Pursue Public Speaking and How to Get There](https://www.youtube.com/watch?v=a5WIMg5sunw)
 
-```
-photo by Mike Kotsch // Unsplash
-```
+[^1]: 5.5 and 5.15 are part of the climbing grading system, [5.5 is beginner, 5.15 is super elite](https://www.guidedolomiti.com/en/rock-climbing-grades/).
