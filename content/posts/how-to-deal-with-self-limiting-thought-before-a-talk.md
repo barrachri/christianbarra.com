@@ -36,7 +36,7 @@ Ouch, self-limiting thought.
 
 I find many similarities between climbing and public speaking.
 
-> The only difference between a climber who climbs 5.15 and one who climbs 5.5[^1] is the magnitude of the doubt and the skills developed to deal with it.
+> The only difference between a climber who climbs 5.15 and one who climbs 5.5 is the magnitude of the doubt and the skills developed to deal with it.[^1]
 >
 - Arno Ilgner
 
