@@ -7,10 +7,6 @@ cover: /images/public-speaking-and-climbing/bouldering.jpg
 tags: [ "public-speaking","doubt", "self-limiting-thought", "mindfulness", "stress"]
 ---
 
-```
-photo by Mike Kotsch // Unsplash
-```
-
 A couple of days ago a friend wrote me a message:
 
 > Can you check my presentation?
@@ -96,3 +92,7 @@ The internal dialogue should go like this:
 - [Yenny Cheung - Why You Should Pursue Public Speaking and How to Get There](https://www.youtube.com/watch?v=a5WIMg5sunw)
 
 [^1]: 5.5 and 5.15 are part of the climbing grading system, [5.5 is beginner, 5.15 is super elite](https://www.guidedolomiti.com/en/rock-climbing-grades/).
+
+```
+photo by Mike Kotsch // Unsplash
+```
