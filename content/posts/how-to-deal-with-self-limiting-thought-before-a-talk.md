@@ -50,7 +50,7 @@ Well I usually do 3 things.
 
 I always try to have 5 mins just for me before a talk, you don't have to meditate in a zazen posture, I sit somewhere comfortably and just relax.
 
-I want to enter an inner state of `relaxed concentration`, where I am focused on `the message you want to deliver` and relaxed, with a positive thinking mindset (I am gonna do great).
+I want to enter an inner state of `relaxed concentration`, where I am focused on `the message I want to deliver` and relaxed, with a positive thinking mindset (I am gonna do great).
 
 The last thing that I do is power posing.
 
