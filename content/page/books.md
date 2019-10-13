@@ -26,6 +26,7 @@ weight: -200
 17. The Circular Economy: A User's Guide - Walter R Stahel
 18. Business Models in the Circular Economy - Roberta De Angelis
 19. REMOTE: Office not required - Jason Fried & David Heinemeier Hansson
+20. Reboot - Jerry Colonna
 
 ## 2018
 
