@@ -9,7 +9,7 @@ Hi there, I am Christian 👋
 
 I used to hack video game consoles to make money during my teenage-hood, then after I dropped out of the Catholic University of Milan I started a company about renewable energies.
 
-Fast forward a few years I am now a senior software engineer, tech lead and speaker living in Berlin where I work four days a week at [infarm](https://www.infarm.com).
+Fast forward a few years I am now a senior software engineer and tech lead living in Berlin where I work four days a week at [infarm](https://www.infarm.com).
 
 Currently I read, talk, blog and tweet about:
 
