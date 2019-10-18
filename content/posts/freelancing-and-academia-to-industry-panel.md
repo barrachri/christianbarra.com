@@ -39,7 +39,7 @@ Meetups, conferences and generally sharing your knowledge is a great way to do i
 
 > 3) **Freelancing platforms can be a great way to start**
 
-Pivigo, Fiverr, Toptotal, Upwork are a great way to kick-start your way to freelancing.
+[Pivigo](https://www.pivigo.com/), [Fiverr](https://www.fiverr.com), [Toptal](https://www.toptal.com), [Upwork](https://www.upwork.com/) are a great way to kick-start your way to freelancing.
 
 > 4) **Create a cash buffer**
 
