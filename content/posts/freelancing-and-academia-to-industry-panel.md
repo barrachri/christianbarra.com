@@ -22,7 +22,7 @@ This will be extremely useful to help you moving to industry and to learn new sk
 If you don't want to be perceived as a junior during your interviews prepare yourself beforehand, try to understand what companies are looking for and how to approach the interview correctly.
 If the interview process is something new for you have some dry runs with companies you don't want to work for.
 
-> 3) **There are pros and cons on both Worlds**
+> 3) **There are pros and cons on both worlds**
 
 [Katharina Rasch](https://twitter.com/krasch_io) keeps teaching although working as a freelancer and consultant.
 You can move to industry without fully leaving academia.
