@@ -1,6 +1,6 @@
 ---
 title: Freelancing & Academia to Industry panel
-description: What climbing can teach us
+description: Takeaways from the Freelancing and Academia to Industry panel @ PyCon DE & PyData Berlin 2019
 slug: freelancing-and-academia-to-industry-panel
 date: 2019-10-17
 cover:
