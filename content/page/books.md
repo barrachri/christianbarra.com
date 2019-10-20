@@ -27,6 +27,7 @@ weight: -200
 18. Business Models in the Circular Economy - Roberta De Angelis
 19. REMOTE: Office not required - Jason Fried & David Heinemeier Hansson
 20. Reboot - Jerry Colonna
+21. The Workshop Survival Guide - Rob Fitzpatrick & Devin Hunt
 
 ## 2018
 
