@@ -7,6 +7,10 @@ weight: -190
 
 ### 2019
 
+##### [Will Tech Save Us?](https://github.com/barrachri/Talks/tree/master/will-tech-save-us)
+
+- 🇩🇪 Hamburg Python Pizza 2019
+
 ##### [Kubernetes 101 for Python Developers](https://gitlab.com/PyBootCamp/k8s-101-python-developers)
 
 - 🇪🇺 EuroPython 2019
@@ -14,6 +18,7 @@ weight: -190
 
 ##### [How software can feed the World](https://github.com/barrachri/Talks/tree/master/how_software_can_feed_the_world)
 
+- 🇵🇱 Code Dive
 - 🇪🇺 EuroPython 2019
 - 🇮🇹 PyCon Italia
 
