@@ -22,7 +22,7 @@ There's a lot of interesting Python online courses, they don't talk about every 
 **Remember to start with Python 3 !**
 
 ### Online courses
-- [Codecademy Python Track](http://www.codecademy.com/tracks/python "Codecademy Python Track") - Very useful, with a few hours of practice you can begin mastering the Python basics.
+- [Codecademy Python Track](https://www.codecademy.com/catalog/language/python "Codecademy Python Track") - Very useful, with a few hours of practice you can begin mastering the Python basics.
 - [Learnpython.org](http://learnpythonthehardway.org/book/ "Learnpython.org") - Another interesting online course
 - [Learn Python the hardway](http://learnpythonthehardway.org/book "Learn Python the hardway") - If you prefer the "hardway" both course/book.
 
