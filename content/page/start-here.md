@@ -7,18 +7,18 @@ weight: -210
 
 Hi there, I am Christian 👋
 
-I used to hack video game consoles to make money during my teenage-hood, then after I dropped out of the Catholic University of Milan I started a company about renewable energies.
+I used to hack video game consoles to make money during my teenage-hood, then after I dropped out of university I started a company about renewable energies.
 
-Fast forward a few years I am now a senior software engineer and tech lead living in Berlin where I work four days a week at [infarm](https://www.infarm.com).
+Fast forward a few years I am now a senior software engineer and tech lead living in Berlin where I work at [infarm](https://www.infarm.com), the farming as a service company.
 
-Currently I read, talk, blog and tweet about:
+Topics I am really into (AKA I read, talk, blog and tweet about):
 
 - AI, IoT and DevOps
-- Escaping 9-to-5
+- System Design
+- Escaping 9-to-5 & remote work
 - Tech for Good
-- Remote work
 
-I am a `proactive` member in the tech community, through contributions to [OSS](https://en.wikipedia.org/wiki/Open-source_software), coaching, speaking, writing and organising events.
+I am a proactive member in the tech community, through contributions to [OSS](https://en.wikipedia.org/wiki/Open-source_software), coaching, speaking, writing and organising events.
 
 I organized more than 20 events in the last years, ranging from meetups to +1000 people conferences like [EuroPython](https://www.europython.eu "EuroPython Conference") and [PyCon DE & PyData Berlin](https://de.pycon.org/ "PyCon DE & PyData Berlin 2019").
 

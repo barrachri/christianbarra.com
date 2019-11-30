@@ -28,6 +28,10 @@ weight: -200
 19. REMOTE: Office not required - Jason Fried & David Heinemeier Hansson
 20. Reboot - Jerry Colonna
 21. The Workshop Survival Guide - Rob Fitzpatrick & Devin Hunt
+22. Small is Beautiful - Ernst Friedrich Schumacher
+23. A world of three zeroes - Muhammad Yunus
+24. Building Social Business - Muhammad Yunus
+25. The Handbook (Enchiridion) - Epictetus
 
 ## 2018
 
