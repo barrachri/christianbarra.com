@@ -1,6 +1,6 @@
 ---
 title: "Getting 51 free days more on your agenda"
-description: "AKA having switching to a 4-day workweek"
+description: "AKA a 4-day workweek"
 date: 2019-11-30
 tags: ["work-life-balance", "freedom", "4days/week", "170-days"]
 ---
