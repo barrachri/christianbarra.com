@@ -9,7 +9,7 @@ During this past summer I negotiated new contract conditions, just before the en
 
 **moving from full time (5 days) to a 3-day workweek while keeping the same salary**.
 
-It took about 2 months but at the end we settled on a 4-day week deal.
+It took about 2 months but at the end we settled on a 4-day workweek deal.
 
 But first, *how many days do we work*?
 
