@@ -25,7 +25,7 @@ A 4-day workweek turns out to be about 200 working days, **~51 days** less than 
 
 To complete the count I can remove from the 200 days my vacations, and I get 170 days, ~46.5%  of the year.
 
-**I can hardly describe the nice feeling of getting the ownership of the majority of your time back**.
+**I can hardly describe the nice feeling of getting the majority of your time back**.
 
 # What I plan to do with those 51 days
 
