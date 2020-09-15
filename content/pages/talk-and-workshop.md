@@ -5,6 +5,8 @@ menu: main
 weight: -190
 ---
 
+I’ve had the pleasure of speaking at design and front-end conferences all around the world. Contact me if you think I would make a great fit at your conference.
+
 ### 2019
 
 ##### [Will Tech Save Us?](https://github.com/barrachri/Talks/tree/master/will-tech-save-us)

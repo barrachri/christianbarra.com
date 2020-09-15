@@ -4,7 +4,7 @@ module.exports = {
     description: `High quality online courses and live training to push your Python and DevOps skills to the next level.`,
     author: `@christianbarra`,
     siteUrl: `https://www.christianbarra.com`,
-    email: `info@pybootcamp.com`,
+    email: `me@christianbarra.com`,
     twitter: {
       url: `https://twitter.com/christianbarra`,
       account: `christianbarra`,

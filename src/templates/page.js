@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { StyledLink } from "../components/utils"
 
 const Header = ({ page }) => {
   return (
@@ -26,7 +27,10 @@ const Page = ({ pageContext }) => {
         description={page.frontmatter.description}
       />
       <Header page={page} />
-      <div className="article" dangerouslySetInnerHTML={{ __html: page.html }} />
+      <div
+        className="article"
+        dangerouslySetInnerHTML={{ __html: page.html }}
+      />
     </Layout>
   )
 }
