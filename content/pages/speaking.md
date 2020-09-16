@@ -1,13 +1,18 @@
 ---
-title: Talks and Workshops
+title: Speaking
 description: My list of talks and workshops
 menu: main
 weight: -190
 ---
 
-I’ve had the pleasure of speaking at design and front-end conferences all around the world. Contact me if you think I would make a great fit at your conference.
+I gave my first conference talk in 2014 and since then I have spoken at dozen of conferences and events all around the world.
 
-### 2019
+If you think I would make a great fit at your conference or event contact me.
+
+##### Production-ready applications with Python
+
+- 🇪🇪 PyCon Estonia 2020
+- 🌐 Python Global Summit 2020
 
 ##### [Will Tech Save Us?](https://github.com/barrachri/Talks/tree/master/will-tech-save-us)
 
@@ -32,15 +37,9 @@ I’ve had the pleasure of speaking at design and front-end conferences all arou
 
 - 🇺🇦 PyCon Odessa 2019
 
-### 2018
-
 ##### [Scaling your data infrastructure](https://speakerdeck.com/barrachri/scaling-your-data-infrastructure)
 
 - 🇮🇹 PyCon Italia X
-
-### 2017
-
-### 2016
 
 ##### [Introduction to statistics with Python](https://speakerdeck.com/barrachri/introduction-to-statistics-with-python)
 
@@ -49,10 +48,6 @@ I’ve had the pleasure of speaking at design and front-end conferences all arou
 ##### [How to fight with yourself and win](https://speakerdeck.com/barrachri/how-to-fight-with-yourself-and-win)
 
 - 🇮🇹 PyCon Italia
-
-### 2015
-
-### 2014
 
 ##### [Django & Docker](https://speakerdeck.com/barrachri/django-and-docker)
 

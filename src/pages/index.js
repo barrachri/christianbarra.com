@@ -9,36 +9,20 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="Home" />
-      <p className="text-lg text-gray-800 text-gray-800 pb-3">
-        Hi! I am an entrepreneur, tech lead and developer living in Berlin.
+      <p className="text-lg text-gray-800">
+        Hi! I am a tech lead, developer and entrepreneur living in Berlin.
       </p>
-      <p className="text-lg text-gray-800 text-gray-800 pb-3">
-        I am a proactive member in the tech community, through contributions to{" "}
-        <StyledLink
-          href="https://en.wikipedia.org/wiki/Open-source_software"
-          text="OSS"
-        />
-        , coaching,{" "}
-        <Link className="font-bold underline" to="/consulting-and-training">
-          consulting
-        </Link>
-        , writing and organising events.
-      </p>
-      <p className="text-lg text-gray-800 text-gray-800 pb-3">
-        I am a proactive member in the tech community, through contributions to{" "}
-        <StyledLink
-          href="https://en.wikipedia.org/wiki/Open-source_software"
-          text="OSS"
-        />
-        , coaching,{" "}
-        <Link className="font-bold underline" to="/page/talk-and-workshop">
+      <p className="text-lg text-gray-800">
+        I am a proactive member in the tech community, through contributions to
+        open source software, coaching,{" "}
+        <Link className="underline" to="/speaking">
           speaking
-        </Link>
-        , writing and organising events.
+        </Link>{" "}
+        and organising events.
       </p>
-      <p className="text-lg text-gray-800 text-gray-800 pb-3">
+      <p className="text-lg text-gray-800">
         I organized more than 20 events in the last years, ranging from meetups
-        to +1000 people conferences like{" "}
+        to +1000 people conferences, like{" "}
         <StyledLink href="https://www.europython.eu" text="EuroPython" /> and{" "}
         <StyledLink
           href="https://de.pycon.org/"
@@ -46,7 +30,7 @@ export default function Home() {
         />
         .
       </p>
-      <p className="text-lg text-gray-800 text-gray-800 pb-3">
+      <p className="text-lg text-gray-800">
         I am a{" "}
         <StyledLink
           href="http://pyfound.blogspot.com/2018/06/"
@@ -59,7 +43,17 @@ export default function Home() {
         />
         .
       </p>
-      <p className="text-lg text-gray-800 text-gray-800 pb-3">
+      <div className="border-t-4 border-b-4 mt-5">
+        <p className="text-lg text-gray-800 font-bold pt-2 pb-2">
+          If you are looking for someone with a deep knowledge on backend
+          development, cloud infrastructure and leading skills{" "}
+          <Link className="underline" to="/consulting-and-training">
+            I am happy to help
+          </Link>
+          .
+        </p>
+      </div>
+      <p className="text-lg text-gray-800 mt-10">
         You can find me on{" "}
         <StyledLink href="https://twitter.com/christianbarra" text="twitter" />,{" "}
         <StyledLink
@@ -67,7 +61,7 @@ export default function Home() {
           text="linkedin"
         />
         , <StyledLink href="https://github.com/barrachri/" text="github" /> or
-        by using me [AT] christianbarra.com
+        you can send me an email at <b>me [AT] christianbarra.com</b>
       </p>
     </Layout>
   )

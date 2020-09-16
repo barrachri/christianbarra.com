@@ -11,6 +11,10 @@
     h1 {
       @apply text-2xl;
     }
+    h3 {
+      @apply text-xl;
+      @apply font-semibold;
+    }
     h5 {
       @apply text-xl;
       @apply p-3;
@@ -18,5 +22,11 @@
     li {
       @apply list-inside;
       @apply pl-5;
+    }
+    p {
+      @apply pb-3;
+    }
+    h5 > a {
+      @apply underline;
     }
   }

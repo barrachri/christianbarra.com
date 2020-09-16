@@ -34,9 +34,9 @@ const Navbar = () => {
             <li className="inline-block">
               <Link
                 className="block font-semibold underline px-3"
-                to="/page/talk-and-workshop"
+                to="/speaking"
               >
-                Talks &amp; Workshops
+                Speaking
               </Link>
             </li>
           </ul>

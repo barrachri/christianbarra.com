@@ -2,21 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { StyledLink } from "../components/utils"
-
-const Header = ({ page }) => {
-  return (
-    <section className="pb-0">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-10 col-xl-8">
-            <h1>{page.frontmatter.title}</h1>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 const Page = ({ pageContext }) => {
   const { page } = pageContext
@@ -26,9 +11,9 @@ const Page = ({ pageContext }) => {
         title={page.frontmatter.title}
         description={page.frontmatter.description}
       />
-      <Header page={page} />
+      <h1 className="text-gray-800 pb-5">{page.frontmatter.title}</h1>
       <div
-        className="article"
+        className="pt-5"
         dangerouslySetInnerHTML={{ __html: page.html }}
       />
     </Layout>

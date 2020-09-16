@@ -70,8 +70,8 @@ const Articles = () => {
   return (
     <Layout>
       <SEO
-        title="Blog"
-        description="Screencasts and useful tips about Python and DevOps"
+        title="Articles"
+        description="Articles and thoughts about tech, business and life"
       />
       <DisplayPosts />
     </Layout>

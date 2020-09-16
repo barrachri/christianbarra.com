@@ -104,7 +104,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value = `/blog${value}`
     }
     if (type === "pages") {
-      value = `/page${value}`
+      value = `${value}`
     }
 
     createNodeField({
