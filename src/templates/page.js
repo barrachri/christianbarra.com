@@ -12,10 +12,7 @@ const Page = ({ pageContext }) => {
         description={page.frontmatter.description}
       />
       <h1 className="text-gray-800 pb-5">{page.frontmatter.title}</h1>
-      <div
-        className="pt-5"
-        dangerouslySetInnerHTML={{ __html: page.html }}
-      />
+      <div className="pt-5" dangerouslySetInnerHTML={{ __html: page.html }} />
     </Layout>
   )
 }

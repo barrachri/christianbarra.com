@@ -8,7 +8,10 @@ const DisplayPosts = () => (
     query={graphql`
       query {
         allFile(
-          filter: {sourceInstanceName: {eq: "posts"}, extension: {eq: "md"}},
+          filter: {
+            sourceInstanceName: { eq: "posts" }
+            extension: { eq: "md" }
+          }
           sort: {
             fields: [childMarkdownRemark___frontmatter___date]
             order: DESC
@@ -45,9 +48,7 @@ const Posts = ({
     const { title, date, category } = edge.node.childMarkdownRemark.frontmatter
     return (
       <div className="p-3" key={index}>
-        <Link
-          to={edge.node.fields.slug}
-        >
+        <Link to={edge.node.fields.slug}>
           <div>
             <div>
               <div>
@@ -57,7 +58,7 @@ const Posts = ({
           </div>
           <div>
             <h2 className="underline font-medium text-base">{title}</h2>
-              <span className="text-sm">{date}</span>
+            <span className="text-sm">{date}</span>
             <p>{edge.node.excerpt}</p>
           </div>
         </Link>

@@ -7,9 +7,12 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         posts: allFile(
-          filter: {sourceInstanceName: {eq: "posts"}, extension: {eq: "md"}},
+          filter: {
+            sourceInstanceName: { eq: "posts" }
+            extension: { eq: "md" }
+          }
           sort: {
-            fields: [childMarkdownRemark___frontmatter___date],
+            fields: [childMarkdownRemark___frontmatter___date]
             order: DESC
           }
         ) {

@@ -14,8 +14,8 @@ const handleMenuClasses = () => {
 
 // Common
 
-menu && menu.addEventListener("click", e => e.stopPropagation());
-menuMore && menuMore.addEventListener("click", e => e.stopPropagation());
+menu && menu.addEventListener("click", (e) => e.stopPropagation());
+menuMore && menuMore.addEventListener("click", (e) => e.stopPropagation());
 
 handleMenuClasses();
 
@@ -32,7 +32,7 @@ window.addEventListener("resize", handleMenuClasses);
 // Mobile menu
 
 mobileMenuTrigger &&
-  mobileMenuTrigger.addEventListener("click", e => {
+  mobileMenuTrigger.addEventListener("click", (e) => {
     e.stopPropagation();
     menu && menu.classList.toggle("hidden");
   });
@@ -40,7 +40,7 @@ mobileMenuTrigger &&
 // Desktop menu
 
 desktopMenuTrigger &&
-  desktopMenuTrigger.addEventListener("click", e => {
+  desktopMenuTrigger.addEventListener("click", (e) => {
     e.stopPropagation();
     menuMore && menuMore.classList.toggle("hidden");
 

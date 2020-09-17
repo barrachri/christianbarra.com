@@ -27,10 +27,10 @@ But do you know which kind of object is returned?
 
 They all return a special object called [view](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects).
 
-Why are __views__ useful?
+Why are **views** useful?
 
-* they provide a dynamic view on the underline object (you change the dictionary and the view will change as well)
-* the object returned by `keys()` and `items()` behaves like a set-like object (with `items()` when the pairs are [hashable](https://docs.python.org/3/glossary.html#term-hashable))
+- they provide a dynamic view on the underline object (you change the dictionary and the view will change as well)
+- the object returned by `keys()` and `items()` behaves like a set-like object (with `items()` when the pairs are [hashable](https://docs.python.org/3/glossary.html#term-hashable))
 
 And being a set-like object means you can use the [set operations](https://docs.python.org/3.6/library/stdtypes.html#set-types-set-frozenset).
 
@@ -58,7 +58,7 @@ first_dictionary.keys() ^ second_dictionary.keys()
 
 This is called [simmetric difference](https://docs.python.org/3.6/library/stdtypes.html#frozenset.symmetric_difference).
 
-__One thing that you cannot do is change the dictionary while iterating over the view object.__
+**One thing that you cannot do is change the dictionary while iterating over the view object.**
 
 ```python
 for key, value in first_dictionary.items():

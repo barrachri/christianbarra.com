@@ -30,10 +30,13 @@ So what we need ?
 In my case a [Digital Ocean](https://www.digitalocean.com/?refcode=16e2312f412e "Digital Ocean") droplet (I'm using Fedora 21).
 
 So, first of all we connect to our vm with ssh.
+
 ```bash
 $ ssh root@yourvmip
 ```
+
 Now that we are inside we need to install git, Docker and docker-compose.
+
 ```bash
 $ yum -y install git docker python-pip
 $ pip install docker-compose==1.1.0-rc2
@@ -62,6 +65,7 @@ yourappdir/
     - README
     - requirements.txt
 ```
+
 So let's start to analyze every part, app, nginx, Dockerfiles and build.yml.
 
 The remaining files, .gitignore, README and requirements.txt are pretty standard and I think there's not to much to say.
@@ -72,6 +76,7 @@ The remaining files, .gitignore, README and requirements.txt are pretty standard
 If you don't know [Flask](http://flask.pocoo.org/ "Flask") it's the right time to spend some hours to learn it, simple and powerful !
 
 That's our app, we have some imports, one line config, our models and views.
+
 ```python
 ## yourdirapp/app.py ##
 
@@ -140,6 +145,7 @@ Simple right ?
 We use [Peewee](http://docs.peewee-orm.com/en/latest/ "Peewee") as ORM.
 
 And here is the index.html template, based on jinja2
+
 ```html
 <html class="no-js" lang="en">
   <head>
@@ -160,32 +166,36 @@ And here is the index.html template, based on jinja2
         <!-- Grid Example -->
         <h5>Write something !</h5>
         <form action="." method="POST">
-                  <div class="row">
-                    <div class="large-12 columns">
-                      <label>Title</label>
-                      <input name="title" type="text" placeholder="Insert comment title" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="large-4 medium-4 columns">
-                      <label>Author</label>
-                      <input name="author" type="text" placeholder="Your name" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="large-12 columns">
-                      <label>Message</label>
-                      <textarea name="text" placeholder="Comment body"></textarea>
-                    </div>
-                  </div>
-                  <input type="submit" class="button" value="Submit">
-                </form>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Title</label>
+              <input
+                name="title"
+                type="text"
+                placeholder="Insert comment title"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-4 medium-4 columns">
+              <label>Author</label>
+              <input name="author" type="text" placeholder="Your name" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Message</label>
+              <textarea name="text" placeholder="Comment body"></textarea>
+            </div>
+          </div>
+          <input type="submit" class="button" value="Submit" />
+        </form>
       </div>
     </div>
     <div class="row">
-    <div class="large-8 medium-8 columns">
-    {% for comment in comments %}
-       <hr />
+      <div class="large-8 medium-8 columns">
+        {% for comment in comments %}
+        <hr />
         <h3>{{comment.id}} - {{comment.title}}</h3>
         <h5>{{comment.author}} - {{comment.date}}</h5>
         <!-- Grid Example -->
@@ -196,23 +206,25 @@ And here is the index.html template, based on jinja2
             </div>
           </div>
         </div>
- {% endfor %}
-    </div>
+        {% endfor %}
+      </div>
     </div>
     <script src="/static/js/vendor/jquery.js"></script>
     <script src="/static/js/foundation.min.js"></script>
     <script>
-      $(document).foundation();
+      $(document).foundation()
     </script>
   </body>
 </html>
 ```
+
 With flask we are done.
 
 #Nginx
 We use nginx as proxy, to redirect some request to our python app and to serve our static files.
 
 That's our sites-enabled conf
+
 ```nginx
 # yourappdir/nginx/sites-enabled/app
 server {
@@ -230,6 +242,7 @@ server {
         }
     }
 ```
+
 The only thing that can looks strange is "proxy_pass http://python:8000", when we link a container to another container Docker insert a new line inside linked container
 /etc/hosts, something like "172.0.0.x python".
 
@@ -270,50 +283,53 @@ If you have some experience with Docker you'll see something familiar in some pa
 In our case we create 3 containers, python, nginx and postgres
 
 The first line (python, nginx and postgres) are just alias for the containers
+
 ```yaml
 ######################
 ## PYTHON CONTAINER ##
 ######################
 python:
-    restart: always
-    build: .
-    expose:
-        - "8000"
-    links:
-        - postgres:postgres
-    volumes:
-        - /usr/src/app
-    command: /usr/local/bin/gunicorn -w 2 -b :8000 app:app
+  restart: always
+  build: .
+  expose:
+    - "8000"
+  links:
+    - postgres:postgres
+  volumes:
+    - /usr/src/app
+  command: /usr/local/bin/gunicorn -w 2 -b :8000 app:app
 
 #####################
 ## NGINX CONTAINER ##
 #####################
 nginx:
-    restart: always
-    build: ./nginx/
-    ports:
-        - "80:80"
-    volumes:
-        - /www/static
-    links:
-        - python:python
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+  volumes:
+    - /www/static
+  links:
+    - python:python
 
 ####################
 ## POSTGRES CONTAINER ##
 ####################
 postgres:
-    restart: always
-    image: postgres
-    expose:
-        - "5432"
+  restart: always
+  image: postgres
+  expose:
+    - "5432"
 ```
 
 Cool, that's all !
 
 now we can type this command
+
 ```bash
 $ docker-compose --file build.yml up -d
 ```
+
 And docker-compose will start to create and run our Docker containers.
 First it tries to pull/build the image specified then it creates and runs the
 Docker container with our parameters and the right order.
@@ -321,10 +337,13 @@ Docker container with our parameters and the right order.
 In our example postgres will be created before the python container and nginx will be the last created container.
 
 How to check which containers are running ?
+
 ```bash
 $ docker-compose --file build.yml ps
 ```
+
 And how to see the logs of containers ?
+
 ```bash
 $ docker-compose --file build.yml logs
 ```
@@ -334,7 +353,7 @@ I would like to tell more about some "issues" that I've met.
 
 ###Postgres database
 
-It is fucki*ng hard to create a postgres database without using psql or connect directly to the database.
+It is fucki\*ng hard to create a postgres database without using psql or connect directly to the database.
 In my example database must exist before or at the same time that app was running, essentially because without the database you'll get some errors.
 
 So I've tried to use pyscopg2 to check if the database exists or not and then create it, but without great results.
@@ -345,11 +364,13 @@ In my case I've used the default "postgres" db.
 
 ###Image and container rebuild
 I think can be a good option to have the possibility to choice which containers recreate and which not and the same for the images.
-For example I would like to have some data containers inside build.yml but it's risky, because with *rm* you remove all containers inside your build.yml...
+For example I would like to have some data containers inside build.yml but it's risky, because with _rm_ you remove all containers inside your build.yml...
+
 ```bash
 $docker-compose --file build.yml rm
 # SHIT MY DATABASE DATA ARE LOST !
 ```
+
 Of course you have "--no-recreate" option but is referred to existing containers.
 
 Now it's time for my questions.

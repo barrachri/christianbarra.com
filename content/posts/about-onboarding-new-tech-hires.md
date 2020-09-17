@@ -30,7 +30,7 @@ You spent around a month, during a long (and maybe painful) process, aren't we d
 
 - Giving your new employees an amazing experience is generally better than providing an average or bad experience, so why wonder at all?
 
-__And above all it will show that they are important__.
+**And above all it will show that they are important**.
 
 So how do you provide a great onboarding experience? **You need a plan and a goal**.
 
@@ -127,7 +127,7 @@ My approach is to avoid overwhelming a new hire and properly manage the cognitiv
 
 For example having a 360 degrees and deep overview of the tech stack and infrastructure is probably useless and a waste of time at the beginning.
 
-Try to divide the learning process in small chunks, if it's not really needed to  achieve the goal/s, it could probably wait, as understanding the entire architecture of your system is not really important at this stage.
+Try to divide the learning process in small chunks, if it's not really needed to achieve the goal/s, it could probably wait, as understanding the entire architecture of your system is not really important at this stage.
 
 This was everything I had for the `Before the first day`.
 

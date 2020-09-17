@@ -4,7 +4,8 @@ description: What climbing can teach us
 slug: how-to-deal-with-self-limiting-thought-before-a-talk
 date: 2019-10-05
 cover: /images/public-speaking-and-climbing/bouldering.jpg
-tags: [ "public-speaking","doubt", "self-limiting-thought", "mindfulness", "stress"]
+tags:
+  ["public-speaking", "doubt", "self-limiting-thought", "mindfulness", "stress"]
 ---
 
 A couple of days ago a friend wrote me a message:
@@ -33,7 +34,7 @@ Ouch, self-limiting thought.
 I find many similarities between climbing and public speaking.
 
 > The only difference between a climber who climbs 5.15 and one who climbs 5.5 is the magnitude of the doubt and the skills developed to deal with it.[^1]
->
+
 - Arno Ilgner
 
 Which is probably what separates giving a talk you want to forget about from giving a great talk.
@@ -54,10 +55,10 @@ I want to enter an inner state of `relaxed concentration`, where I am focused on
 
 The last thing that I do is power posing.
 
-Yep,  I go to something that I consider a private space (a toilette works well) and I do 30 seconds of power posing.
+Yep, I go to something that I consider a private space (a toilette works well) and I do 30 seconds of power posing.
 
 > Breathe, consciously and continuously. Shifting your focus from the intruding thoughts to your breathing makes a bridge back to the body, to the flow of action and movement. Keep moving.
->
+
 - Arno Ilgner
 
 ### 2. Focus and remember to breathe
@@ -71,7 +72,7 @@ The inhale/exhal process is a great way to focus your attention on your body and
 And as you breathe you take pauses which help giving the right rhythm to your talk.
 
 > Don’t react to the doubts. Rather, stay in the pose with the stress and delay reacting.
->
+
 - Arno Ilgner
 
 ### 3. Delay

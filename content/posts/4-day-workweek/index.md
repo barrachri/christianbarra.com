@@ -11,7 +11,7 @@ During this past summer I negotiated new contract conditions, just before the en
 
 It took about 2 months but at the end we settled on a 4-day workweek deal.
 
-But first, *how many days do we work*?
+But first, _how many days do we work_?
 
 **If you open your agenda, and you work 5 days a week, you will find that around 221 days are already booked for something.**
 
@@ -23,7 +23,7 @@ Translated in a percentage is about **60.54% of the year**, which is quite a lot
 
 A 4-day workweek turns out to be about 200 working days, **~51 days** less than working full time, 1 month and 21 days more just for you.
 
-To complete the count I can remove from the 200 days my vacations, and I get 170 days, ~46.5%  of the year.
+To complete the count I can remove from the 200 days my vacations, and I get 170 days, ~46.5% of the year.
 
 **I can hardly describe the nice feeling of getting the majority of your time back**.
 
@@ -42,8 +42,7 @@ So what am I up to?
 - learning new stuff
 - running a couple of customer development interviews to create a SaaS business
 
-My master plan is, by the end of 2020, to run a business between 5K € and 30K € in MRR (Monthly Recurring Revenue) without getting crazy (like the amazing founders of [HoneyBadger](https://www.indiehackers.com/podcast/122-josh-wood-of-honeybadger
-)).
+My master plan is, by the end of 2020, to run a business between 5K € and 30K € in MRR (Monthly Recurring Revenue) without getting crazy (like the amazing founders of [HoneyBadger](https://www.indiehackers.com/podcast/122-josh-wood-of-honeybadger)).
 
 # Ok, stop rambling, how do I get a 4-day workweek deal?
 
