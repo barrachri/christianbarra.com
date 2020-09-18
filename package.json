@@ -17,7 +17,7 @@
     "gatsby": "^2.24.57",
     "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-manifest": "^2.4.28",
-    "gatsby-plugin-postcss": "^2.3.11",
+    "gatsby-plugin-postcss": "^2.3.12",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.35",
     "gatsby-plugin-sitemap": "^2.4.12",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "prettier": "2.1.1",
-    "tailwindcss": "^1.8.8"
+    "tailwindcss": "^1.8.10"
   },
   "repository": {
     "type": "git",
