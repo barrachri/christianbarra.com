@@ -3,6 +3,8 @@ title: Speaking
 description: My list of talks and workshops
 menu: main
 weight: -190
+redirect_from:
+    - /page/talk-and-workshop/
 ---
 
 I gave my first conference talk in 2014 and since then I have spoken at dozen of conferences and events all around the world.

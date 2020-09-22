@@ -34,7 +34,9 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
         pages: allFile(
-          filter: { sourceInstanceName: { eq: "pages" } }
+          filter: { sourceInstanceName: { eq: "pages" }
+          extension: { eq: "md" }
+          }
           sort: {
             fields: [childMarkdownRemark___frontmatter___date]
             order: DESC
@@ -104,7 +106,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     let value = createFilePath({ node, getNode })
 
     if (type === "posts") {
-      value = `/blog${value}`
+      value = `/posts${value}`
     }
     if (type === "pages") {
       value = `${value}`

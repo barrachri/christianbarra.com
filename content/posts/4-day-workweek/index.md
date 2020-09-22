@@ -3,6 +3,7 @@ title: "Getting 51 free days more on your agenda"
 description: "AKA a 4-day workweek"
 date: 2019-11-30
 tags: ["work-life-balance", "freedom", "4days/week", "170-days"]
+image: ./dockerfile.png
 ---
 
 During this past summer I negotiated new contract conditions, just before the end of my probation period:

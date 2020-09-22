@@ -6,6 +6,16 @@
   command = "npm run build"
 
   [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+    from = "/*"
+    to = "/index.html"
+    status = 200
+
+  [[redirects]]
+    from = "/page/start-here/"
+    to = "/"
+    status = 301
+
+  [[redirects]]
+    from = "/page/talk-and-workshop/"
+    to = "/speaking"
+    status = 301

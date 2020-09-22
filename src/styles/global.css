@@ -21,6 +21,14 @@
       @apply list-inside;
       @apply pl-5;
     }
+    ul {
+      @apply pb-2;
+    }
+    div.post > ul > li:before {
+      content: "-";
+      text-indent: -5px;
+      padding-right: 0.8em;
+    }
     p {
       @apply pb-3;
     }

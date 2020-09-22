@@ -26,7 +26,7 @@ const Navbar = () => {
             <li className="inline-block">
               <Link
                 className="block font-semibold underline px-3"
-                to="/articles"
+                to="/posts"
               >
                 Articles
               </Link>
