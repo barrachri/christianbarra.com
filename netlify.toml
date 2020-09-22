@@ -13,9 +13,11 @@
   [[redirects]]
     from = "/page/start-here/"
     to = "/"
+    force = true
     status = 301
 
   [[redirects]]
     from = "/page/talk-and-workshop/"
     to = "/speaking"
+    force = true
     status = 301
