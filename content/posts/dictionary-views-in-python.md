@@ -9,7 +9,6 @@ comments: true
 <center>
     <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Did you know that &quot;dict.keys()&quot; returns a view that is a set-like object? <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> <a href="https://t.co/0zS9FgnkLL">pic.twitter.com/0zS9FgnkLL</a></p>&mdash; Christian Barra (@christianbarra) <a href="https://twitter.com/christianbarra/status/1024266442374557696?ref_src=twsrc%5Etfw">July 31, 2018</a>
     </blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
 
 Dictionary is one of the Python's greatest features and using the `keys()`, `items()` and `values()` methods is really common.

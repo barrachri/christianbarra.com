@@ -58,7 +58,7 @@ To be honest there are different ways:
 - Running your own company
 - ...
 
-I'll cover `negotiating a new deal with your employer` in one of my next blog posts.
+I'll cover negotiating a new deal with your employer in one of my next blog posts.
 
 **tl;dr having the right mindset and approaching the negotiation from the right perspective are both crucial**.
 

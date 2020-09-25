@@ -17,7 +17,7 @@ export default function Home() {
         <StyledLink href="https://www.infarm.com" text="Infarm" />.
       </p>
       <p className="text-lg text-gray-800">
-        I am a proactive member in the tech community, through contributions to
+        I'm a proactive member in the tech community, through contributions to
         open source software, coaching,{" "}
         <Link className="underline" to="/speaking">
           speaking

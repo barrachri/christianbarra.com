@@ -57,6 +57,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-transformer-remark`,
