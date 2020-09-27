@@ -23,7 +23,7 @@ export default function Home() {
         and organising events.
       </p>
       <p className="text-lg text-gray-800">
-        I organized more than 20 events in the last years, ranging from meetups
+        In the last years I organized more than 20 events, ranging from meetups
         to +1000 people conferences, like{" "}
         <StyledLink href="https://www.europython.eu" text="EuroPython" /> and{" "}
         <StyledLink
