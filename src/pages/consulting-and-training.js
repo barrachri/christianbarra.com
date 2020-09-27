@@ -39,11 +39,11 @@ const Consulting = () => {
       </div>
       <div className="pt-5">
         <h1 className="text-gray-800 pb-5">Training</h1>
-        <p className="text-lg text-gray-800 pb-3">
+        <p>
           Tech is a rapidly changing industry. Keep your team/s up to date is
           fundamental and trainings are a great way to achieve that.
         </p>
-        <p className="text-lg text-gray-800 pb-3">
+        <p>
           Apart from tailored trainings if you are looking for something focus
           on Python and cloud infrastructure you can check{" "}
           <a href="https://www.pybootcamp.com" className="underline">
