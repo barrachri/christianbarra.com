@@ -7,13 +7,13 @@ tags: ["python", "europython", "talks"]
 comments: true
 ---
 
-So [__EuroPython 2017__](https://ep2017.europython.eu) is over!
+So [**EuroPython 2017**](https://ep2017.europython.eu) is over!
 
 It's been a tough mission to organize the #EuroPython this year but again it was an amazing experience.
 
 A special thank goes to all the people that have participated in organizing the conference: [EuroPython Team](https://ep2017.europython.eu/en/europython/team/).
 
-This is my _to-watch-list_ for __EuroPython 2017__, probably you can end up with something different, in case you wonder talks are randomly ordered.
+This is my _to-watch-list_ for **EuroPython 2017**, probably you can end up with something different, in case you wonder talks are randomly ordered.
 
 ### 1) [The encounter: Python's adventures in Africa](https://ep2017.europython.eu/conference/talks/the-encounter-pythons-adventures-in-africa) // [Slide](https://ep2017.europython.eu/media/conference/slides/the-encounter-pythons-adventures-in-africa.pdf)
 
@@ -82,7 +82,8 @@ Do you know how many trees there are in the world? That's a lot of data points t
 <br/>
 
 ### 8) [The joy of PyPy JIT: abstractions for free](https://ep2017.europython.eu/conference/talks/the-joy-of-pypy-jit-abstractions-for-free)
-Want to get __97x__ improvement in your code performance for free? Well this introduction to PyPy is probably the best way :)
+
+Want to get **97x** improvement in your code performance for free? Well this introduction to PyPy is probably the best way :)
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NQfpHQII2cU?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -90,6 +91,7 @@ Want to get __97x__ improvement in your code performance for free? Well this int
 <br />
 
 ### 9) [A faster Python? you have these choices](https://ep2017.europython.eu/conference/talks/a-faster-python-you-have-these-choices) // [Slide](https://ep2017.europython.eu/media/conference/slides/a-faster-python-you-have-these-choices.pdf)
+
 A very interesting presentation about how to make your Python code faster but it faces the problem from a chief/lead role perspective instead of how effectively write faster code.
 
 If you are facing these problems inside your team this presentation is for you.
@@ -100,6 +102,7 @@ If you are facing these problems inside your team this presentation is for you.
 <br/>
 
 ### 10) How to get your pants stolen, in 2 easy steps
+
 <center>
 <img src="/images/best-from-europython-2017/2_pants.jpg" width="50%" height="50%" class="img-responsive" alt="How to get your pants stolen">
 </center>
@@ -108,7 +111,6 @@ This was a lightning talk during the last day of the conference (LTs are not onl
 
 The story is quiet interesting and there is also a [crowdfunding campaign](https://www.indiegogo.com/projects/new-pants-for-europython-2018--2#/) &#x1F923;.
 
-
 But there is a lot more to come (I think more than 200 sessions), soon we are going to release all the program on [YouTube](https://www.youtube.com/channel/UC98CzaYuFNAA_gOINFB0e4Q)!
 
-__A big thanks to [Alessia Peviani](https://www.flickr.com/photos/photogenicgreen/albums/with/72157683943564550), official photographer of the event, all the pictures come from her lenses.__
+**A big thanks to [Alessia Peviani](https://www.flickr.com/photos/photogenicgreen/albums/with/72157683943564550), official photographer of the event, all the pictures come from her lenses.**

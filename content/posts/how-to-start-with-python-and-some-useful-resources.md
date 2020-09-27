@@ -22,6 +22,7 @@ There's a lot of interesting Python online courses, they don't talk about every 
 **Remember to start with Python 3 !**
 
 ### Online courses
+
 - [Codecademy Python Track](https://www.codecademy.com/catalog/language/python "Codecademy Python Track") - Very useful, with a few hours of practice you can begin mastering the Python basics.
 - [Learnpython.org](http://learnpythonthehardway.org/book/ "Learnpython.org") - Another interesting online course
 - [Learn Python the hardway](http://learnpythonthehardway.org/book "Learn Python the hardway") - If you prefer the "hardway" both course/book.
@@ -33,7 +34,7 @@ So pick up one of this course and start learning Python.
 If you prefer some good books I think this is the best to start.
 
 - [Learning Python](http://shop.oreilly.com/product/0636920028154.do "Learning Python") - Awesome book, it talks deeply about every aspect of Python and sometimes it’s a little “boring”. But, personally, I can call it the Python Bible.
-This book costs a lot of money and it's worth it, but often you'll find interesting offer (50 % discount) on O'Reilly site.
+  This book costs a lot of money and it's worth it, but often you'll find interesting offer (50 % discount) on O'Reilly site.
 
 # Useful resource
 
@@ -53,14 +54,17 @@ This book costs a lot of money and it's worth it, but often you'll find interest
 Same as for "Learning Python", these books cost a lot of money, but you can get them with some good discount on O'Really site.
 
 ### Slides
+
 - [Slideshare](http://www.slideshare.net/ "Slideshare.com")
 - [Speackerdeck](https://speakerdeck.com/ "Speackerdeck.com")
 
 ### Events and Conferences
+
 Go to [meetup.com](http://www.meetup.com/ "Meetup.com") and look for a Python meetup in your city and most of all take a ticket for the next PyCon in your country.
 This is my first year that I’ve participated in PyCon Italy and DjangoVillage and it was a great experience which left me wondering why I have not gone before.
 
 # Mistakes to avoid
+
 Don’t make my mistake to buy a lot of interesting long books about Python when you're not started to code yet.
 
 Remember, reading docs and books is important but code is much more important !

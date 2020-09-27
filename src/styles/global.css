@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+      @apply font-mono;
+    }
+    h1 {
+      @apply text-2xl;
+    }
+    h3 {
+      @apply text-xl;
+      @apply font-semibold;
+    }
+    h5 {
+      @apply text-xl;
+      @apply p-3;
+    }
+    li {
+      @apply list-inside;
+      @apply pl-5;
+    }
+    ul {
+      @apply pb-2;
+    }
+    div.post > ul > li:before {
+      content: "-";
+      text-indent: -5px;
+      padding-right: 0.8em;
+    }
+    p {
+      @apply pb-3;
+    }
+    h5 > a {
+      @apply underline;
+    }
+  }

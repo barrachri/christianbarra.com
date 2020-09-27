@@ -20,9 +20,7 @@ So I said… well, there must be an <code>except: pass</code> somewhere and I st
 
 <br \>
 
-
 ![screaming code](/images/the-code-review-that-never-happened/code.png "screaming code")
-
 
 This code was running somewhere in production.
 
@@ -31,7 +29,6 @@ So I just removed the comments and the code inside each block - everything else 
 <br/>
 
 _So, let's imagine for a second that we went back 4 years (November 2013), and that my colleague, named <code>Charlie</code> (random name), had just made a PR to add this code to our codebase._
-
 
 ## Let's begin.
 
@@ -45,15 +42,14 @@ Charlie have you read **[this](https://www.python.org/dev/peps/pep-0257/)**?
 
 <br/>
 
-I think it's always  **good practice to add docstrings**: to at least try to explain, even just briefly how your function behaves, and maybe also add something  about its parameters.
+I think it's always **good practice to add docstrings**: to at least try to explain, even just briefly how your function behaves, and maybe also add something about its parameters.
 
-It could be invaluable for your  colleagues or, indeed, anyone who is going to be working on the code in the future (.......).
+It could be invaluable for your colleagues or, indeed, anyone who is going to be working on the code in the future (.......).
 
 <br/>
 
 The name of the function really does not tell us that much about the ‘story’ of your code.
 A general explanation about how your are **dehydrating** your data would be very much appreciated!
-
 
 ### 2. Don't <code>except: pass</code>
 
@@ -62,7 +58,6 @@ Charlie, I see from the PR that you worked on this very late in the evening.....
 Nonetheless, what were you trying to do with **except: pass**
 
 **You are silently catching all the errors, without even logging them.**
-
 
 ```python
 try:
@@ -93,7 +88,6 @@ So please:
 - **be more specific about the exception you want to catch (check the example)**
 - don't **except: pass**
 
-
 ```python
 # example for Charlie
 
@@ -113,14 +107,13 @@ In any case - great job. Keep up the hard work.
 
 <br />
 
-And, just in case you have forgotten: - please *don't except: pass*.
+And, just in case you have forgotten: - please _don't except: pass_.
 
 <br />
 
 _Sincerely, your colleague and a future reader of your code._
 
-
-## Takeaways for the *current* readers
+## Takeaways for the _current_ readers
 
 ### 1. Code Reviews
 
@@ -133,7 +126,6 @@ Use docstrings: - they will be extremely useful in the future.
 ### 3. Catch errors
 
 <code>Try/Except</code> is really powerful, but use it properly: - to catch specific errors and log them.
-
 
 ### 4. Feedback
 

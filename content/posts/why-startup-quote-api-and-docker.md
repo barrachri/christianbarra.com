@@ -20,6 +20,7 @@ Write and read are still the best method to share knowledge.
 So, here I am.
 
 <!-- TEASER_END -->
+
 In honour of [the Daniel Pennac's ten rules](http://www.oup.it/files/Documenti/ReadOn/RightsoftheReaderbyPennac.pdf "The rights of the Reader") I'll follow 3 simple rules to make more enjoyable reading this blog:
 
 1. Don't write more than 900 words;
@@ -43,58 +44,81 @@ I have 1 simple docker container with python, uWSGI and NGINX.
 [Here](https://github.com/barrachri/dockerfiles "barrachri Repo") you can find my repo with my docker and config files.
 
 Now ssh your digital ocean vps or whatever you want to use
+
 <pre>ssh root@ipyourhostmachine</pre>
+
 Change your dir
+
 <pre>
 &#35; Clone git repository of your project or change your directory with your ROOT
 &#35; project directory, this is very important because this command "ADD ./ /app"
 &#35; copy all your files from your current directory to the /app container's dir
 cd rootprojectdir
 </pre>
+
 Download my Dockerfile
+
 <pre>
 &#35; Always from ROOT directory of your project download my Dockerfile
 &#35; remember to change your uwsgi.ini if your wsgi.py is not located in api/wsgi.py dir
 &#35; More information in my Dockerfile
 sudo curl -o Dockerfile https://raw.githubusercontent.com/barrachri/dockerfiles/master/dockerfile/Dockerfile_app
 </pre>
+
 Build image from Dockerfile and name it appserver_image
+
 <pre>docker build -t appserver_image .</pre>
+
 Run a container from appserver_image and expose port 80 from the container to port 80 of the host machine and name this container appserver
+
 <pre>docker run -d -p 80:80 --name appserver appserver_image</pre>
+
 We looking for mount point directories between our container and host machine
+
 <pre>docker inspect --format='{{.Volumes}}' appserver</pre>
+
 The output will be something like this
+
 <pre>
 map[
 /app:/var/lib/docker/vfs/dir/strangehashcode
 /etc/nginx/sites-enabled:/var/lib/docker/vfs/dir/strangehashcode
 /var/log/nginx:/var/lib/docker/vfs/dir/strangehashcode]
 </pre>
+
 If you want to stop and restart your container
+
 <pre>
 docker stop appserver
 docker start appserver
 </pre>
+
 If something went wrong simple
+
 <pre>
 docker logs appserver
 </pre>
+
 After that we need to set this container to start automatically, we can do that with [supervisor](http://supervisord.org/ "Supervisord")
+
 <pre>
 sudo apt-get install supervisor
 sudo nano /etc/supervisor/supervisord.conf
 </pre>
+
 And add this text at end
+
 <pre>
 [program:appserver]
 command=/usr/bin/docker start -a appserver
 </pre>
+
 Save and then
+
 <pre>sudo reboot</pre>
 
 Now your python app should be online !
 
 I hope this was useful for other questions I’m here !
 
-__*Tsuduku !*__
+**_Tsuduku !_**

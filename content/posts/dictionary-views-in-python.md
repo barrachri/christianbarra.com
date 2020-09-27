@@ -9,7 +9,6 @@ comments: true
 <center>
     <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Did you know that &quot;dict.keys()&quot; returns a view that is a set-like object? <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> <a href="https://t.co/0zS9FgnkLL">pic.twitter.com/0zS9FgnkLL</a></p>&mdash; Christian Barra (@christianbarra) <a href="https://twitter.com/christianbarra/status/1024266442374557696?ref_src=twsrc%5Etfw">July 31, 2018</a>
     </blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
 
 Dictionary is one of the Python's greatest features and using the `keys()`, `items()` and `values()` methods is really common.
@@ -27,10 +26,10 @@ But do you know which kind of object is returned?
 
 They all return a special object called [view](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects).
 
-Why are __views__ useful?
+Why are **views** useful?
 
-* they provide a dynamic view on the underline object (you change the dictionary and the view will change as well)
-* the object returned by `keys()` and `items()` behaves like a set-like object (with `items()` when the pairs are [hashable](https://docs.python.org/3/glossary.html#term-hashable))
+- they provide a dynamic view on the underline object (you change the dictionary and the view will change as well)
+- the object returned by `keys()` and `items()` behaves like a set-like object (with `items()` when the pairs are [hashable](https://docs.python.org/3/glossary.html#term-hashable))
 
 And being a set-like object means you can use the [set operations](https://docs.python.org/3.6/library/stdtypes.html#set-types-set-frozenset).
 
@@ -58,7 +57,7 @@ first_dictionary.keys() ^ second_dictionary.keys()
 
 This is called [simmetric difference](https://docs.python.org/3.6/library/stdtypes.html#frozenset.symmetric_difference).
 
-__One thing that you cannot do is change the dictionary while iterating over the view object.__
+**One thing that you cannot do is change the dictionary while iterating over the view object.**
 
 ```python
 for key, value in first_dictionary.items():

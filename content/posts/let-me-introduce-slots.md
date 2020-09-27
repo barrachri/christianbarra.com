@@ -9,16 +9,15 @@ comments: true
 
 Hey there!
 
-Today I'd like to talk about **__slots__**.
+Today I'd like to talk about ****slots****.
 
 The inspiration for this article comes from a blog post about Python data structures published by [Dan Bader](https://dbader.org/blog/records-structs-and-data-transfer-objects-in-python) and the small iteration we then had on this [gist](https://gist.github.com/barrachri/c7922df84eb171eaa45e466b1b790bce) to check their performances.
 
 For all the examples you are going to see I am using **Python 3.6.2**.
 
-So what are slots? **__slots__** are a different way to define the attributes storage for classes in Python.
+So what are slots? ****slots**** are a different way to define the attributes storage for classes in Python.
 
 If this is not clear bear with me.
-
 
 ```python
 # use getsizeof to get the size of our objects
@@ -82,7 +81,7 @@ my_instance.__dict__
  'new_message': 'This is a new message'}
 ```
 
-As you can see, I can add new attributes to <code>my_instance</code> using either the <code>my_instance.name_of_the_attribute</code> notation, or the <code>my_instance.__dict__['name_of_the_attribute']</code> notation.
+As you can see, I can add new attributes to <code>my_instance</code> using either the <code>my_instance.name_of_the_attribute</code> notation, or the <code>my_instance.**dict**['name_of_the_attribute']</code> notation.
 
 We can therefore say that for normal Python classes, a **dict** is used to store the instance's attributes.
 
@@ -92,7 +91,7 @@ Well, this is neither bad nor good, [**dicts** are awesome](https://www.youtube.
 
 With a dict you have a consistent lookup time, so the access time is more or less O(1) (it doesn't depend on the size of the dictionary), but because it's a mutable object and it can grow, it's a lot heavier (it has to allocate space for this).
 
-Let's look at the **__slots__** now.
+Let's look at the ****slots**** now.
 
 ```python
 class PythonClassWithSlots:
@@ -121,9 +120,9 @@ my_instance = PythonClassWithSlots("my message")
 []
 ```
 
-So we don't have an attribute called <code>__dict__</code> inside our instance.
+So we don't have an attribute called <code>**dict**</code> inside our instance.
 
-But we have a new attribute called **__slots__**.
+But we have a new attribute called ****slots****.
 
 ```python
 [element for element in dir(my_instance) if element == '__slots__']
@@ -154,7 +153,7 @@ AttributeError: 'PythonClassWithSlots' object has no attribute 'new_message'
 
 **No, we can't**.
 
-But we can use the attributes that we defined during the class declaration inside **__slots__**.
+But we can use the attributes that we defined during the class declaration inside ****slots****.
 
 ```python
 my_instance.message = "Just putting something new here"
@@ -162,10 +161,9 @@ my_instance.message = "Just putting something new here"
 
 ### But why would you need to use slots when you have a dict?
 
-Well the answer is that __slots__ are a *lot lighter and slightly faster*.
+Well the answer is that **slots** are a _lot lighter and slightly faster_.
 
-
-Are *slots*-based classes lighter than normal classes?
+Are _slots_-based classes lighter than normal classes?
 
 The answer should be yes, **but getting the size of an object is not that easy**.
 
@@ -207,7 +205,7 @@ getsizeof(my_instance_with_slots)
 56
 ```
 
-As you can see, the size of **__dict__** changes when we add new elements.
+As you can see, the size of ****dict**** changes when we add new elements.
 
 ```python
 len(my_instance_without_slots.__dict__)
@@ -222,7 +220,6 @@ getsizeof({k:v for k,v in enumerate(range(3))})
 A <code>normal</code> dict, with the same number of elements, will be the same size.
 What if we add 10 new elements?
 
-
 ```python
 for i in range(10): my_instance_without_slots.__dict__[i] = str(i)
 getsizeof(my_instance_without_slots.__dict__)
@@ -231,7 +228,7 @@ getsizeof(my_instance_without_slots)
 56
 ```
 
-Let's go further with our analysis of __slots__, and compare them with a normal class in a little experiment.
+Let's go further with our analysis of **slots**, and compare them with a normal class in a little experiment.
 
 ```python
 import json
@@ -245,7 +242,7 @@ my_json = '''{
 }'''
 ```
 
-In this example we import a json object (think about an api call) using both a normal class and a class with __slots__
+In this example we import a json object (think about an api call) using both a normal class and a class with **slots**
 
 ```python
 class MyUserWithSlots():
@@ -344,15 +341,15 @@ z = instance_without_slots.username
 61.6 ns ± 1.07 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 ```
 
-**__slots__** are also slightly faster 👍
+****slots**** are also slightly faster 👍
 
-Want to know more about **__slots__**?
+Want to know more about ****slots****?
 Check the [official documentation](https://docs.python.org/3/reference/datamodel.html#object.__slots__)
 
 ## Questions for you
 
-- What do you think about **__slots__**?
-- Is there a use case where you have found **__slots__** extremely useful?
+- What do you think about ****slots****?
+- Is there a use case where you have found ****slots**** extremely useful?
 
 This blog post was a notebook, you can download it from [here](https://github.com/barrachri/chrisbarra.xyz/blob/master/static/files/let-me-introduce-slots.ipynb)
 

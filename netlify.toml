@@ -1,0 +1,21 @@
+
+[build]
+  publish = "public/"
+
+  # Default build command.
+  command = "npm run build"
+
+  [[redirects]]
+    from = "/page/start-here/"
+    to = "/"
+    status = 301
+
+  [[redirects]]
+    from = "/page/talk-and-workshop/"
+    to = "/speaking"
+    status = 301
+
+  [[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200

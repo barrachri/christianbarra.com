@@ -20,15 +20,15 @@ b.x = 11
 a.x # ?
 ```
 
-My answer was wrong but it was the good occasion to pick some books and the **[reference docs](https://docs.python.org/3.5/reference/ "Python 3.5.2 Reference")** back and spend some hours with the concepts behind: __classes__, __instances__, __attributes__ and __namespaces__.
+My answer was wrong but it was the good occasion to pick some books and the **[reference docs](https://docs.python.org/3.5/reference/ "Python 3.5.2 Reference")** back and spend some hours with the concepts behind: **classes**, **instances**, **attributes** and **namespaces**.
 
-*All the things you are going to read are related to Python 3.x.*
+_All the things you are going to read are related to Python 3.x._
 
 # Briefly introduction to Scope
 
-In Python you have 2 very important concepts: __scope__ and __namespace__.
-They are both related but generally __scope__ is related to unqualified names (X for example) and __namespace__ is related to qualified attribute names (object.X).
-Due to the fact that in __Python everything is an object__ the difference is slight, but in general we can assume that.
+In Python you have 2 very important concepts: **scope** and **namespace**.
+They are both related but generally **scope** is related to unqualified names (X for example) and **namespace** is related to qualified attribute names (object.X).
+Due to the fact that in **Python everything is an object** the difference is slight, but in general we can assume that.
 
 Time for some code
 
@@ -44,9 +44,9 @@ f() # 20
 f1() # 1
 ```
 
-Python (generally) follows the __LEGB__ rule, where LEGB means __Local__ -> __Enclosed__ -> __Global__ -> __Built-in__.
+Python (generally) follows the **LEGB** rule, where LEGB means **Local** -> **Enclosed** -> **Global** -> **Built-in**.
 
-__LEGB__ rule means that when you call __X__ Python will look in order inside the:
+**LEGB** rule means that when you call **X** Python will look in order inside the:
 
 1. Local scope
 2. Enclosed scope
@@ -79,7 +79,7 @@ NameError                                 Traceback (most recent call last)
 NameError: name 'X' is not defined
 ```
 
-If you want to know more about __LEGB__ you can start from **[here](http://stackoverflow.com/questions/291978/short-description-of-python-scoping-rules "Python LEGB Rule")**.
+If you want to know more about **LEGB** you can start from **[here](http://stackoverflow.com/questions/291978/short-description-of-python-scoping-rules "Python LEGB Rule")**.
 
 Let's go back to our classes.
 
@@ -91,20 +91,20 @@ class C(): # class is a reserved keyword used to create class
 c = C()
 ```
 
-We just defined a simple class, named __C__, __X__ is defined inside __class C__, __c__ is what we call an __object of C__ or an __instance of C__.
+We just defined a simple class, named **C**, **X** is defined inside **class C**, **c** is what we call an **object of C** or an **instance of C**.
 
-__"f"__ is a *function* that accepts 1 parameter, **self**.
+**"f"** is a _function_ that accepts 1 parameter, **self**.
 
 ```python
 print(C.f, c.f)
 <function C.f at 0x1039aaae8> <bound method C.f of <__main__.C object at 0x103ea8e10>>
 ```
 
-Now the first strange part, we called __f__, a function defined inside __C__, and we get **_2 different things_**.
+Now the first strange part, we called **f**, a function defined inside **C**, and we get **_2 different things_**.
 
-A **_function_** with __C.f__ and a **_method_** with __c.f__.
+A **_function_** with **C.f** and a **_method_** with **c.f**.
 
-The keyword here is __bound__ or at least it's where the main difference lives.
+The keyword here is **bound** or at least it's where the main difference lives.
 
 But let's call our function (or method in this case):
 
@@ -127,7 +127,7 @@ NameError                                 Traceback (most recent call last)
 NameError: name 'X' is not defined
 ```
 
-mmmm.... Python should find __X__ following the __LEGB__, does the __LEGB__ rule still apply or not ?
+mmmm.... Python should find **X** following the **LEGB**, does the **LEGB** rule still apply or not ?
 
 Let's try with this:
 
@@ -150,10 +150,9 @@ c.f()
 
 We have a nested function (f1) and we added X = 50 in the global scope and now the code works.
 
-__But what about X inside class C ?__
+**But what about X inside class C ?**
 
-Well __X__ (inside class C) is not exactly a _variable_, it's an __attribute__ and behaves in a different way from a _variable_ when we talk about __LEGB__.
-
+Well **X** (inside class C) is not exactly a _variable_, it's an **attribute** and behaves in a different way from a _variable_ when we talk about **LEGB**.
 
 ```python
 class C():
@@ -164,15 +163,15 @@ c = C()
 c.f() # 10
 ```
 
-We just changed X with __self.X__ inside the print function a now it works.
+We just changed X with **self.X** inside the print function a now it works.
 
 Why ?
 
-Well.... time to explain the concept of __self__ and __namespaces__.
+Well.... time to explain the concept of **self** and **namespaces**.
 
 # Self
 
-As I said, __self__ is just a parameter.
+As I said, **self** is just a parameter.
 
 ```python
 class C():
@@ -183,9 +182,9 @@ c = C()
 c.f() # 10
 ```
 
-This code works in the same way, we use __self__ as a convention, it's just a reference to the __instance__, in this case to the instance __c__, that is passed to the function when we call it.
+This code works in the same way, we use **self** as a convention, it's just a reference to the **instance**, in this case to the instance **c**, that is passed to the function when we call it.
 
-When we type __c.f()__  Python is calling __C.f(c)__, where __C__ is the class of our instance, __f__ is our function/method and __c__ is the first parameter required by __f__ (self or legion).
+When we type **c.f()** Python is calling **C.f(c)**, where **C** is the class of our instance, **f** is our function/method and **c** is the first parameter required by **f** (self or legion).
 
 And do you remember this ?
 
@@ -193,25 +192,25 @@ And do you remember this ?
 c.f # <bound method C.f of <__main__.C object at 0x1039cf6d8>>
 ```
 
-Now the meaning of __bound__ is more clear, it means that when we call **f** with __c.f__ we are automatically passing a reference to our instance.
+Now the meaning of **bound** is more clear, it means that when we call **f** with **c.f** we are automatically passing a reference to our instance.
 
-So from this moment when we talk about a function that accept a self parameter we will call it __instance method__.
+So from this moment when we talk about a function that accept a self parameter we will call it **instance method**.
 
-And yes you can also have __unbound method__, that are not related to your instances like __class method__ or __static method__, but we leave this for the future.
+And yes you can also have **unbound method**, that are not related to your instances like **class method** or **static method**, but we leave this for the future.
 
 # Namespaces
 
 A namespace is a collection of...names.
 
-A collection of __references__ to __objects__ like __name=object__.
+A collection of **references** to **objects** like **name=object**.
 
-Why __namespaces__ are so important ?
+Why **namespaces** are so important ?
 
 Because every class has a namespace and...... every instance of a class has a namespace too.
 
-They are completely __separated__ but related _somehow_.
+They are completely **separated** but related _somehow_.
 
-Let's look inside our class and instance namespaces, we have a built-in attribute for this: __\__dict__\__
+Let's look inside our class and instance namespaces, we have a built-in attribute for this: **\_\_dict**\_\_
 
 ```python
 # I cleaned the output of C.__dict__ of all the built-in methods/attributes
@@ -221,9 +220,9 @@ c.__dict__ # {}
 
 As you can see class namespace and instance namespace are completely different.
 
-Class namespace is a __mappingproxy__, instance namespace is a __dict__.
+Class namespace is a **mappingproxy**, instance namespace is a **dict**.
 
-A mappingproxy is a kind of __read-only__ dict.
+A mappingproxy is a kind of **read-only** dict.
 
 You can find why mappingproxy is used **[here](http://stackoverflow.com/questions/32720492/why-is-a-class-dict-a-mappingproxy "why-is-a-class-dict-a-mappingproxy")**.
 
@@ -243,17 +242,17 @@ TypeError: 'mappingproxy' object does not support item assignment
 
 If you want to put new elements inside your class namespace you have to use other ways.
 
-Back to __C namespace__ we can find __f__, our instance method, and __X__.
+Back to **C namespace** we can find **f**, our instance method, and **X**.
 
-__X__ as we said is not properly a _variable_ and is defined in **C.\__dict__**.
+**X** as we said is not properly a _variable_ and is defined in **C.\_\_dict\_\_**.
 
-How can we call it ? __Class attribute__
+How can we call it ? **Class attribute**
 
-And with class attribute we mean that __X__ (attribute) belongs to __C__ (class), because as we see __X__ is inside __C namespace__ (C.\__dict__).
+And with class attribute we mean that **X** (attribute) belongs to **C** (class), because as we see **X** is inside **C namespace** (C.\_\_dict\_\_).
 
 Can we access directly a class attribute ?
 
-Yes, with __NameOfTheClass.AttributeName__
+Yes, with **NameOfTheClass.AttributeName**
 
 ```python
 C.X # 10
@@ -261,11 +260,11 @@ C.X # 10
 
 Just to recap:
 
-1. C namespace contains __f__ (a method) and __X__ (a class attribute)
+1. C namespace contains **f** (a method) and **X** (a class attribute)
 2. c namespace is empty
-3. We accessed X of C with __self.X__
+3. We accessed X of C with **self.X**
 
-But before I said that __class namespaces__ and __instance namespaces__ are completely separated.
+But before I said that **class namespaces** and **instance namespaces** are completely separated.
 
 ```python
 class C():
@@ -275,20 +274,22 @@ class C():
 c = C()
 c.f() # 10
 ```
-When we type __self.X__ we tell Python to "*look inside the namespace of instance __self__ for __X__*".
 
-__How can we access something that belongs to C (attribute X) from self.X (our instance) ?__
+When we type **self.X** we tell Python to "_look inside the namespace of instance **self** for **X**_".
+
+**How can we access something that belongs to C (attribute X) from self.X (our instance) ?**
 
 Time for the next part.
 
 # MRO
-MRO means _**Method Resolution Order**_ and is how and why from __self.X__ we get **C.\__dict__['X']**.
+
+MRO means _**Method Resolution Order**_ and is how and why from **self.X** we get **C.\_\_dict\_\_['X']**.
 
 As I said namespace of a class and its instances are separated but somehow related.
 
-**MRO** is behind the "*somehow related*".
+**MRO** is behind the "_somehow related_".
 
-When Python look for an attribute, like __self.X__, it will search in order:
+When Python look for an attribute, like **self.X**, it will search in order:
 
 1. Instance namespace
 2. Class namespace
@@ -323,20 +324,21 @@ I used [getattr](https://docs.python.org/3/library/functions.html#getattr "getat
 
 As I said our instance is related to its class (Son) and to the superclasses of Son (Mother and Father).
 
-The process of giving an order between your instance and its class and between your class and all its superclasses is called __linearization__.
+The process of giving an order between your instance and its class and between your class and all its superclasses is called **linearization**.
 
 The algorithm behind Python MRO is called **[C3](https://www.python.org/download/releases/2.3/mro/ "Python MRO")**
 and the main thing to remember is this:
 
-* children precede their parents (aka superclasses) and the order of appearance in \__bases__ is respected.
+- children precede their parents (aka superclasses) and the order of appearance in \_\_bases\_\_ is respected.
 
 Bases are what we put inside the parenthesis after the name of a class: class Name(bases).
 
-* Instance __a__ is a child of class __A__
-* Class __A__ is a child of class __Mother__ and __Father__
-* Class __Mother__ and __Father__ are both children of object
+- Instance **a** is a child of class **A**
+- Class **A** is a child of class **Mother** and **Father**
+- Class **Mother** and **Father** are both children of object
 
-With **__bases__** we get a tuple with the parents of a class, with **__class__** we get the class of an instance:
+With ****bases**** we get a tuple with the parents of a class, with ****class**** we get the class of an instance:
+
 ```python
 a.__class__ # __main__.A,
 Son.__bases__ # (__main__.Mother, __main__.Father)
@@ -346,7 +348,7 @@ Father.__bases__ # (object,)
 
 Nothing new I would say, can we see the search order of MRO ?
 
-Yes, with __\__mro____:
+Yes, with **\_\_mro\_\_**:
 
 ```python
 Son.__mro__ # (__main__.Son, __main__.Mother, __main__.Father, object)
@@ -360,11 +362,11 @@ a.M # 22
 
 Python searches in order:
 
-1. a.\__dict__
-2. Son.\__dict__
-3. Mother.\__dict__
-4. Father.\__dict__
-5. object.\__dict__
+1. a.\_\_dict\_\_
+2. Son.\_\_dict\_\_
+3. Mother.\_\_dict\_\_
+4. Father.\_\_dict\_\_
+5. object.\_\_dict\_\_
 
 With the rule first-come first-served.
 
@@ -384,14 +386,14 @@ a.F # Output: 50
 
 This is why we get 50 here instead of 34.
 
-1. First Python looks inside __a__ (Son's instance) namespace, but nothing is found named __"F"__
-2. Then it's time to look inside the namespace of Son, class of our instance, and we found __"F"__
+1. First Python looks inside **a** (Son's instance) namespace, but nothing is found named **"F"**
+2. Then it's time to look inside the namespace of Son, class of our instance, and we found **"F"**
 
 And what about F defined inside Father ?
 
-As I said *first-come first-served*, and in our **\__mro__** Son namespace is before Father namespace.
+As I said _first-come first-served_, and in our **\_\_mro\_\_** Son namespace is before Father namespace.
 
-And what does it happen if you look for a reference that doesn't exist in all the \__mro__ namespaces ?
+And what does it happen if you look for a reference that doesn't exist in all the \_\_mro\_\_ namespaces ?
 
 ```python
 a.DXIUISD
@@ -403,15 +405,15 @@ AttributeError                            Traceback (most recent call last)
 AttributeError: 'A' object has no attribute 'DXIUISD'
 ```
 
-You get an __AttributeError__.
+You get an **AttributeError**.
 
-__But where is the tricky part ?__
+**But where is the tricky part ?**
 
-MRO and all the things explained above work only when you try to __retrieve__ an attribute/method and with __retrieve__ I mean object.attribute or object.method in general.
+MRO and all the things explained above work only when you try to **retrieve** an attribute/method and with **retrieve** I mean object.attribute or object.method in general.
 
-When you try to __assign__ an attribute/method (like object.attribute = 10) you do that in the __namespace of the object (instance/class)__.
+When you try to **assign** an attribute/method (like object.attribute = 10) you do that in the **namespace of the object (instance/class)**.
 
- You can change the behaviour with advanced and magic things (metaclass, inheritance, descriptor, property...) but this is how it __normally__ works.
+You can change the behaviour with advanced and magic things (metaclass, inheritance, descriptor, property...) but this is how it **normally** works.
 
 So when we type this:
 
@@ -419,12 +421,13 @@ So when we type this:
 Son.F
 ```
 
-Python looks for the attribute inside the namespaces following the \__mro__ order.
+Python looks for the attribute inside the namespaces following the \_\_mro\_\_ order.
+
 ```python
 Son.F = 50
 ```
 
-But with this the \__mro__ doesn't matter, **Python will create a new attribute or change its value if exists**.
+But with this the \_\_mro\_\_ doesn't matter, **Python will create a new attribute or change its value if exists**.
 
 ```python
 class Mother():
@@ -456,9 +459,7 @@ Here are the namespaces
 {'S': 10, 'F': 30} # After 4
 ```
 
-
-
-# **\__init__** method
+# **\_\_init\_\_** method
 
 Init method is a special method to customize our instance, and it's called when we create an instance.
 
@@ -471,7 +472,7 @@ a = A(10)
 b = A(50)
 ```
 
-Translated it means "*when you call A(something) create a new instance of A and assign something to self.x*".
+Translated it means "_when you call A(something) create a new instance of A and assign something to self.x_".
 
 Let's look inside the namespace.
 
@@ -481,9 +482,9 @@ a.__dict__ # {'x': 10}
 b.__dict__ #  {'x': 50}
 ```
 
-__A__ has its attributes, C and \__init__, **a** and **b** their own x.
+**A** has its attributes, C and \_\_init\_\_, **a** and **b** their own x.
 
-The attributes of __a__ and __b__ are called __instance attributes__, and __they belong to their instance__.
+The attributes of **a** and **b** are called **instance attributes**, and **they belong to their instance**.
 
 Now it should be clear the output of this:
 
@@ -491,7 +492,7 @@ Now it should be clear the output of this:
 A.C, a.C, b.C # (10, 10, 10)
 ```
 
-Both __a__ and __b__ have no references of the attribute C in their namespaces, so Python looks inside __A__ namespace to find something (following the MRO).
+Both **a** and **b** have no references of the attribute C in their namespaces, so Python looks inside **A** namespace to find something (following the MRO).
 
 But what happens if we do this ?
 
@@ -500,14 +501,15 @@ a.C = 50
 a.__dict__ # {'C': 50, 'x': 10}
 ```
 
-We create a new reference inside __a__ namespace.
+We create a new reference inside **a** namespace.
 
 ```python
 A.C, a.C, b.C # (10, 50, 10)
 ```
-This is why we get this result, because now when we look for C inside __a__ we have an occurrence.
 
-Let's see the __dict__ of __A__, __a__ and __b__ again
+This is why we get this result, because now when we look for C inside **a** we have an occurrence.
+
+Let's see the **dict** of **A**, **a** and **b** again
 
 ```python
 A.__dict__ # (mappingproxy({'__init__': <function A.__init__ at 0x103ecab70>, 'C': 10})
@@ -522,7 +524,7 @@ A.C = 20
 A.C, a.C, b.C # (20, 50, 20)
 ```
 
-a.C remains 50 and b.C still looks inside __A__ namespace because its namespace doesn't have any value for "C".
+a.C remains 50 and b.C still looks inside **A** namespace because its namespace doesn't have any value for "C".
 
 ```python
 b.C = 70
@@ -530,7 +532,7 @@ A.C, a.C, b.C
 (20, 50, 70)
 ```
 
-Now instances __a__, __b__ and the class __A__ have a reference for "C" in their namespaces.
+Now instances **a**, **b** and the class **A** have a reference for "C" in their namespaces.
 
 ```python
 A.__dict__ # (mappingproxy({'__init__': <function A.__init__ at 0x103ecab70>, 'C': 10})
@@ -555,7 +557,7 @@ a.p() # 10 10
 b.p() # 10 50
 ```
 
-So we just hardcoded __A.C__ inside our method.
+So we just hardcoded **A.C** inside our method.
 
 Is there a better way ?
 
@@ -602,20 +604,20 @@ A.C.pop(0)
 A.C, a.C, b.C # ([10], [10], [10])
 ```
 
-The class attribute __A.C__ this time seems really _shared_, but also the class attributes that we used before were _initially shared_.
+The class attribute **A.C** this time seems really _shared_, but also the class attributes that we used before were _initially shared_.
 
 So why we can append and pop elements without any kind of problem ?
 
-__Because we didn't do any kind of assignment__.
+**Because we didn't do any kind of assignment**.
 
-And our instances and class are "working" on a mutable object, __accessing the object pointed by the reference (C) and changing it directly__.
+And our instances and class are "working" on a mutable object, **accessing the object pointed by the reference (C) and changing it directly**.
 
 ```python
 a.C = a.C * 2
 A.C, a.C, b.C # ([10], [10, 10], [10])
 ```
 
-After an assignment __a.C__ has a new reference inside its namespace.
+After an assignment **a.C** has a new reference inside its namespace.
 
 But the tricky part is this one....if instead of the last code we type this:
 
@@ -634,7 +636,7 @@ In this case we didn't have any new assignment, so we are still changing the ref
 
 Why ?
 
-**Due to how augmented assignments (+=, -=, *=, /=, ...) work**.
+**Due to how augmented assignments (+=, -=, \*=, /=, ...) work**.
 
 With list and mutable objects there isn't an _assignment_ and the operation is done "in-place", we are just updating the **referenced object** directly.
 
@@ -651,8 +653,8 @@ b.x = 11
 a.x # ?
 ```
 
-The answer is 1 because b.x = 11 creates a new attribute (instance attribute) inside __b__ namespace.
+The answer is 1 because b.x = 11 creates a new attribute (instance attribute) inside **b** namespace.
 
-The namespace of __a__ remains empty, so __a.x__ will look inside the namespace of __A__ where __x__ is still equal to 1.
+The namespace of **a** remains empty, so **a.x** will look inside the namespace of **A** where **x** is still equal to 1.
 
-If you wanto to go further with OOP in Python I think nothing is better than [Leonardo Giordani's training](https://speakerdeck.com/lgiordani/object-oriented-python-from-scratch  "slides").
+If you wanto to go further with OOP in Python I think nothing is better than [Leonardo Giordani's training](https://speakerdeck.com/lgiordani/object-oriented-python-from-scratch "slides").
