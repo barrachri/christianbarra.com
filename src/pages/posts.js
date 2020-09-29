@@ -69,7 +69,10 @@ const Posts = () => {
         title="Posts"
         description="Posts and thoughts about tech, business and life"
       />
-      <DisplayPosts />
+      <>
+        <h1 className="text-gray-800 pb-5">Posts</h1>
+        <DisplayPosts />
+      </>
     </Layout>
   )
 }
