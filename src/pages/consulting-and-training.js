@@ -12,11 +12,11 @@ const Consulting = () => {
       <div>
         <h1 className="text-gray-800 pb-5">Consulting</h1>
         <p>
-          I am a software engineer with a strong product-driven approach. My
-          focus is mainly on system architecture, backend development and cloud
-          infrastructure.
+          I'm a software engineer and engineering leader with a strong
+          product-driven approach. My focus is mainly on system architecture,
+          backend development and cloud infrastructure.
         </p>
-        <p>These are some areas where I can support your company:</p>
+        <p>These are some areas where I can support you:</p>
         <ul>
           <li>
             - Design and develop software systems and applications
@@ -40,12 +40,17 @@ const Consulting = () => {
       <div className="pt-5">
         <h1 className="text-gray-800 pb-5">Training</h1>
         <p>
-          Tech is a rapidly changing industry. Keep your team/s up to date is
-          fundamental and trainings are a great way to achieve that.
+          Tech is a rapidly changing industry. Helping your teams staying up to
+          date is fundamental, and training courses are a great way to achieve
+          that.
         </p>
         <p>
-          Apart from tailored trainings if you are looking for something focus
-          on Python and cloud infrastructure you can check{" "}
+          My training courses are tailored on your team's needs and learning
+          goals, and the agenda is usually created together.
+        </p>
+        <p>
+          In case you are looking for training focused on Python and cloud
+          infrastructure you can check{" "}
           <a href="https://www.pybootcamp.com" className="underline">
             pybootcamp.com
           </a>
