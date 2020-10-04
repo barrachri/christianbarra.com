@@ -184,7 +184,7 @@ getsizeof(my_instance_with_slots)
 
 ### mmm.....but normal classes should be heavier, shouldn't they?
 
-With [**getsizeof**]("https://docs.python.org/3/library/sys.html#sys.getsizeof) we get the size in **bytes** of our object but not of all the other referenced objects.
+With [**getsizeof**](https://docs.python.org/3/library/sys.html#sys.getsizeof) we get the size in **bytes** of our object but not of all the other referenced objects.
 
 So in our case it should be calculated in the following way:
 
