@@ -14,11 +14,11 @@ I am currently working as consultant for a mid-sized company in Europe, where my
 A few weeks ago, it became clear to me that the server running the application was down.
 Something wasn't working properly, and yet the logs were completely silent.
 
-<br/>
+<br />
 
 So I said… well, there must be an <code>except: pass</code> somewhere and I started looking for it (so much for my Friday night…)
 
-<br \>
+<br />
 
 ![screaming code](/images/the-code-review-that-never-happened/code.png "screaming code")
 
@@ -26,7 +26,7 @@ This code was running somewhere in production.
 
 So I just removed the comments and the code inside each block - everything else I left just as it was.
 
-<br/>
+<br />
 
 _So, let's imagine for a second that we went back 4 years (November 2013), and that my colleague, named <code>Charlie</code> (random name), had just made a PR to add this code to our codebase._
 
@@ -40,13 +40,13 @@ The code logic looks ok, but **there are a few things that I would definitely ch
 
 Charlie have you read **[this](https://www.python.org/dev/peps/pep-0257/)**?
 
-<br/>
+<br />
 
 I think it's always **good practice to add docstrings**: to at least try to explain, even just briefly how your function behaves, and maybe also add something about its parameters.
 
 It could be invaluable for your colleagues or, indeed, anyone who is going to be working on the code in the future (.......).
 
-<br/>
+<br />
 
 The name of the function really does not tell us that much about the ‘story’ of your code.
 A general explanation about how your are **dehydrating** your data would be very much appreciated!
@@ -84,7 +84,7 @@ Same goes here - you are silently catching every kind of exception.
 So please:
 
 - remove **pass**
-- log this exception somehow, the [https://docs.python.org/3/library/logging.html](logging module) is a good place to start.
+- log this exception somehow, the [logging module](https://docs.python.org/3/library/logging.html) is a good place to start.
 - **be more specific about the exception you want to catch (check the example)**
 - don't **except: pass**
 

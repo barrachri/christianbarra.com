@@ -17,7 +17,7 @@ This is my _to-watch-list_ for **EuroPython 2017**, probably you can end up with
 
 ### 1) [The encounter: Python's adventures in Africa](https://ep2017.europython.eu/conference/talks/the-encounter-pythons-adventures-in-africa) // [Slide](https://ep2017.europython.eu/media/conference/slides/the-encounter-pythons-adventures-in-africa.pdf)
 
-I've met [Aisha](https://twitter.com/AishaXBello) for the first time during [EuroPython 2015](ep2015.europython.eu), she was an attendee of the DjangoGirls workshop in Bilbao.
+I've met [Aisha](https://twitter.com/AishaXBello) for the first time during [EuroPython 2015](https://europython.eu), she was an attendee of the DjangoGirls workshop in Bilbao.
 
 From that moment she has put a [lot of effort](https://www.djangoproject.com/weblog/2016/dec/22/dsf-announces-winner-2016-malcolm-tredinnick-memor/) in growing the Python community in Africa and the results are astonishing as much as the different kind of problems they are facing there.
 
