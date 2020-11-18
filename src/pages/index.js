@@ -17,7 +17,7 @@ export default function Home() {
       <p className="text-lg text-gray-800">
         I'm a proactive member in the tech community, through contributions to
         open source software, coaching,{" "}
-        <Link className="underline" to="/speaking">
+        <Link className="underline" to="/speaking/">
           speaking
         </Link>{" "}
         and organising events.
@@ -47,7 +47,7 @@ export default function Home() {
       </p>
       <div className="border-t-4 border-b-4 mt-5">
         <p className="text-lg text-gray-800 font-bold pt-2 pb-2">
-          <Link className="underline" to="/consulting-and-training">
+          <Link className="underline" to="/consulting-and-training/">
             I'm available for consulting engagements on backend development,
             cloud infrastructure and more
           </Link>

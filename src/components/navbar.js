@@ -21,21 +21,21 @@ const Navbar = () => {
               </Link>
               <Link
                 className="block text-base font-semibold mt-4 lg:inline-block lg:mt-0 hover:underline mr-4"
-                to="/consulting-and-training"
+                to="/consulting-and-training/"
                 alt="Consulting &amp; Training"
               >
                 Consulting &amp; Training
               </Link>
               <Link
                 className="block text-base font-semibold mt-4 lg:inline-block lg:mt-0 hover:underline mr-4"
-                to="/posts"
+                to="/posts/"
                 alt="Posts"
               >
                 Posts
               </Link>
               <Link
                 className="block text-base font-semibold mt-4 lg:inline-block lg:mt-0 hover:underline mr-4"
-                to="/speaking"
+                to="/speaking/"
                 alt="Speaking"
               >
                 Speaking
