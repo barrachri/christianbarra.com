@@ -99,7 +99,7 @@ If something went wrong simple
 docker logs appserver
 </pre>
 
-After that we need to set this container to start automatically, we can do that with [supervisor](http://supervisord.org/ "Supervisord")
+After that we need to set this container to start automatically, we can do that with [supervisor](https://supervisord.readthedocs.io "Supervisord")
 
 <pre>
 sudo apt-get install supervisor

@@ -7,7 +7,7 @@ cover:
 tags: ["freelancing", "academia", "industry"]
 ---
 
-On October 11th we hosted a [panel at PyConDE](https://de.pycon.org/program/pyconde-meegjc-job-panel-christian-barra-tereza-iofciu-katharina-rasch-matteo-guzzo-sieer-angar/) with [Matteo Guzzo](https://twitter.com/_teoguso), [Tereza Iofciu](https://twitter.com/terezaif), [Katharina Rasch](https://twitter.com/krasch_io) and [Sieer Angar](https://twitter.com/sieer83/) and I had the pleasure to be the moderator.
+On October 11th we hosted a panel at PyConDE with [Matteo Guzzo](https://twitter.com/_teoguso), [Tereza Iofciu](https://twitter.com/terezaif), [Katharina Rasch](https://twitter.com/krasch_io) and [Sieer Angar](https://twitter.com/sieer83/) and I had the pleasure to be the moderator.
 
 These are some of the takeaways:
 

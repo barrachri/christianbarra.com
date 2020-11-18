@@ -20,7 +20,7 @@ So I said… well, there must be an <code>except: pass</code> somewhere and I st
 
 <br />
 
-![screaming code](/images/the-code-review-that-never-happened/code.png "screaming code")
+![screaming code](./code.png "screaming code")
 
 This code was running somewhere in production.
 
@@ -132,5 +132,3 @@ Use docstrings: - they will be extremely useful in the future.
 **Proper** feedback is fundamental if you want to grow, both in technical skills and in what are generally called **soft skills**.
 
 I say **proper** feedback, because feedback given in the wrong way is probably more harmful than not giving a feedback at all.
-
-If you want to know more about how to give proper feedback, here’s a good starting point: [http://www.ustream.tv/recorded/102892183](http://www.ustream.tv/recorded/102892183)

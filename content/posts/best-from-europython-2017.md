@@ -109,7 +109,7 @@ If you are facing these problems inside your team this presentation is for you.
 <br />
 This was a lightning talk during the last day of the conference (LTs are not online yet).
 
-The story is quiet interesting and there is also a [crowdfunding campaign](https://www.indiegogo.com/projects/new-pants-for-europython-2018--2#/) &#x1F923;.
+The story is quiet interesting and there was also a crowdfunding campaign on indiegogo.
 
 But there is a lot more to come (I think more than 200 sessions), soon we are going to release all the program on [YouTube](https://www.youtube.com/channel/UC98CzaYuFNAA_gOINFB0e4Q)!
 
