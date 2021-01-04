@@ -11,7 +11,7 @@ export default function Home() {
       <SEO title="Home" />
       <p className="text-lg text-gray-800">
         I'm a developer, engineering leader and entrepreneur living in Berlin,
-        currently the Tech Lead of the Farm Service Domain at{" "}
+        former Tech Lead at{" "}
         <StyledLink href="https://www.infarm.com" text="Infarm" />.
       </p>
       <p className="text-lg text-gray-800">
