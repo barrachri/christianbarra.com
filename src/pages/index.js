@@ -10,10 +10,10 @@ export default function Home() {
     <Layout>
       <SEO title="Home" />
       <p className="text-lg text-gray-800">
-        I'm a developer, engineering leader and entrepreneur living in Berlin.
-      </p>
-      <p className="text-lg text-gray-800">
-        Right now I'm building <StyledLink href="https://www.machinalia.com" text="Machinalia" /> and <StyledLink href="https://www.pybootcamp.com" text="PyBootcamp" />.
+        I'm a developer, engineering leader and entrepreneur living in Berlin,
+        currently building{" "}
+        <StyledLink href="https://www.machinalia.com" text="Machinalia" /> and{" "}
+        <StyledLink href="https://www.pybootcamp.com" text="PyBootcamp" />.
       </p>
       <p className="text-lg text-gray-800">
         I'm a proactive member in the tech community, through contributions to
@@ -49,8 +49,8 @@ export default function Home() {
       <div className="border-t-4 border-b-4 mt-5">
         <p className="text-lg text-gray-800 font-bold pt-2 pb-2">
           <Link to="/consulting-and-training/">
-            I'm available for consulting engagements on backend development,
-            cloud infrastructure and more
+            I'm available for consulting engagements on backend development and
+            cloud infrastructure.
           </Link>
           .
         </p>
