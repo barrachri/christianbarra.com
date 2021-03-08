@@ -50,7 +50,7 @@ export default function Home() {
         <p className="text-lg text-gray-800 font-bold pt-2 pb-2">
           <Link to="/consulting-and-training/">
             I'm available for consulting engagements on backend development and
-            cloud infrastructure.
+            cloud infrastructure
           </Link>
           .
         </p>
