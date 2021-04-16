@@ -12,7 +12,7 @@ const Consulting = () => {
       <div>
         <h1 className="text-gray-800 pb-5">Consulting & Training</h1>
         <p className="font-bold">
-          Have you ever had the feeling of having a badass team/organisation but
+          Have you ever had the feeling of having a badass team/organization but
           things are not working out as you expected?
         </p>
         <p>I've been there too.</p>
@@ -25,11 +25,11 @@ const Consulting = () => {
           .
         </p>
         <p>
-          The mission of <b>fourbit</b> is to help fast growing startups unstack
+          The mission of <b>fourbit</b> is to help fast-growing startups unstuck
           their teams.
         </p>
         <p>
-          The success of a team depends of four different things, what I call
+          The success of a team depends on four different dimensions, what I call
           the TDWx framework:
         </p>
 
