@@ -10,57 +10,45 @@ const Consulting = () => {
         description="Learn how I can support your company with consulting and training"
       />
       <div>
-        <h1 className="text-gray-800 pb-5">Consulting</h1>
-        <p>
-          I'm a software engineer and engineering leader with a strong
-          product-driven approach. My focus is mainly on system architecture,
-          backend development and cloud infrastructure.
+        <h1 className="text-gray-800 pb-5">Consulting & Training</h1>
+        <p className="font-bold">
+          Have you ever had the feeling of having a badass team/organisation but
+          things are not working out as you expected?
         </p>
-        <p>These are some areas where I can support you:</p>
-        <ul>
-          <li>
-            - Design and develop software systems and applications
-            (Python/Go/Javascript)
-          </li>
-          <li>- Reduce lead-time and improve software quality</li>
-          <li>- Implement a remote work strategy & culture</li>
-          <li>
-            - Migrate your deployment to a container/kubernetes based solution
-          </li>
-          <li>- Create and grow software teams</li>
-          <li>- Implement and improve CI/CD</li>
-          <li>- Build MVPs</li>
-          <li>- Build cloud infrastructure</li>
-          <li>- Build RESTFul, gRPC and GraphQL APIs</li>
-          <li>- Build serverless system</li>
-          <li>- Build software for IoT products</li>
-          <li>- ....</li>
-        </ul>
-      </div>
-      <div className="pt-5">
-        <h1 className="text-gray-800 pb-5">Training</h1>
+        <p>I've been there too.</p>
         <p>
-          Tech is a rapidly changing industry. Helping your teams staying up to
-          date is fundamental, and training courses are a great way to achieve
-          that.
-        </p>
-        <p>
-          My training courses are tailored on your team's needs and learning
-          goals, and the agenda is usually created together.
-        </p>
-        <p>
-          In case you are looking for training focused on Python and cloud
-          infrastructure you can check{" "}
-          <a href="https://www.pybootcamp.com" className="underline">
-            pybootcamp.com
+          I put my +12 years of experience in software and engineering
+          leadership in{" "}
+          <a href="https://www.four-bit.com" className="underline">
+            fourbit
           </a>
           .
         </p>
-      </div>
-      <div className="border-t-4 border-b-4 mt-5">
-        <p className="text-lg text-gray-800 text-gray-800 pt-2 pb-2">
-          For more info, whether for consulting or training, you can send an
-          email at <b>me [AT] christianbarra.com</b>
+        <p>
+          The mission of <b>fourbit</b> is to help fast growing startups ustack
+          their teams.
+        </p>
+        <p>
+          The success of a team depends of four different things, what I call
+          the TDWx framework:
+        </p>
+
+        <ul>
+          <li>- Team: skills, engagement</li>
+          <li>- Deliverability: lead time, re-work, deployment frequency</li>
+          <li>- Work: agile framework, scopes, clarity, focus</li>
+        </ul>
+
+        <p>
+          The last bit, x, is randomness and unknowns, things that you can't
+          control. So it's fundamental to get the first 3 bits right.
+        </p>
+        <p className="font-bold">
+          During a consulting engagement we focus on one bit only and drive a
+          key metric up.
+        </p>
+        <p>
+          Sounds interesting? Get in touch: <b>christian@four-bit.com</b>
         </p>
       </div>
     </Layout>
