@@ -17,7 +17,7 @@ const Consulting = () => {
         </p>
         <p>I've been there too.</p>
         <p>
-          I put my +12 years of experience in software and engineering
+          I've put my +12 years of experience in software and engineering
           leadership in{" "}
           <a href="https://www.four-bit.com" className="underline">
             fourbit
@@ -35,7 +35,7 @@ const Consulting = () => {
 
         <ul>
           <li>- Team: skills, engagement</li>
-          <li>- Deliverability: lead time, re-work, deployment frequency</li>
+          <li>- Deliverability: lead time, rework, deployment frequency</li>
           <li>- Work: agile framework, scopes, clarity, focus</li>
         </ul>
 
