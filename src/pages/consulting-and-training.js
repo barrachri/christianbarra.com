@@ -25,7 +25,7 @@ const Consulting = () => {
           .
         </p>
         <p>
-          The mission of <b>fourbit</b> is to help fast growing startups ustack
+          The mission of <b>fourbit</b> is to help fast growing startups unstack
           their teams.
         </p>
         <p>
@@ -40,11 +40,11 @@ const Consulting = () => {
         </ul>
 
         <p>
-          The last bit, x, is randomness and unknowns, things that you can't
+          The last bit, x, is randomness and unknowns. Things that you can't
           control. So it's fundamental to get the first 3 bits right.
         </p>
         <p className="font-bold">
-          During a consulting engagement we focus on one bit only and drive a
+          During a consulting engagement we focus on one bit only at a time and drive a
           key metric up.
         </p>
         <p>
