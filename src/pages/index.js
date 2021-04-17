@@ -13,7 +13,7 @@ export default function Home() {
         I've walked through different roles during my life. From founder to software engineer.
       </p>
       <p className="text-lg text-gray-800">
-        Flling some of the most senior roles in the engineering
+        Filling some of the most senior roles in the engineering
         leadership ladder.
       </p>
       <p className="text-lg text-gray-800">
