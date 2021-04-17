@@ -6,11 +6,11 @@ const Consulting = () => {
   return (
     <Layout>
       <SEO
-        title="Consulting & Training"
-        description="Learn how I can support your company with consulting and training"
+        title="Consulting"
+        description="Learn how I can support your company"
       />
       <div>
-        <h1 className="text-gray-800 pb-5">Consulting & Training</h1>
+        <h1 className="text-gray-800 pb-5">Consulting</h1>
         <p className="font-bold">
           Have you ever had the feeling of having a badass team/organization but
           things are not working out as you expected?

@@ -10,12 +10,16 @@ export default function Home() {
     <Layout>
       <SEO title="Home" />
       <p className="text-lg text-gray-800">
-        I'm a developer, engineering leader and entrepreneur living in Berlin.
+        I've walked through different roles during my life. From founder to software engineer.
       </p>
       <p className="text-lg text-gray-800">
-        Now building{" "}
+        Ending up filling some of the most senior roles in the engineering
+        leadership ladder.
+      </p>
+      <p className="text-lg text-gray-800">
+        Now I am back to my founder role, building{" "}
         <StyledLink href="https://www.machinalia.com" text="Machinalia" /> and{" "}
-        <Link className="underline" to="/consulting-and-training/">
+        <Link className="underline" to="/consulting/">
           fourbit
         </Link>
         .
