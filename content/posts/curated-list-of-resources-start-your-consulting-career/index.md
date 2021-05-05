@@ -1,5 +1,5 @@
 ---
-title: "A curated list of resources to start your consulting career"
+title: "Consulting 101: A curated list of resources to start your consulting career"
 description: "There are so many things to consider when leaving your job for an independent career. This is the list I needed when I started."
 date: 2021-05-05
 tags: ["consulting", "freelancing", "9-to-5"]
