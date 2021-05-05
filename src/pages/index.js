@@ -29,7 +29,7 @@ export default function Home() {
         <StyledLink href="https://twitter.com/christianbarra" text="twitter" />.
       </p>
       <p className="text-lg text-gray-800">
-        Or send me an email at <b>me [AT] christianbarra.com</b>
+        Or send me an email at <b>me@[thisdomain]</b>
       </p>
     </Layout>
   )

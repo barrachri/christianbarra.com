@@ -29,6 +29,16 @@
       text-indent: -5px;
       padding-right: 0.8em;
     }
+    div.post ol {
+      @apply list-decimal;
+    }
+    div.post a {
+      text-decoration: underline;
+    }
+    div.post h1 {
+      @apply text-xl;
+      @apply my-5;
+    }
     p {
       @apply pb-3;
     }
