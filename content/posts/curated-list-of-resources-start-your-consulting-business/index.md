@@ -1,5 +1,5 @@
 ---
-title: "Consulting 101: A curated list of resources to start your consulting career"
+title: "A curated list of resources to start your consulting business"
 description: "There are so many things to consider when leaving your job for an independent career. This is the list I needed when I started."
 date: 2021-05-05
 tags: ["consulting", "freelancing", "9-to-5"]
@@ -36,6 +36,7 @@ Whether you are a software developer, data scientist, or product owner, that wan
 # Articles
 
 - [The key to becoming a software consultant](https://daedtech.com/key-becoming-software-consultant/)
+- [From Developer to Consultant](https://daedtech.com/from-developer-to-consultant/)
 - [Marketing 101: Marketing Isn’t What You Think It Is, Freelancers](https://daedtech.com/marketing-101-marketing-isnt-what-you-think-it-is-freelancers/)
 
 <br />
