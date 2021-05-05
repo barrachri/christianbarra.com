@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Christian Barra`,
-    description: `High quality online courses and live training to push your Python and DevOps skills to the next level.`,
+    description: `Talking SaaS, tech leadership + biz  • Building http://machinalia.com • Getting tech teams unstuck at http://four-bit.com`,
     author: `@christianbarra`,
     siteUrl: `https://www.christianbarra.com`,
     email: `me@christianbarra.com`,
