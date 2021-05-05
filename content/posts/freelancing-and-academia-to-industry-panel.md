@@ -11,7 +11,7 @@ On October 11th we hosted a panel at PyConDE with [Matteo Guzzo](https://twitter
 
 These are some of the takeaways:
 
-### From Academia to Industry
+# From Academia to Industry
 
 > 1. **As a PhD student you learn how to learn**
 
@@ -27,7 +27,7 @@ If the interview process is something new for you have some dry runs with compan
 [Katharina Rasch](https://twitter.com/krasch_io) keeps teaching although working as a freelancer and consultant.
 You can move to industry without fully leaving academia.
 
-### Freelancing
+# Freelancing
 
 > 1. **Wanna be a freelancer? Just do it**
 

@@ -61,5 +61,3 @@ To be honest there are different ways:
 I'll cover negotiating a new deal with your employer in one of my next blog posts.
 
 **tl;dr having the right mindset and approaching the negotiation from the right perspective are both crucial**.
-
-In the meantime you can check my [tweets](https://twitter.com/christianbarra), I try to put some valuable thoughts and advice there.

@@ -130,5 +130,3 @@ For example having a 360 degrees and deep overview of the tech stack and infrast
 Try to divide the learning process in small chunks, if it's not really needed to achieve the goal/s, it could probably wait, as understanding the entire architecture of your system is not really important at this stage.
 
 This was everything I had for the `Before the first day`.
-
-I am really looking forward to knowing how your onboarding process looks like, feel free to comment here or tweet [@christianbarra](https://twitter.com/christianbarra).

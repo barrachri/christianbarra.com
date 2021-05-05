@@ -32,7 +32,7 @@
     div.post ol {
       @apply list-decimal;
     }
-    div.post a {
+    .post a {
       text-decoration: underline;
     }
     div.post h1 {

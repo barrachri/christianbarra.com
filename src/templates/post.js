@@ -29,6 +29,7 @@ const Post = ({ pageContext }) => {
       />
       <Header post={post} />
       <div className="pt-5 post" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <p className="mt-5 post font-medium">Enjoyed this post? For more, follow me on <a href="https://twitter.com/christianbarra">twitter</a>.</p>
     </Layout>
   )
 }
