@@ -1,11 +1,15 @@
 ---
 title: "A curated list of resources to start your consulting business"
-description: "There are so many things to consider when leaving your job for an independent career. This is the list I needed when I started."
+description: "There are so many things to consider when you leave your job to start a consulting business. And this is the list I needed when I started."
 date: 2021-05-05
 tags: ["consulting", "freelancing", "9-to-5"]
 ---
 
 This is a curated list of resources that helped me starting my consulting career.
+
+It covers what consulting is about, why freelancing and consulting are not the same thing, marketing, positioning, how to tame that good amount of self-doubt that you'll have. 
+
+And highlight a few skills that you have to nurture: coaching, and leadership.
 
 Whether you are a software developer, data scientist, or product owner, that wants to switch, you'll find these resources useful.
 
