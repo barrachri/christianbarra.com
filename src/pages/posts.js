@@ -53,7 +53,7 @@ const SinglePost = ({
     return (
       <div key={index}>
         <Link to={edge.node.fields.slug}>
-          <h2 className="underline font-medium text-lg pt-4">{title}</h2>
+          <h2 className="underline font-semibold text-xl pt-4">{title}</h2>
         </Link>
         <h2 className="text-base pb-1">{description}</h2>
         <span className="text-sm">{date}</span>
