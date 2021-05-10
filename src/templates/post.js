@@ -26,6 +26,7 @@ const Post = ({ pageContext }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description}
+        titleTemplate={`%s`}
       />
       <Header post={post} />
       <div className="pt-5 post" dangerouslySetInnerHTML={{ __html: post.html }} />
