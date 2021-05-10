@@ -1,5 +1,5 @@
 ---
-title: "A curated list of resources to start your consulting business"
+title: "Start a Consulting Business: A curated list of resources"
 description: "There are so many things to consider when you leave your job to start a consulting business. And this is the list I needed when I started."
 date: 2021-05-05
 tags: ["consulting", "freelancing", "9-to-5"]
