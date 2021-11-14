@@ -21,7 +21,7 @@ const Navbar = () => {
               </Link>
               <a
                 className="block text-base font-semibold mt-4 lg:inline-block lg:mt-0 hover:underline mr-4"
-                ahref="https://www.orkestrato.com/"
+                href="https://www.orkestrato.com/"
                 alt="Orkestrato"
               >
                 Consulting

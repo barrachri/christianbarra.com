@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -19,9 +18,9 @@ export default function Home() {
       <p className="text-lg text-gray-800">
         Now I am back to my founder role, building{" "}
         <StyledLink href="https://www.machinalia.com" text="Machinalia" /> and{" "}
-        <Link className="underline" to="/consulting/">
+        <a className="underline" href="https://www.orkestrato.com">
           orkestrato
-        </Link>
+        </a>
         .
       </p>
       <p className="text-lg text-gray-800">
