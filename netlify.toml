@@ -16,6 +16,11 @@
     status = 301
 
   [[redirects]]
+    from = "/consulting"
+    to = "https://www.orkestrato.com/"
+    status = 301
+
+  [[redirects]]
     from = "/*"
     to = "/index.html"
     status = 200
