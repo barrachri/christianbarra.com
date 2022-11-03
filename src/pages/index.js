@@ -14,7 +14,7 @@ export default function Home() {
         Working on Fintech Infrastructure, Automation and IoT.
       </p>
       <p className="text-lg text-gray-800">
-        If you want to get in touch{" "}
+        You can find me on{" "}
         <StyledLink href="https://twitter.com/christianbarra" text="twitter" />.
       </p>
       <p className="text-lg text-gray-800">
