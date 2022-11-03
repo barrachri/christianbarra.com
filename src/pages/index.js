@@ -11,7 +11,7 @@ export default function Home() {
         Developer and founder.
       </p>
       <p className="text-lg text-gray-800">
-        Working on Fintech Infrastructure, automation and IoT.
+        Working on Fintech Infrastructure, Automation and IoT.
       </p>
       <p className="text-lg text-gray-800">
         If you want to get in touch{" "}
