@@ -8,23 +8,13 @@ export default function Home() {
     <Layout>
       <SEO title="Home" />
       <p className="text-lg text-gray-800">
-        I've walked through different roles during my life. From founder to
-        software engineer.
+        Developer and founder.
       </p>
       <p className="text-lg text-gray-800">
-        Filling some of the most senior roles in the engineering leadership
-        ladder.
+        Working on Financial Infrastructure, automation and IoT.
       </p>
       <p className="text-lg text-gray-800">
-        Now I am back to my founder role, building{" "}
-        <StyledLink href="https://www.machinalia.com" text="Machinalia" /> and{" "}
-        <a className="underline" href="https://www.orkestrato.com">
-          orkestrato
-        </a>
-        .
-      </p>
-      <p className="text-lg text-gray-800">
-        If you want to learn more about my journey follow me on{" "}
+        If you want to get in touch{" "}
         <StyledLink href="https://twitter.com/christianbarra" text="twitter" />.
       </p>
       <p className="text-lg text-gray-800">
