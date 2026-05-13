@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Christian Barra`,
-    description: `Writing about SaaS, tech leadership + biz. Building machinalia.com. Getting tech teams unstuck at four-bit.com`,
+    description: `Developer, founder and SaaS operator buying and building software companies between $10k and $800k ARR.`,
     author: `@christianbarra`,
     siteUrl: `https://www.christianbarra.com`,
     email: `me@christianbarra.com`,
