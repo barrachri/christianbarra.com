@@ -7,21 +7,19 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="Home" />
-      <p className="text-lg text-gray-800">Developer, founder and SaaS operator.</p>
       <p className="text-lg text-gray-800">
-        I used to work as a software engineer and consultant. Now I buy and
-        build SaaS companies, focusing on products between $10k and $800k ARR.
+        I used to code · Founder · Building AI Agents
       </p>
       <p className="text-lg text-gray-800">
-        I am building a constellation of software across Fintech
-        Infrastructure, Automation and IoT.
+        I buy and build SaaS companies, focusing on products between $10k and
+        $800k ARR.
       </p>
       <p className="text-lg text-gray-800">
         Current projects include{" "}
-        <StyledLink href="https://dearmachines.com/" text="Dear Machines" />,{" "}
-        <StyledLink href="https://orderlayer.com/" text="Orderlayer" />,{" "}
-        <StyledLink href="https://funnelhype.com/" text="FunnelHype" />, and{" "}
-        <StyledLink href="https://uptimenine.com/" text="UptimeNine" />.
+        <StyledLink href="https://www.dearmachines.com/" text="dearmachines" />,{" "}
+        <StyledLink href="https://www.orderlayer.com/" text="orderlayer" />,{" "}
+        <StyledLink href="https://www.funnelhype.com/" text="funnelhype" />, and{" "}
+        <StyledLink href="https://www.uptimenine.com/" text="uptimenine" />.
       </p>
       <p className="text-lg text-gray-800">
         You can find me on{" "}
