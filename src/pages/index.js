@@ -8,11 +8,9 @@ export default function Home() {
     <Layout>
       <SEO title="Home" />
       <p className="text-lg text-gray-800">
-        I used to code · Founder · Building AI Agents
-      </p>
-      <p className="text-lg text-gray-800">
-        I buy and build SaaS companies, focusing on products between $10k and
-        $800k ARR.
+        Software engineer and founder. Now building AI agents and a constellation
+        of software products. Acquiring SaaS companies doing $10k to $800k in
+        ARR.
       </p>
       <p className="text-lg text-gray-800">
         Current projects include{" "}
