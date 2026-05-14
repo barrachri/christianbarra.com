@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="Home" />
-      <p className="text-lg text-gray-800">
-        Software engineer and founder. Now building AI agents and a constellation
-        of software products. Acquiring SaaS companies doing $10k to $800k in
-        ARR.
+      <p className="text-lg text-gray-800">Software engineer and founder.</p>
+      <p className="text-lg text-gray-800 font-bold">
+        Now building AI agents and a constellation of software products.
+        Acquiring SaaS companies doing $10k to $800k in ARR.
       </p>
       <p className="text-lg text-gray-800">
         Current projects include{" "}
