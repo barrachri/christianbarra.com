@@ -28,8 +28,15 @@ The production build outputs to `dist/`.
 
 ## Deploy to Cloudflare Workers
 
-This project includes `wrangler.toml` for the `christianbarra-com` Worker. To deploy the static Astro build:
+This project includes `wrangler.toml` for the `christianbarra-com` Worker. Manual deployment:
 
 ```sh
 npm run deploy:worker
 ```
+
+Production deploys are also handled by `.github/workflows/deploy.yml` using Cloudflare's official `cloudflare/wrangler-action`. The workflow runs checks on pull requests and deploys after pushes to `master` or manual dispatches.
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
