@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "deploy:worker": "npm run build && wrangler deploy",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -47,7 +48,8 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "~6",
-    "typescript-eslint": "^8"
+    "typescript-eslint": "^8",
+    "wrangler": "^4.107.0"
   },
   "repository": {
     "type": "git",
