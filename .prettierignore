@@ -1,4 +1,8 @@
-.cache
-package.json
+node_modules/
+coverage/
+.pnpm-store/
+pnpm-lock.yaml
 package-lock.json
-public
+yarn.lock
+dist/
+.astro/

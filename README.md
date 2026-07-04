@@ -1,29 +1,27 @@
-# christianbarra.com website
+# christianbarra.com
 
-My personal website based on gatsby and hosted on netlify.
+Personal website for Christian Barra, now migrated from Gatsby to Astro.
 
-## 🚀 Quick start
+## Stack
 
-1.  **To start locally.**
+- Astro for static rendering
+- React islands for shadcn/ui components
+- Tailwind CSS v4 with the shadcn `nova` preset
+- Netlify deployment
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+## Local development
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    npm install
-    ```
+```sh
+npm install
+npm run dev
+```
 
-2.  **Start developing.**
+## Build and checks
 
-    Navigate into your new site’s directory and start it up.
+```sh
+npm run typecheck
+npm run lint
+npm run build
+```
 
-    ```shell
-    npx gatsby develop
-    ```
-2.  **To build the website.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    npx gatsby build
-    ```
+The production build outputs to `dist/`.

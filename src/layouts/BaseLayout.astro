@@ -1,0 +1,52 @@
+---
+import "@/styles/global.css"
+
+type Props = {
+  title?: string
+  description?: string
+}
+
+const siteTitle = "Christian Barra"
+const defaultTitle = "Christian Barra — Software Engineer & Founder"
+const defaultDescription =
+  "Software engineer and founder building AI agents and a constellation of software products. Acquiring SaaS companies doing $10k to $800k in ARR."
+
+const { title = defaultTitle, description = defaultDescription } = Astro.props
+const canonical = new URL(
+  Astro.url.pathname,
+  Astro.site ?? "https://www.christianbarra.com"
+)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={siteTitle} />
+    <link rel="canonical" href={canonical.toString()} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#111111" />
+
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical.toString()} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@christianbarra" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <div class="relative isolate min-h-screen overflow-hidden">
+      <div class="absolute inset-x-0 top-0 -z-10 h-96 bg-muted/40 blur-3xl">
+      </div>
+      <slot />
+    </div>
+  </body>
+</html>

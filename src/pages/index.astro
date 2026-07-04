@@ -1,0 +1,248 @@
+---
+import { ArrowUpRight, BadgeCheck, Mail, Sparkles } from "lucide-react"
+
+import ProjectCard from "@/components/ProjectCard.astro"
+import SiteFooter from "@/components/SiteFooter.astro"
+import SiteHeader from "@/components/SiteHeader.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import { Badge } from "@/components/ui/badge"
+import { ButtonLink } from "@/components/ButtonLink"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+
+const projects = [
+  {
+    name: "dearmachines",
+    href: "https://www.dearmachines.com/",
+    label: "AI agents",
+    description:
+      "A studio for practical AI agents that take on useful, bounded work inside software businesses.",
+  },
+  {
+    name: "orderlayer",
+    href: "https://www.orderlayer.com/",
+    label: "Software product",
+    description:
+      "A product in the constellation: focused, operational software for teams that need clearer workflows.",
+  },
+  {
+    name: "funnelhype",
+    href: "https://www.funnelhype.com/",
+    label: "Growth systems",
+    description:
+      "Conversion and marketing infrastructure for turning attention into measurable product demand.",
+  },
+  {
+    name: "uptimenine",
+    href: "https://www.uptimenine.com/",
+    label: "Reliability",
+    description:
+      "Monitoring and reliability tooling for people who care when their products are unavailable.",
+  },
+]
+
+const focusAreas = [
+  {
+    title: "AI agents",
+    description:
+      "Designing useful agents around sharp workflows, clear evaluation loops, and operator trust.",
+  },
+  {
+    title: "Durable products",
+    description:
+      "Building small, profitable software products with simple surfaces and strong fundamentals.",
+  },
+  {
+    title: "SaaS acquisitions",
+    description:
+      "Looking for software companies doing $10k to $800k in ARR where better systems can unlock growth.",
+  },
+]
+---
+
+<BaseLayout>
+  <SiteHeader />
+
+  <main
+    class="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-10 lg:px-8 lg:py-16"
+  >
+    <section class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="secondary">
+              <Sparkles data-icon="inline-start" />
+              Building AI agents and software products
+            </Badge>
+            <Badge variant="outline">
+              <BadgeCheck data-icon="inline-start" />
+              Acquiring profitable SaaS
+            </Badge>
+          </div>
+
+          <div class="flex flex-col gap-5">
+            <h1
+              class="max-w-3xl font-heading text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+            >
+              Software engineer and founder building practical products.
+            </h1>
+            <p class="max-w-2xl text-lg leading-8 text-muted-foreground">
+              I am building AI agents and a constellation of software products.
+              I am also looking to acquire SaaS companies doing $10k to $800k in
+              ARR.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <ButtonLink href="mailto:me@christianbarra.com" size="lg">
+            <Mail data-icon="inline-start" />
+            Email me
+          </ButtonLink>
+          <ButtonLink
+            href="https://www.linkedin.com/in/christianbarra/"
+            target="_blank"
+            rel="noreferrer"
+            variant="outline"
+            size="lg"
+          >
+            Connect on LinkedIn
+            <ArrowUpRight data-icon="inline-end" />
+          </ButtonLink>
+        </div>
+      </div>
+
+      <Card className="lg:ml-auto lg:max-w-md">
+        <CardHeader>
+          <CardTitle>What I am focused on now</CardTitle>
+          <CardDescription>
+            Operating, building, and buying useful software businesses.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="grid gap-4">
+            <div class="grid gap-1">
+              <p class="text-sm font-medium">Building</p>
+              <p class="text-sm leading-6 text-muted-foreground">
+                AI agents, workflow products, and small tools with practical
+                distribution.
+              </p>
+            </div>
+            <Separator />
+            <div class="grid gap-1">
+              <p class="text-sm font-medium">Acquiring</p>
+              <p class="text-sm leading-6 text-muted-foreground">
+                Bootstrapped SaaS companies with real customers, retention, and
+                room for operational leverage.
+              </p>
+            </div>
+            <Separator />
+            <div class="grid gap-1">
+              <p class="text-sm font-medium">Collaborating</p>
+              <p class="text-sm leading-6 text-muted-foreground">
+                With founders, operators, and technical teams who like shipping
+                pragmatic software.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </section>
+
+    <section class="grid gap-4 sm:grid-cols-3" aria-label="Highlights">
+      <Card size="sm">
+        <CardHeader>
+          <CardDescription>Role</CardDescription>
+          <CardTitle>Engineer & founder</CardTitle>
+        </CardHeader>
+      </Card>
+      <Card size="sm">
+        <CardHeader>
+          <CardDescription>Current thesis</CardDescription>
+          <CardTitle>AI-native operations</CardTitle>
+        </CardHeader>
+      </Card>
+      <Card size="sm">
+        <CardHeader>
+          <CardDescription>Acquisition range</CardDescription>
+          <CardTitle>$10k–$800k ARR</CardTitle>
+        </CardHeader>
+      </Card>
+    </section>
+
+    <section id="projects" class="flex scroll-mt-10 flex-col gap-6">
+      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div class="flex flex-col gap-2">
+          <Badge variant="outline">Current projects</Badge>
+          <h2 class="font-heading text-3xl font-semibold tracking-tight">
+            A small constellation of products
+          </h2>
+        </div>
+        <p class="max-w-xl text-sm leading-6 text-muted-foreground">
+          These are active businesses and experiments around agents, workflow
+          software, growth, and reliability.
+        </p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
+    </section>
+
+    <section class="grid gap-4 lg:grid-cols-3">
+      {
+        focusAreas.map((area) => (
+          <Card>
+            <CardHeader>
+              <CardTitle>{area.title}</CardTitle>
+              <CardDescription>Current focus</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p class="text-sm leading-6 text-muted-foreground">
+                {area.description}
+              </p>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </section>
+
+    <section>
+      <Card>
+        <CardHeader>
+          <CardTitle
+            >Have a SaaS business, agent workflow, or product idea to discuss?</CardTitle
+          >
+          <CardDescription>
+            Send a note if you are selling, partnering, or building something
+            adjacent.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href="mailto:me@christianbarra.com">
+              <Mail data-icon="inline-start" />
+              me@christianbarra.com
+            </ButtonLink>
+            <ButtonLink
+              href="https://twitter.com/christianbarra"
+              target="_blank"
+              rel="noreferrer"
+              variant="outline"
+            >
+              Twitter
+              <ArrowUpRight data-icon="inline-end" />
+            </ButtonLink>
+          </div>
+        </CardContent>
+      </Card>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

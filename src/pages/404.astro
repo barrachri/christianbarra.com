@@ -1,0 +1,41 @@
+---
+import { ArrowLeft } from "lucide-react"
+
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import SiteFooter from "@/components/SiteFooter.astro"
+import SiteHeader from "@/components/SiteHeader.astro"
+import { ButtonLink } from "@/components/ButtonLink"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+---
+
+<BaseLayout
+  title="Page not found | Christian Barra"
+  description="The page you are looking for does not exist."
+>
+  <SiteHeader />
+  <main
+    class="mx-auto flex min-h-[55vh] w-full max-w-3xl items-center px-6 py-16 lg:px-8"
+  >
+    <Card>
+      <CardHeader>
+        <CardTitle>Page not found</CardTitle>
+        <CardDescription>
+          This page may have moved while the site was being rebuilt.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ButtonLink href="/">
+          <ArrowLeft data-icon="inline-start" />
+          Back home
+        </ButtonLink>
+      </CardContent>
+    </Card>
+  </main>
+  <SiteFooter />
+</BaseLayout>
