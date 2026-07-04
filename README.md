@@ -1,29 +1,42 @@
-# christianbarra.com website
+# christianbarra.com
 
-My personal website based on gatsby and hosted on netlify.
+Personal website for Christian Barra, now migrated from Gatsby to Astro.
 
-## 🚀 Quick start
+## Stack
 
-1.  **To start locally.**
+- Astro for static rendering
+- React islands for shadcn/ui components
+- Tailwind CSS v4 with the shadcn `nova` preset
+- Netlify and Cloudflare Workers deployment
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+## Local development
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    npm install
-    ```
+```sh
+npm install
+npm run dev
+```
 
-2.  **Start developing.**
+## Build and checks
 
-    Navigate into your new site’s directory and start it up.
+```sh
+npm run typecheck
+npm run lint
+npm run build
+```
 
-    ```shell
-    npx gatsby develop
-    ```
-2.  **To build the website.**
+The production build outputs to `dist/`.
 
-    Navigate into your new site’s directory and start it up.
+## Deploy to Cloudflare Workers
 
-    ```shell
-    npx gatsby build
-    ```
+This project includes `wrangler.toml` for the `christianbarra-com` Worker. Manual deployment:
+
+```sh
+npm run deploy:worker
+```
+
+Production deploys are also handled by `.github/workflows/deploy.yml` using Cloudflare's official `cloudflare/wrangler-action`. The workflow runs checks on pull requests and deploys after pushes to `master` or manual dispatches.
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
