@@ -74,8 +74,6 @@ jobs:
       - name: Deploy to christianbarra-com Worker
         id: deploy
         uses: cloudflare/wrangler-action@v4
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 8f8ad66c967994c8b1bca4a03588070f
