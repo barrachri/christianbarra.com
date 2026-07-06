@@ -5,13 +5,14 @@
   "version": "0.1.0",
   "license": "0BSD",
   "type": "module",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "deploy:worker": "npm run build && wrangler deploy",
+    "deploy:worker": "pnpm run build && wrangler deploy",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -47,6 +48,7 @@
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "react-grab": "^0.1.48",
     "typescript": "~6",
     "typescript-eslint": "^8",
     "wrangler": "^4.107.0"

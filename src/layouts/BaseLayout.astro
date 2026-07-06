@@ -43,10 +43,12 @@ const canonical = new URL(
     <meta name="twitter:description" content={description} />
   </head>
   <body class="min-h-screen bg-background text-foreground antialiased">
-    <div class="relative isolate min-h-screen overflow-hidden">
-      <div class="absolute inset-x-0 top-0 -z-10 h-96 bg-muted/40 blur-3xl">
-      </div>
-      <slot />
-    </div>
+    <slot />
+
+    <script>
+      if (import.meta.env.DEV) {
+        import("react-grab")
+      }
+    </script>
   </body>
 </html>
