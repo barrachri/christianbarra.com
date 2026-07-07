@@ -58,14 +58,13 @@ const About8 = ({ className }: About8Props) => {
             aria-label="Social links"
             className="flex flex-wrap justify-center gap-2 pt-1"
           >
-            {links.map(({ label, href, icon: Icon }) => (
+            {links.map(({ label, href }) => (
               <Button key={href} asChild variant="outline" size="sm">
                 <a
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
                 >
-                  {Icon && <Icon data-icon="inline-start" />}
                   {label}
                 </a>
               </Button>
