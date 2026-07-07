@@ -72,7 +72,7 @@ const About8 = ({ className }: About8Props) => {
             Christian Barra
           </p>
           <h1 className="text-4xl font-semibold tracking-tight text-balance md:text-5xl lg:text-6xl">
-            Software engineer and founder.
+            Software engineer, sailor and founder.
           </h1>
           <p className="max-w-2xl text-xl leading-8 text-muted-foreground md:text-2xl md:leading-9">
             Building and buying durable companies. Building AI agents and a
