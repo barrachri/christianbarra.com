@@ -103,9 +103,6 @@ const About8 = ({ className }: About8Props) => {
 
       <section className="container mx-auto max-w-3xl border-y px-6 py-8 lg:px-8">
         <div className="flex max-w-2xl flex-col gap-3">
-          <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
-            Now / Building
-          </p>
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
             futurogrup.it
           </h2>
