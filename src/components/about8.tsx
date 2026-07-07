@@ -152,8 +152,8 @@ const About8 = ({ className }: About8Props) => {
       <section className="container mx-auto max-w-3xl px-6 pb-10 md:pb-12 lg:px-8 lg:pb-15">
         <div className="flex max-w-2xl flex-col gap-5 border-t pt-6 text-lg leading-8">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            You're a founder of a SaaS company doing $40k-$800k in ARR looking
-            for a new home? Let's have a chat.
+            A permanent home for founder-led SaaS companies ready for their next
+            chapter.
           </h2>
           <p className="text-muted-foreground">
             Email is best:{" "}
