@@ -133,15 +133,17 @@ const About8 = ({ className }: About8Props) => {
         </div>
       </section>
 
-      <section className="container mx-auto max-w-3xl px-6 py-10 md:py-12 lg:px-8 lg:py-15">
-        <div className="flex max-w-2xl flex-col gap-5 text-lg leading-8">
-          <p>
-            I like practical software: focused products, clear customer value,
-            and systems that can compound over time.
+      <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
+        <div className="flex max-w-2xl flex-col gap-3">
+          <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
+            Now / Thesis
           </p>
-          <p>
-            The common thread is durability: products with customers, retention,
-            and enough operational leverage to keep improving.
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+            Durable companies compound.
+          </h2>
+          <p className="text-lg leading-8 text-muted-foreground">
+            I like focused products, clear customer value, customers who stick
+            around, and enough operational leverage to keep improving over time.
           </p>
         </div>
       </section>
