@@ -123,8 +123,9 @@ const About8 = ({ className }: About8Props) => {
             </TextLink>
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
-            You're a founder of a SaaS company doing $40k-$800k in ARR looking
-            for a new home? Let's have a chat.
+            We build, acquire and operate SaaS companies. You're a founder of a
+            SaaS company doing $40k-$800k in ARR looking for a new home? Let's
+            have a chat.
           </p>
         </div>
       </section>
