@@ -107,7 +107,7 @@ const About8 = ({ className }: About8Props) => {
             Now / Building
           </p>
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            AI agents and software products.
+            futurogrup.it
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
             Practical tools around sharp workflows, clear evaluation loops, and
