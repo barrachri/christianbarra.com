@@ -20,8 +20,8 @@ const links = [
     icon: ExternalLinkIcon,
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/christianbarra",
+    label: "X",
+    href: "https://x.com/christianbarra",
     icon: XIcon,
   },
 ]
