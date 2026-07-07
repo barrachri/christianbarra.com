@@ -109,8 +109,8 @@ const About8 = ({ className }: About8Props) => {
             </TextLink>
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
-            Practical tools around sharp workflows, clear evaluation loops, and
-            simple distribution.
+            We consolidate durable companies in Italy and operate them for the
+            long term.
           </p>
         </div>
       </section>
