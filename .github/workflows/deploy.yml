@@ -25,23 +25,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.9.0
+
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm run typecheck
 
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Upload static build
         uses: actions/upload-artifact@v7
@@ -65,6 +70,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.9.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
       - name: Download static build
         uses: actions/download-artifact@v8
         with:
@@ -78,6 +93,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 8f8ad66c967994c8b1bca4a03588070f
           command: deploy
-          packageManager: npm
+          packageManager: pnpm
           wranglerVersion: "4"
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

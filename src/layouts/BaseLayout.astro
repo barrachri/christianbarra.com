@@ -7,9 +7,9 @@ type Props = {
 }
 
 const siteTitle = "Christian Barra"
-const defaultTitle = "Christian Barra — Software Engineer & Founder"
+const defaultTitle = "Christian Barra: Software Engineer, Sailor & Founder"
 const defaultDescription =
-  "Software engineer and founder building AI agents and a constellation of software products. Acquiring SaaS companies doing $10k to $800k in ARR."
+  "Software engineer, sailor and founder building and buying durable companies across SaaS and traditional businesses."
 
 const { title = defaultTitle, description = defaultDescription } = Astro.props
 const canonical = new URL(
@@ -43,10 +43,12 @@ const canonical = new URL(
     <meta name="twitter:description" content={description} />
   </head>
   <body class="min-h-screen bg-background text-foreground antialiased">
-    <div class="relative isolate min-h-screen overflow-hidden">
-      <div class="absolute inset-x-0 top-0 -z-10 h-96 bg-muted/40 blur-3xl">
-      </div>
-      <slot />
-    </div>
+    <slot />
+
+    <script>
+      if (import.meta.env.DEV) {
+        import("react-grab")
+      }
+    </script>
   </body>
 </html>
