@@ -1,11 +1,5 @@
 import { type AnchorHTMLAttributes, type SVGProps, useId } from "react"
 
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 interface About8Props {
@@ -28,21 +22,6 @@ const projects = [
   {
     name: "uptimenine",
     href: "https://www.uptimenine.com/",
-  },
-]
-
-const stats = [
-  {
-    label: "Role",
-    value: "Software engineer / founder",
-  },
-  {
-    label: "Building",
-    value: "AI agents + software products",
-  },
-  {
-    label: "Buying",
-    value: "$10k–$800k ARR SaaS",
   },
 ]
 
@@ -102,31 +81,45 @@ const About8 = ({ className }: About8Props) => {
         </div>
       </section>
 
-      <section className="container mx-auto max-w-3xl border-y px-6 py-5 lg:px-8">
-        <div className="flex flex-col gap-5">
-          <h2 className="font-mono text-sm font-semibold tracking-widest text-accent-foreground">
-            Now
+      <section className="container mx-auto max-w-3xl border-y px-6 py-8 lg:px-8">
+        <div className="flex max-w-2xl flex-col gap-3">
+          <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
+            Now / Building
+          </p>
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+            AI agents and software products.
           </h2>
-          <div className="grid gap-3 md:grid-cols-3">
-            {stats.map((stat) => (
-              <Card key={stat.label} size="sm" className="h-full">
-                <CardHeader>
-                  <CardDescription>{stat.label}</CardDescription>
-                  <CardTitle>{stat.value}</CardTitle>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
+          <p className="text-lg leading-8 text-muted-foreground">
+            Practical tools around sharp workflows, clear evaluation loops, and
+            simple distribution.
+          </p>
         </div>
       </section>
 
-      <section className="container mx-auto max-w-3xl px-6 py-10 md:py-12 lg:px-8 lg:py-15">
-        <div className="flex max-w-2xl flex-col gap-5 text-lg leading-8">
-          <p>
-            I build practical software: agents, workflow products, and small
-            tools with clear distribution and simple surfaces.
+      <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
+        <div className="ml-auto flex max-w-2xl flex-col gap-3">
+          <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
+            Now / Buying
           </p>
-          <p>
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+            Bootstrapped SaaS with real customers.
+          </h2>
+          <p className="text-lg leading-8 text-muted-foreground">
+            I am looking for durable software companies doing $10k to $800k in
+            ARR, with retention and room for better systems.
+          </p>
+        </div>
+      </section>
+
+      <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
+        <div className="flex max-w-2xl flex-col gap-3">
+          <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
+            Now / Projects
+          </p>
+          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+            A small constellation of products.
+          </h2>
+          <p className="text-lg leading-8 text-muted-foreground">
             Current projects include{" "}
             {projects.map((project, index) => (
               <span key={project.href}>
@@ -137,10 +130,18 @@ const About8 = ({ className }: About8Props) => {
             ))}
             .
           </p>
+        </div>
+      </section>
+
+      <section className="container mx-auto max-w-3xl px-6 py-10 md:py-12 lg:px-8 lg:py-15">
+        <div className="flex max-w-2xl flex-col gap-5 text-lg leading-8">
           <p>
-            I am interested in bootstrapped SaaS businesses with real customers,
-            retention, and room for better systems. The sweet spot is $10k to
-            $800k in ARR.
+            I like practical software: focused products, clear customer value,
+            and systems that can compound over time.
+          </p>
+          <p>
+            The common thread is durability: products with customers, retention,
+            and enough operational leverage to keep improving.
           </p>
         </div>
       </section>
