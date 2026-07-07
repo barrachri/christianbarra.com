@@ -8,25 +8,6 @@ interface About8Props {
   className?: string
 }
 
-const projects = [
-  {
-    name: "dearmachines",
-    href: "https://www.dearmachines.com/",
-  },
-  {
-    name: "orderlayer",
-    href: "https://www.orderlayer.com/",
-  },
-  {
-    name: "funnelhype",
-    href: "https://www.funnelhype.com/",
-  },
-  {
-    name: "uptimenine",
-    href: "https://www.uptimenine.com/",
-  },
-]
-
 const links = [
   {
     label: "Email",
@@ -126,25 +107,6 @@ const About8 = ({ className }: About8Props) => {
             We build, acquire and operate SaaS companies. You're a founder of a
             SaaS company doing $40k-$800k in ARR looking for a new home? Let's
             have a chat.
-          </p>
-        </div>
-      </section>
-
-      <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
-        <div className="flex max-w-2xl flex-col gap-3">
-          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            A small constellation of products.
-          </h2>
-          <p className="text-lg leading-8 text-muted-foreground">
-            Current projects include{" "}
-            {projects.map((project, index) => (
-              <span key={project.href}>
-                <TextLink href={project.href}>{project.name}</TextLink>
-                {index < projects.length - 2 ? ", " : ""}
-                {index === projects.length - 2 ? ", and " : ""}
-              </span>
-            ))}
-            .
           </p>
         </div>
       </section>
