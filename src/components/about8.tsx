@@ -97,7 +97,7 @@ const About8 = ({ className }: About8Props) => {
       </section>
 
       <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
-        <div className="ml-auto flex max-w-2xl flex-col gap-3">
+        <div className="flex max-w-2xl flex-col gap-3">
           <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
             Now / Buying
           </p>
@@ -147,7 +147,7 @@ const About8 = ({ className }: About8Props) => {
       </section>
 
       <section className="container mx-auto max-w-3xl px-6 pb-10 md:pb-12 lg:px-8 lg:pb-15">
-        <div className="ml-auto flex max-w-2xl flex-col gap-5 border-t pt-6 text-lg leading-8">
+        <div className="flex max-w-2xl flex-col gap-5 border-t pt-6 text-lg leading-8">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
             If you are selling, building, or thinking through an agent workflow,
             send a note.
