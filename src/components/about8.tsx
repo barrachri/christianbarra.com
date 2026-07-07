@@ -79,7 +79,10 @@ const About8 = ({ className }: About8Props) => {
             constellation of small software products. Also looking to acquire
             profitable SaaS companies.
           </p>
-          <nav aria-label="Social links" className="flex flex-wrap gap-2 pt-1">
+          <nav
+            aria-label="Social links"
+            className="flex flex-wrap justify-center gap-2 pt-1"
+          >
             {links.map(({ label, href, icon: Icon }) => (
               <Button key={href} asChild variant="outline" size="sm">
                 <a
