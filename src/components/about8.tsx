@@ -133,21 +133,6 @@ const About8 = ({ className }: About8Props) => {
         </div>
       </section>
 
-      <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
-        <div className="flex max-w-2xl flex-col gap-3">
-          <p className="font-mono text-sm font-semibold tracking-widest text-accent-foreground uppercase">
-            Now / Thesis
-          </p>
-          <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            Durable companies compound.
-          </h2>
-          <p className="text-lg leading-8 text-muted-foreground">
-            I like focused products, clear customer value, customers who stick
-            around, and enough operational leverage to keep improving over time.
-          </p>
-        </div>
-      </section>
-
       <section className="container mx-auto max-w-3xl px-6 pb-10 md:pb-12 lg:px-8 lg:pb-15">
         <div className="flex max-w-2xl flex-col gap-5 border-t pt-6 text-lg leading-8">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
