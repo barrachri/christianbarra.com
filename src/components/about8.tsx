@@ -1,5 +1,4 @@
 import { type AnchorHTMLAttributes, type SVGProps, useId } from "react"
-import { ExternalLinkIcon, MailIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -12,12 +11,10 @@ const links = [
   {
     label: "Email",
     href: "mailto:me@christianbarra.com",
-    icon: MailIcon,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/christianbarra/",
-    icon: ExternalLinkIcon,
   },
   {
     label: "x.com",
@@ -103,9 +100,8 @@ const About8 = ({ className }: About8Props) => {
             </TextLink>
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
-            We build, acquire and operate SaaS companies. You're a founder of a
-            SaaS company doing $40k-$800k in ARR looking for a new home? Let's
-            have a chat.
+            We build, acquire and operate SaaS companies. A permanent home for
+            founder-led SaaS companies ready for their next chapter.
           </p>
         </div>
       </section>
@@ -113,16 +109,12 @@ const About8 = ({ className }: About8Props) => {
       <section className="container mx-auto max-w-3xl px-6 pb-10 md:pb-12 lg:px-8 lg:pb-15">
         <div className="flex max-w-2xl flex-col gap-5 border-t pt-6 text-lg leading-8">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            A permanent home for founder-led SaaS companies ready for their next
-            chapter.
+            <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+              Founder of a SaaS company doing $50k-$800k/ARR looking for a new
+              home? Let's have a{" "}
+              <TextLink href="mailto:me@christianbarra.com">chat</TextLink>.
+            </h2>
           </h2>
-          <p className="text-muted-foreground">
-            Email is best:{" "}
-            <TextLink href="mailto:me@christianbarra.com">
-              [ me @ this domain ]
-            </TextLink>
-            .
-          </p>
         </div>
       </section>
     </section>
