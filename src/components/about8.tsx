@@ -1,5 +1,7 @@
 import { type AnchorHTMLAttributes, type SVGProps, useId } from "react"
+import { ExternalLinkIcon, MailIcon, XIcon } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 interface About8Props {
@@ -29,14 +31,17 @@ const links = [
   {
     label: "Email",
     href: "mailto:me@christianbarra.com",
+    icon: MailIcon,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/christianbarra/",
+    icon: ExternalLinkIcon,
   },
   {
     label: "Twitter",
     href: "https://twitter.com/christianbarra",
+    icon: XIcon,
   },
 ]
 
@@ -74,6 +79,20 @@ const About8 = ({ className }: About8Props) => {
             constellation of small software products. Also looking to acquire
             profitable SaaS companies.
           </p>
+          <nav aria-label="Social links" className="flex flex-wrap gap-2 pt-1">
+            {links.map(({ label, href, icon: Icon }) => (
+              <Button key={href} asChild variant="outline" size="sm">
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  <Icon data-icon="inline-start" />
+                  {label}
+                </a>
+              </Button>
+            ))}
+          </nav>
         </div>
 
         <div className="absolute -inset-40 z-[-1] [mask-image:radial-gradient(circle_at_center,black_0%,black_20%,transparent_80%)]">
@@ -146,16 +165,6 @@ const About8 = ({ className }: About8Props) => {
             </TextLink>
             .
           </p>
-          <nav
-            aria-label="Social links"
-            className="flex flex-wrap gap-4 text-sm"
-          >
-            {links.map((link) => (
-              <TextLink key={link.href} href={link.href}>
-                {link.label}
-              </TextLink>
-            ))}
-          </nav>
         </div>
       </section>
     </section>
