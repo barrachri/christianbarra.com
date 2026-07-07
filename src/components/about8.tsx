@@ -123,8 +123,8 @@ const About8 = ({ className }: About8Props) => {
             </TextLink>
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
-            I am looking for durable software companies doing $10k to $800k in
-            ARR, with retention and room for better systems.
+            We build, acquire and operate SaaS companies. Looking at founder-led
+            SaaS companies doing $40k to $800k in ARR looking for a new home.
           </p>
         </div>
       </section>
