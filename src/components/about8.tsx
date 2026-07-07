@@ -1,5 +1,11 @@
 import { type AnchorHTMLAttributes, type SVGProps, useId } from "react"
 
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 interface About8Props {
@@ -97,21 +103,21 @@ const About8 = ({ className }: About8Props) => {
       </section>
 
       <section className="container mx-auto max-w-3xl border-y px-6 py-5 lg:px-8">
-        <h2 className="font-mono text-sm font-semibold tracking-widest text-accent-foreground">
-          Now
-        </h2>
-        <dl className="mt-6 grid gap-6 md:grid-cols-3">
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-1">
-              <dt className="font-medium text-muted-foreground">
-                {stat.label}
-              </dt>
-              <dd className="text-2xl font-medium tracking-tight">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <div className="flex flex-col gap-5">
+          <h2 className="font-mono text-sm font-semibold tracking-widest text-accent-foreground">
+            Now
+          </h2>
+          <div className="grid gap-3 md:grid-cols-3">
+            {stats.map((stat) => (
+              <Card key={stat.label} size="sm" className="h-full">
+                <CardHeader>
+                  <CardDescription>{stat.label}</CardDescription>
+                  <CardTitle>{stat.value}</CardTitle>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="container mx-auto max-w-3xl px-6 py-10 md:py-12 lg:px-8 lg:py-15">
