@@ -1,5 +1,5 @@
 import { type AnchorHTMLAttributes, type SVGProps, useId } from "react"
-import { ExternalLinkIcon, MailIcon, XIcon } from "lucide-react"
+import { ExternalLinkIcon, MailIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -20,9 +20,8 @@ const links = [
     icon: ExternalLinkIcon,
   },
   {
-    label: "X",
+    label: "x.com",
     href: "https://x.com/christianbarra",
-    icon: XIcon,
   },
 ]
 
@@ -69,7 +68,7 @@ const About8 = ({ className }: About8Props) => {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
                 >
-                  <Icon data-icon="inline-start" />
+                  {Icon && <Icon data-icon="inline-start" />}
                   {label}
                 </a>
               </Button>
