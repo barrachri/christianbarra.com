@@ -104,7 +104,9 @@ const About8 = ({ className }: About8Props) => {
       <section className="container mx-auto max-w-3xl border-y px-6 py-8 lg:px-8">
         <div className="flex max-w-2xl flex-col gap-3">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            futurogrup.it
+            <TextLink href="https://www.futurogroup.it/">
+              futurogroup.it
+            </TextLink>
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
             Practical tools around sharp workflows, clear evaluation loops, and
@@ -116,7 +118,9 @@ const About8 = ({ className }: About8Props) => {
       <section className="container mx-auto max-w-3xl border-b px-6 py-8 lg:px-8">
         <div className="flex max-w-2xl flex-col gap-3">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-            Bootstrapped SaaS with real customers.
+            <TextLink href="https://www.thinkfutura.com/">
+              thinkfutura.com
+            </TextLink>
           </h2>
           <p className="text-lg leading-8 text-muted-foreground">
             I am looking for durable software companies doing $10k to $800k in
