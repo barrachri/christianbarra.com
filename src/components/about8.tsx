@@ -76,7 +76,7 @@ const About8 = ({ className }: About8Props) => {
         className
       )}
     >
-      <section className="relative container max-w-3xl py-10 md:py-12 lg:py-15">
+      <section className="relative container mx-auto max-w-3xl px-6 py-10 md:py-12 lg:px-8 lg:py-15">
         <div className="flex flex-col gap-5">
           <p className="font-mono text-sm tracking-[0.22em] text-muted-foreground uppercase">
             Christian Barra
@@ -95,7 +95,7 @@ const About8 = ({ className }: About8Props) => {
         </div>
       </section>
 
-      <section className="container max-w-3xl border-y py-5">
+      <section className="container mx-auto max-w-3xl border-y px-6 py-5 lg:px-8">
         <h2 className="font-mono text-sm font-semibold tracking-widest text-accent-foreground">
           Now
         </h2>
@@ -113,7 +113,7 @@ const About8 = ({ className }: About8Props) => {
         </dl>
       </section>
 
-      <section className="container max-w-3xl py-10 md:py-12 lg:py-15">
+      <section className="container mx-auto max-w-3xl px-6 py-10 md:py-12 lg:px-8 lg:py-15">
         <div className="flex max-w-2xl flex-col gap-5 text-lg leading-8">
           <p>
             I build practical software: agents, workflow products, and small
@@ -138,7 +138,7 @@ const About8 = ({ className }: About8Props) => {
         </div>
       </section>
 
-      <section className="container max-w-3xl pb-10 md:pb-12 lg:pb-15">
+      <section className="container mx-auto max-w-3xl px-6 pb-10 md:pb-12 lg:px-8 lg:pb-15">
         <div className="ml-auto flex max-w-2xl flex-col gap-5 border-t pt-6 text-lg leading-8">
           <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
             If you are selling, building, or thinking through an agent workflow,
