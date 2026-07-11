@@ -1,17 +1,36 @@
-name: Deploy Worker
+name: Cloudflare deployment
+
+run-name: ${{ github.event_name == 'push' && 'Deploy Cloudflare production' || 'Deploy Cloudflare PR preview' }}
 
 on:
-  pull_request:
-    branches:
-      - master
   push:
     branches:
       - master
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      cloudflare-command:
+        description: Wrangler command to run
+        type: string
+        default: deploy
+      deployment-environment:
+        description: GitHub deployment environment
+        type: string
+        default: production
+      deploy-enabled:
+        description: Whether to deploy after the checks pass
+        type: boolean
+        default: true
+      require-deployment-url:
+        description: Fail when Cloudflare does not return a deployment URL
+        type: boolean
+        default: false
+    secrets:
+      CLOUDFLARE_API_TOKEN:
+        required: false
 
 concurrency:
-  group: worker-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: worker-${{ inputs.deployment-environment || 'production' }}-${{ github.ref }}
+  cancel-in-progress: ${{ inputs.deployment-environment == 'preview' }}
 
 permissions:
   contents: read
@@ -57,11 +76,13 @@ jobs:
           retention-days: 1
 
   deploy:
-    name: Deploy to Cloudflare Workers
-    if: github.event_name != 'pull_request'
+    name: Deploy to ${{ inputs.deployment-environment || 'production' }}
+    if: github.event_name == 'push' || inputs.deploy-enabled == true
     needs: checks
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: ${{ inputs.deployment-environment || 'production' }}
+      url: ${{ steps.deploy.outputs.deployment-url }}
     permissions:
       contents: read
       deployments: write
@@ -86,13 +107,27 @@ jobs:
           name: dist
           path: dist
 
-      - name: Deploy to christianbarra-com Worker
+      - name: Deploy to Cloudflare
         id: deploy
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 8f8ad66c967994c8b1bca4a03588070f
-          command: deploy
+          command: ${{ inputs.cloudflare-command || 'deploy' }}
           packageManager: pnpm
           wranglerVersion: "4"
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add deployment URL to job summary
+        if: inputs.require-deployment-url == true
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          if [ -z "$DEPLOYMENT_URL" ]; then
+            echo "::error::Cloudflare did not return a preview URL. Enable Worker preview URLs in Cloudflare."
+            exit 1
+          fi
+          {
+            echo "## Cloudflare preview"
+            echo ""
+            echo "[Open preview]($DEPLOYMENT_URL)"
+          } >> "$GITHUB_STEP_SUMMARY"
