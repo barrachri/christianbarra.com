@@ -37,4 +37,4 @@ This project includes `wrangler.toml` for the `christianbarra-com` Worker. Manua
 pnpm run deploy:worker
 ```
 
-Production deploys are also handled by `.github/workflows/deploy.yml` using Cloudflare's official `cloudflare/wrangler-action`. The workflow runs checks on pull requests and deploys after pushes to `master` or manual dispatches.
+Deployments use Cloudflare's official `cloudflare/wrangler-action`. `.github/workflows/pull-request.yml` creates an isolated Worker preview for pull requests and reuses `.github/workflows/deploy.yml`; pushes and merges to `master` trigger `deploy.yml` directly for production.
